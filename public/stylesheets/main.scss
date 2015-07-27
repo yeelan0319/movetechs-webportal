@@ -1,0 +1,358 @@
+$misc-font-size: 14px;
+
+$navbar-height: 46px;
+$footer-height: 56px;
+
+$shade: (0px 0px 10px rgba(0, 0, 0, 0.1));
+
+@mixin box-shadow($shadows) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin transition($animation){
+	-webkit-transition: $animation;
+  -moz-transition: $animation;
+  -o-transition: $animation;
+  transition: $animation;
+}
+
+/*This is default font color, darkest, should be used on lite background*/
+.text-default{
+	color: #333;
+}
+/*This is a lighter version for default font color, should be used when hover on default*/
+.text-blackout{
+	color: #7e7e7e;
+}
+/*This is a darker version for reverse font color, should be used when hover on reverse*/
+.text-whiteout{
+	color: #cdcdcd;
+}
+/*This is brightest font color, should be used on dark background*/
+.text-reverse{
+	color: white;
+}
+
+.text-not-selectable{
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */   
+}
+
+.table-borderless{
+	thead, tbody, tfoot{
+		tr{
+			th, td{
+				border:none
+			}
+		}
+	}
+}
+
+.btn{
+	@include box-shadow($shade);
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/materialIcons-regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(../fonts/materialIcons-regular.woff2) format('woff2'),
+       url(../fonts/materialIcons-regular.woff) format('woff'),
+       url(../fonts/materialIcons-regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1rem;
+  line-height: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+  vertical-align: middle;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+html, body{
+	font-size: 14px;
+	color: #333;
+	line-height: 22px;
+	background: white;
+
+	@media (min-width: 768px){
+		.container{
+			width:947px !important;
+		}
+	}
+}
+
+nav.navbar{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	min-height: $navbar-height;
+
+	border:none;
+	@include border-radius(0px);
+	@include transition(all 0.5s ease);
+	
+	font-size: $misc-font-size;
+	@extend .text-not-selectable;
+
+	z-index: 9999;
+
+	/*override when navbar is fixed at top*/
+	&.navbar-fixed{
+		position: fixed;
+	}
+
+	/*apply to all navbars, when on laptop remove padding*/
+	.navbar-brand, li>a{	
+		&:hover, &:visited, &:focus{
+			text-decoration: none;
+	  	background-color: transparent;
+		}
+	}
+	@media (min-width: 768px){
+		.navbar-collapse{
+			padding: 0px;
+		}
+
+		.navbar-brand, li>a{	
+			height: $navbar-height;
+			padding: 0px 15px;
+			line-height: $navbar-height;
+		}
+	}
+
+	&.navbar-secondary{
+		@include transition(none);
+
+		.navbar-collapse{
+			height: $navbar-height !important;
+			overflow: hidden !important;
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
+
+			li{
+				font-size: 12px;
+				padding-top: 3px;
+				padding-bottom: 3px;
+				border-bottom-width: 3px;
+				border-bottom-style: solid;
+				@include transition(all 0.2s ease);
+
+				&.active{
+					padding-bottom: 0px;
+				}
+				a{
+					height: $navbar-height - 6;
+					line-height: $navbar-height - 6;
+				}
+			}
+		}
+
+		&.navbar-fixed{
+			@include box-shadow($shade);
+			.navbar-collapse{
+				border-bottom: none;
+			}
+		}
+	}
+
+	/*default, lite, etc.. are only adjust styles*/
+	&.navbar-default{
+		background-color: #414141;
+		background-color: rgba(65,65,65,0.8);
+		@include box-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
+
+		.navbar-brand, li>a{
+			@extend .text-reverse;
+
+			&:hover{
+				@extend .text-whiteout;
+			}
+		}
+	}
+
+	&.navbar-lite{
+		background-color: #fff;
+		background: rgba(255,255,255,0.96);
+		@include box-shadow(none);
+
+		.navbar-collapse{
+			border-bottom-color: #e7e7e7;
+
+			li{
+				border-bottom-color: #F4577F;
+			}
+		}
+
+		.navbar-brand, li>a{
+			@extend .text-default;
+
+			&:hover{
+				@extend .text-blackout;
+			}
+		}
+	}
+	&.navbar-dark{
+		background-color: black;
+		@include box-shadow(none);
+
+		.navbar-collapse{
+			border-bottom-color: black;
+
+			li{
+				border-bottom-color: white;
+			}
+		}
+
+		.navbar-brand, li>a{
+			@extend .text-reverse;
+
+			&:hover{
+				@extend .text-whiteout;
+			}
+		}
+	}
+}
+
+footer{
+	height: $footer-height;
+	
+	text-align: center;
+	font-size: $misc-font-size;
+	line-height: $footer-height;
+	@extend .text-reverse;
+	@include transition(all 0.5s ease);
+	
+	background-color: #414141;
+	background-color: rgba(65,65,65,0.8);
+
+	z-index: 9999;
+
+	a {
+		@extend .text-reverse;
+		text-decoration: none;
+
+		&:visited{
+			@extend .text-reverse;
+		}
+		&:hover, &:focus{
+			@extend .text-whiteout;
+			text-decoration: none;
+		}
+	}
+
+	&.footer-fixed{
+		position: fixed;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+	}
+	&.footer-transparent{
+		background-color: transparent;
+	}
+}
+
+/*main style*/
+.introduction{
+	position: relative;
+	padding-top: $navbar-height;
+}
+.article{
+	position: relative;
+	width: 100%;
+
+	p{
+		margin: 0px;
+	}
+
+	.bg{
+		position: absolute;
+		top:0px;
+		left:0px;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+
+		.background{
+			position: absolute;
+			display: none;
+		}
+		.foreground{
+			position: absolute;
+			top:0px;
+			left:0px;
+			width: 100%;
+			height: 100%;
+
+			&.shadow{
+				background-color: rgba(0,0,0,0.1);
+			}
+			
+		}
+		.bg-items{
+			position: relative;
+		}
+	}
+
+	&.article-full{
+		height:100%;
+		overflow: hidden;
+	}
+
+	&.article-center{
+		.container{
+			text-align: center;
+
+			p{
+				text-align: left;
+			}
+			
+			@media (min-width: 768px){
+				width: 844px !important; 
+			}
+		}
+	}
+}
+
+.introduction{
+	.article{
+		h2{
+			font-size: 24px;
+			line-height: 40px;
+		}
+		p{
+			font-size: 13px;
+		}
+	}
+}

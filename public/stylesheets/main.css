@@ -1,0 +1,230 @@
+/*This is default font color, darkest, should be used on lite background*/
+.text-default, nav.navbar.navbar-lite .navbar-brand, nav.navbar.navbar-lite li > a {
+  color: #333; }
+
+/*This is a lighter version for default font color, should be used when hover on default*/
+.text-blackout, nav.navbar.navbar-lite .navbar-brand:hover, nav.navbar.navbar-lite li > a:hover {
+  color: #7e7e7e; }
+
+/*This is a darker version for reverse font color, should be used when hover on reverse*/
+.text-whiteout, nav.navbar.navbar-default .navbar-brand:hover, nav.navbar.navbar-default li > a:hover, nav.navbar.navbar-dark .navbar-brand:hover, nav.navbar.navbar-dark li > a:hover, footer a:hover, footer a:focus {
+  color: #cdcdcd; }
+
+/*This is brightest font color, should be used on dark background*/
+.text-reverse, nav.navbar.navbar-default .navbar-brand, nav.navbar.navbar-default li > a, nav.navbar.navbar-dark .navbar-brand, nav.navbar.navbar-dark li > a, footer, footer a, footer a:visited {
+  color: white; }
+
+.text-not-selectable, nav.navbar {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */ }
+
+.table-borderless thead tr th, .table-borderless thead tr td, .table-borderless tbody tr th, .table-borderless tbody tr td, .table-borderless tfoot tr th, .table-borderless tfoot tr td {
+  border: none; }
+
+.btn {
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/materialIcons-regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../fonts/materialIcons-regular.woff2) format("woff2"), url(../fonts/materialIcons-regular.woff) format("woff"), url(../fonts/materialIcons-regular.ttf) format("truetype"); }
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px;
+  /* Preferred icon size */
+  display: inline-block;
+  width: 1rem;
+  line-height: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+  vertical-align: middle;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga'; }
+
+html, body {
+  font-size: 14px;
+  color: #333;
+  line-height: 22px;
+  background: white; }
+  @media (min-width: 768px) {
+    html .container, body .container {
+      width: 947px !important; } }
+
+nav.navbar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  min-height: 46px;
+  border: none;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  font-size: 14px;
+  z-index: 9999;
+  /*override when navbar is fixed at top*/
+  /*apply to all navbars, when on laptop remove padding*/
+  /*default, lite, etc.. are only adjust styles*/ }
+  nav.navbar.navbar-fixed {
+    position: fixed; }
+  nav.navbar .navbar-brand:hover, nav.navbar .navbar-brand:visited, nav.navbar .navbar-brand:focus, nav.navbar li > a:hover, nav.navbar li > a:visited, nav.navbar li > a:focus {
+    text-decoration: none;
+    background-color: transparent; }
+  @media (min-width: 768px) {
+    nav.navbar .navbar-collapse {
+      padding: 0px; }
+    nav.navbar .navbar-brand, nav.navbar li > a {
+      height: 46px;
+      padding: 0px 15px;
+      line-height: 46px; } }
+  nav.navbar.navbar-secondary {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none; }
+    nav.navbar.navbar-secondary .navbar-collapse {
+      height: 46px !important;
+      overflow: hidden !important;
+      border-bottom-width: 1px;
+      border-bottom-style: solid; }
+      nav.navbar.navbar-secondary .navbar-collapse li {
+        font-size: 12px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease; }
+        nav.navbar.navbar-secondary .navbar-collapse li.active {
+          padding-bottom: 0px; }
+        nav.navbar.navbar-secondary .navbar-collapse li a {
+          height: 40px;
+          line-height: 40px; }
+    nav.navbar.navbar-secondary.navbar-fixed {
+      -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
+      nav.navbar.navbar-secondary.navbar-fixed .navbar-collapse {
+        border-bottom: none; }
+  nav.navbar.navbar-default {
+    background-color: #414141;
+    background-color: rgba(65, 65, 65, 0.8);
+    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
+  nav.navbar.navbar-lite {
+    background-color: #fff;
+    background: rgba(255, 255, 255, 0.96);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+    nav.navbar.navbar-lite .navbar-collapse {
+      border-bottom-color: #e7e7e7; }
+      nav.navbar.navbar-lite .navbar-collapse li {
+        border-bottom-color: #F4577F; }
+  nav.navbar.navbar-dark {
+    background-color: black;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+    nav.navbar.navbar-dark .navbar-collapse {
+      border-bottom-color: black; }
+      nav.navbar.navbar-dark .navbar-collapse li {
+        border-bottom-color: white; }
+
+footer {
+  height: 56px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 56px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background-color: #414141;
+  background-color: rgba(65, 65, 65, 0.8);
+  z-index: 9999; }
+  footer a {
+    text-decoration: none; }
+    footer a:hover, footer a:focus {
+      text-decoration: none; }
+  footer.footer-fixed {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px; }
+  footer.footer-transparent {
+    background-color: transparent; }
+
+/*main style*/
+.introduction {
+  position: relative;
+  padding-top: 46px; }
+
+.article {
+  position: relative;
+  width: 100%; }
+  .article p {
+    margin: 0px; }
+  .article .bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+    .article .bg .background {
+      position: absolute;
+      display: none; }
+    .article .bg .foreground {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%; }
+      .article .bg .foreground.shadow {
+        background-color: rgba(0, 0, 0, 0.1); }
+    .article .bg .bg-items {
+      position: relative; }
+  .article.article-full {
+    height: 100%;
+    overflow: hidden; }
+  .article.article-center .container {
+    text-align: center; }
+    .article.article-center .container p {
+      text-align: left; }
+    @media (min-width: 768px) {
+      .article.article-center .container {
+        width: 844px !important; } }
+
+.introduction .article h2 {
+  font-size: 24px;
+  line-height: 40px; }
+.introduction .article p {
+  font-size: 13px; }
