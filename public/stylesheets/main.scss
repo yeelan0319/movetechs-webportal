@@ -1,9 +1,20 @@
-$misc-font-size: 14px;
+$default-font-size: 15px;
 
-$navbar-height: 46px;
-$footer-height: 56px;
+$strong-title-font-size: 130px;
+$strong-paragraph-font-size: 58px;
+$first-font-size: 42px;
+$second-font-size: 36px;
+$third-font-size: 28px;
+$forth-font-size: 24px;
+$fifth-font-size: 18px;
+$sixth-font-size: 15px;
 
-$shade: (0px 0px 10px rgba(0, 0, 0, 0.1));
+$navbar-height: 50px;
+$footer-height: 250px;
+
+/*color-palette*/
+$red: #ef483b;
+$red-hover: #f15a4e;
 
 @mixin box-shadow($shadows) {
   -moz-box-shadow: $shadows;
@@ -35,7 +46,7 @@ $shade: (0px 0px 10px rgba(0, 0, 0, 0.1));
 }
 /*This is a darker version for reverse font color, should be used when hover on reverse*/
 .text-whiteout{
-	color: #cdcdcd;
+	color: #dcdcdc;
 }
 /*This is brightest font color, should be used on dark background*/
 .text-reverse{
@@ -53,16 +64,60 @@ $shade: (0px 0px 10px rgba(0, 0, 0, 0.1));
 	thead, tbody, tfoot{
 		tr{
 			th, td{
-				border:none
+				border:none;
+				line-height: 1;
+    		vertical-align: middle;
+    		padding: 0px 8px;
 			}
 		}
 	}
 }
 
-.btn{
-	@include box-shadow($shade);
+.divider{
+	width: 42px;
+	height: 1px;
+	display: block;
+	background: #000;
 }
 
+h1, h2, h3, h4, h5, h6{
+	strong{
+		font-size: $strong-title-font-size;
+		font-weight: 100;
+		line-height: 0.8;
+	}
+}
+
+p, span {
+	strong{
+		font-size: $strong-paragraph-font-size;
+		font-weight: normal;
+	}
+}
+@font-face {
+  font-family: 'Han Sans';
+  font-style: normal;
+  font-weight: 100;
+  src: url(../fonts/SourceHanSansCN-ExtraLight.otf); /* For IE6-8 */
+}
+@font-face {
+  font-family: 'Han Sans';
+  font-style: normal;
+  font-weight: 200;
+  src: url(../fonts/SourceHanSansCN-Light.otf); /* For IE6-8 */
+}
+@font-face {
+  font-family: 'Han Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/SourceHanSansCN-Regular.otf); /* For IE6-8 */
+}
+@font-face {
+  font-family: 'Han Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url(../fonts/SourceHanSansCN-Medium.otf); /* For IE6-8 */
+}
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -79,7 +134,7 @@ $shade: (0px 0px 10px rgba(0, 0, 0, 0.1));
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 14px;  /* Preferred icon size */
+  font-size: $default-font-size; /* Preferred icon size */
   display: inline-block;
   width: 1rem;
   line-height: inherit;
@@ -99,16 +154,70 @@ $shade: (0px 0px 10px rgba(0, 0, 0, 0.1));
   font-feature-settings: 'liga';
 }
 
-html, body{
-	font-size: 14px;
+* {
+	margin: 0px;
+}
+
+html, body {
+	height: 100%;
+	font-size: $default-font-size;
 	color: #333;
 	line-height: 22px;
 	background: white;
+	font-family: "Gotham light","Helvetica Neue", Helvetica, Arial, "Han Sans", sans-serif;
 
-	@media (min-width: 768px){
-		.container{
+	@media (min-width: 768px) {
+		.container {
 			width:947px !important;
 		}
+	}
+}
+
+.page-wrap {
+	min-height: 100%;
+	margin-bottom: -$footer-height;
+
+	&:after {
+		content: '';
+		display: block;
+		height: $footer-height;
+	}
+}
+
+footer{
+	height: $footer-height;
+
+	text-align: left;
+	font-size: $default-font-size;
+	line-height: $footer-height;
+	padding-top: 56px;
+	padding-top: 4rem;
+
+	@include transition(all 0.5s ease);
+	
+	background-color: #454545;
+
+	z-index: 9999;
+
+	h4, h6{
+		@extend .text-reverse;
+	}
+	h6{
+		font-weight: 600;
+		margin-bottom: 16px;
+	}
+	h4{
+		font-weight: 200;
+	}
+
+	&.footer-fixed{
+		position: fixed;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+	}
+	&.footer-transparent{
+		background-color: transparent;
 	}
 }
 
@@ -123,7 +232,7 @@ nav.navbar{
 	@include border-radius(0px);
 	@include transition(all 0.5s ease);
 	
-	font-size: $misc-font-size;
+	font-size: $default-font-size;
 	@extend .text-not-selectable;
 
 	z-index: 9999;
@@ -132,8 +241,21 @@ nav.navbar{
 	&.navbar-fixed{
 		position: fixed;
 	}
+	.navbar-right{
+		margin-right: 0px;
+	}
 
 	/*apply to all navbars, when on laptop remove padding*/
+	.navbar-brand{
+		width: 85px;
+		background: url('/images/logo.png') 0 16px no-repeat;
+		opacity: 1;
+
+		&:hover{
+			opacity: 0.8;
+		}
+	}
+
 	.navbar-brand, li>a{	
 		&:hover, &:visited, &:focus{
 			text-decoration: none;
@@ -147,7 +269,7 @@ nav.navbar{
 
 		.navbar-brand, li>a{	
 			height: $navbar-height;
-			padding: 0px 15px;
+			padding: 0px 19px;
 			line-height: $navbar-height;
 		}
 	}
@@ -162,25 +284,25 @@ nav.navbar{
 			border-bottom-style: solid;
 
 			li{
-				font-size: 12px;
-				padding-top: 3px;
-				padding-bottom: 3px;
-				border-bottom-width: 3px;
-				border-bottom-style: solid;
+				font-size: $default-font-size;
 				@include transition(all 0.2s ease);
 
 				&.active{
-					padding-bottom: 0px;
+					a {
+						color: $red;
+					}
 				}
 				a{
-					height: $navbar-height - 6;
-					line-height: $navbar-height - 6;
+					display: inline-block;
+					line-height: $navbar-height;
+					cursor: pointer;
 				}
 			}
 		}
 
 		&.navbar-fixed{
-			@include box-shadow($shade);
+			border-bottom: 1px solid #e5e5e5;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 			.navbar-collapse{
 				border-bottom: none;
 			}
@@ -189,9 +311,9 @@ nav.navbar{
 
 	/*default, lite, etc.. are only adjust styles*/
 	&.navbar-default{
-		background-color: #414141;
-		background-color: rgba(65,65,65,0.8);
-		@include box-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
+		background-color: #242424;
+		background-color: rgba(36,36,36,0.9);
+		@include box-shadow(none);
 
 		.navbar-brand, li>a{
 			@extend .text-reverse;
@@ -203,30 +325,31 @@ nav.navbar{
 	}
 
 	&.navbar-lite{
-		background-color: #fff;
-		background: rgba(255,255,255,0.96);
+		background-color: transparent;
 		@include box-shadow(none);
 
-		.navbar-collapse{
-			border-bottom-color: #e7e7e7;
+		.outer-container{
+			background-color: #fff;
+			background: rgba(255,255,255,0.96);
 
-			li{
-				border-bottom-color: #F4577F;
+			.navbar-collapse{
+				border-bottom-color: #e5e5e5;
+			}
+
+			.navbar-brand, li>a{
+				@extend .text-default;
+
+				&:hover{
+					@extend .text-blackout;
+				}
 			}
 		}
-
-		.navbar-brand, li>a{
-			@extend .text-default;
-
-			&:hover{
-				@extend .text-blackout;
-			}
-		}
+		
 	}
 	&.navbar-dark{
 		background-color: black;
 		@include box-shadow(none);
-
+		
 		.navbar-collapse{
 			border-bottom-color: black;
 
@@ -245,44 +368,6 @@ nav.navbar{
 	}
 }
 
-footer{
-	height: $footer-height;
-	
-	text-align: center;
-	font-size: $misc-font-size;
-	line-height: $footer-height;
-	@extend .text-reverse;
-	@include transition(all 0.5s ease);
-	
-	background-color: #414141;
-	background-color: rgba(65,65,65,0.8);
-
-	z-index: 9999;
-
-	a {
-		@extend .text-reverse;
-		text-decoration: none;
-
-		&:visited{
-			@extend .text-reverse;
-		}
-		&:hover, &:focus{
-			@extend .text-whiteout;
-			text-decoration: none;
-		}
-	}
-
-	&.footer-fixed{
-		position: fixed;
-		left: 0px;
-		right: 0px;
-		bottom: 0px;
-	}
-	&.footer-transparent{
-		background-color: transparent;
-	}
-}
-
 /*main style*/
 .introduction{
 	position: relative;
@@ -292,8 +377,34 @@ footer{
 	position: relative;
 	width: 100%;
 
+	.title{
+		margin: 0px 0px 30px 0px;
+
+		h1, h2, h3, h4, h5{
+			font-weight: 100;
+		}
+		h1 {
+			font-size: $first-font-size;
+		}
+		h2 {
+			font-size: $second-font-size;
+			margin: 10px 0px;
+		}
+		h3 {
+			font-size: $third-font-size;
+		}
+		h4 {
+			font-size: $forth-font-size;
+		}
+		h5 {
+			font-size: $fifth-font-size;
+		}
+		h6 {
+			font-size: $sixth-font-size;
+		}
+	}
 	p{
-		margin: 0px;
+		margin: 11.5px 0px;
 	}
 
 	.bg{
@@ -337,7 +448,10 @@ footer{
 			p{
 				text-align: left;
 			}
-			
+		}
+	}
+	&.article-narrow{
+		.container{
 			@media (min-width: 768px){
 				width: 844px !important; 
 			}
@@ -345,14 +459,73 @@ footer{
 	}
 }
 
-.introduction{
-	.article{
-		h2{
-			font-size: 24px;
-			line-height: 40px;
-		}
-		p{
-			font-size: 13px;
+.bubble{
+	display: table;
+	@include border-radius(100px);
+
+	.inner{
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+		height: 100%;
+		@include border-radius(100px);
+		border: 2px solid #000;
+		text-align: center;
+
+		h4{
+			color: $red;
 		}
 	}
+}
+
+/*override jquery-ui slider*/
+.container{
+	&.is-dragging{
+  	cursor: move;
+  	cursor: -webkit-grabbing;
+  	cursor: grabbing
+  }
+  .ui-widget-content{
+		border: none;
+		background: #e2e2e2;
+	}
+	.ui-slider-horizontal{
+		height: 2px;
+	}
+
+	.ui-slider-handle{
+		height: 16px;
+		width: 16px;
+		top: -8px;
+		border: 1px solid #bbb;
+		border-radius: 14px;
+		background: #fcfcfc;
+	  outline: none;
+
+	  &:hover{
+	  	cursor: move;
+	  	cursor: -webkit-grab;
+	  	cursor: grab;
+	  }
+	}
+}
+
+/*override paper material design*/
+.btn{
+	margin: 8px 0px;
+	padding: 3px 20px;
+	font-size: $default-font-size;
+	@include box-shadow(none);
+
+	&:hover{
+		background-color: $red-hover;
+	}
+
+	&:focus, &:active{
+		@include box-shadow(none);
+	}
+}
+.btn-danger{
+	background-color: $red;
+	font-weight: 600;
 }

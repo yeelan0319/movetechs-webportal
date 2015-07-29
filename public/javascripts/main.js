@@ -41,8 +41,8 @@ function redoLayoutArticle(article){
 				bgRealHeight;
 
 			// Let the bgImg fill height first. Calculate the width in that case
-			bgTheoryHeight = containerHeight;
-			bgTheoryWidth = bgTheoryHeight * bgWidthHeightRatio;
+			bgTheoryHeight = Math.ceil(containerHeight) + 1;
+			bgTheoryWidth = Math.ceil(bgTheoryHeight * bgWidthHeightRatio);
 			// The theortical width filled the container, good to go
 			if(containerWidth <= bgTheoryWidth) {
 				bgRealWidth = bgTheoryWidth;
@@ -50,8 +50,8 @@ function redoLayoutArticle(article){
 			}
 			// The theortical width is not wide enough to fill the container, reverse it.
 			else{
-				bgRealWidth = containerWidth;
-				bgRealHeight = bgRealWidth / bgWidthHeightRatio;
+				bgRealWidth = Math.ceil(containerWidth);
+				bgRealHeight = Math.ceil(bgRealWidth / bgWidthHeightRatio) + 1;
 			}
 			bgImg.css({
 				height: bgRealHeight,
