@@ -98,25 +98,45 @@ p, span {
   font-family: 'Han Sans';
   font-style: normal;
   font-weight: 100;
-  src: url(../fonts/SourceHanSansCN-ExtraLight.otf); /* For IE6-8 */
+  src: url('../fonts/SourceHanSansSC-ExtraLight.eot');
+  src:
+    url('../fonts/SourceHanSansSC-ExtraLight.eot?#font-spider') format('embedded-opentype'),
+    url('../fonts/SourceHanSansSC-ExtraLight.woff') format('woff'),
+    url('../fonts/SourceHanSansSC-ExtraLight.ttf') format('truetype'),
+    url('../fonts/SourceHanSansSC-ExtraLight.svg') format('svg');
 }
 @font-face {
   font-family: 'Han Sans';
   font-style: normal;
   font-weight: 200;
-  src: url(../fonts/SourceHanSansCN-Light.otf); /* For IE6-8 */
+  src: url('../fonts/SourceHanSansSC-Light.eot');
+  src:
+    url('../fonts/SourceHanSansSC-Light.eot?#font-spider') format('embedded-opentype'),
+    url('../fonts/SourceHanSansSC-Light.woff') format('woff'),
+    url('../fonts/SourceHanSansSC-Light.ttf') format('truetype'),
+    url('../fonts/SourceHanSansSC-Light.svg') format('svg');
 }
 @font-face {
   font-family: 'Han Sans';
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/SourceHanSansCN-Regular.otf); /* For IE6-8 */
+  src: url('../fonts/SourceHanSansSC-Regular.eot');
+  src:
+    url('../fonts/SourceHanSansSC-Regular.eot?#font-spider') format('embedded-opentype'),
+    url('../fonts/SourceHanSansSC-Regular.woff') format('woff'),
+    url('../fonts/SourceHanSansSC-Regular.ttf') format('truetype'),
+    url('../fonts/SourceHanSansSC-Regular.svg') format('svg');
 }
 @font-face {
   font-family: 'Han Sans';
   font-style: normal;
   font-weight: 600;
-  src: url(../fonts/SourceHanSansCN-Medium.otf); /* For IE6-8 */
+  src: url('../fonts/SourceHanSansSC-Medium.eot');
+  src:
+    url('../fonts/SourceHanSansSC-Medium.eot?#font-spider') format('embedded-opentype'),
+    url('../fonts/SourceHanSansSC-Medium.woff') format('woff'),
+    url('../fonts/SourceHanSansSC-Medium.ttf') format('truetype'),
+    url('../fonts/SourceHanSansSC-Medium.svg') format('svg');
 }
 @font-face {
   font-family: 'Material Icons';

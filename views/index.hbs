@@ -1,8 +1,18 @@
 {{> header }}
+<style type="text/css">
+.page-wrap{
+	margin-bottom: 0px;
+}
+.page-wrap:after{
+	height: 0px;
+}
+</style>
 <div class="main">
 	<div class="article article-full article-center">
 		<div class="bg">
-			<video type="video/mp4" autoplay=true width=100% src="index.mp4" loop="true" style="visibility: visible;"></video>
+			<div class="background">
+				<video type="video/mp4" autoplay=true width=100% src="index.mp4" style="visibility: visible;"></video>
+			</div>
 			<div class="foreground"></div>
 			<div class="bg-items">
 				<div class="container">
@@ -20,4 +30,6 @@
 		</div>
 	</div>
 </div>
-{{> footer }}
+</div>
+</body>
+</html>
