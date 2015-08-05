@@ -214,8 +214,8 @@ nav.navbar {
       nav.navbar.navbar-secondary.navbar-fixed .navbar-collapse {
         border-bottom: none; }
   nav.navbar.navbar-default {
-    background-color: #242424;
-    background-color: rgba(36, 36, 36, 0.9);
+    background-color: #30343b;
+    background-color: rgba(48, 52, 59, 0.95);
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none; }

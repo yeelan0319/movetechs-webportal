@@ -15,6 +15,8 @@ $footer-height: 250px;
 /*color-palette*/
 $red: #ef483b;
 $red-hover: #f15a4e;
+$grey: rgba(48,52,59,0.95);
+$grey-fallback: #30343b;
 
 @mixin box-shadow($shadows) {
   -moz-box-shadow: $shadows;
@@ -331,8 +333,8 @@ nav.navbar{
 
 	/*default, lite, etc.. are only adjust styles*/
 	&.navbar-default{
-		background-color: #242424;
-		background-color: rgba(36,36,36,0.9);
+		background-color: $grey-fallback;
+		background-color: $grey;
 		@include box-shadow(none);
 
 		.navbar-brand, li>a{
