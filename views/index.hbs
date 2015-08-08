@@ -1,35 +1,78 @@
 {{> header }}
 <style type="text/css">
+html{
+	padding-top: 50px;
+}
 .page-wrap{
 	margin-bottom: 0px;
 }
 .page-wrap:after{
 	height: 0px;
 }
+.article {
+	position: relative;
+}
+.play, .detail{
+	position: absolute;
+}
+.play, .play:hover{
+	color: #333;
+	cursor: pointer;
+}
+.detail .arrow{
+	padding: 7px;
+	background: url("/images/arrow-red.png") 8px 12px no-repeat;
+}
 </style>
 <div class="main">
 	<div class="article article-full article-center">
 		<div class="bg">
-			<div class="background">
-				<video type="video/mp4" autoplay=true width=100% src="index.mp4" style="visibility: visible;"></video>
-			</div>
+			<video class="background" autoplay style="visibility: visible;" width="2048px" height="956px">
+				<source src="index.mp4" type="video/mp4">
+				<img src="/images/index-jumbo.png">
+			</video>
 			<div class="foreground"></div>
 			<div class="bg-items">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-8 col-md-offset-2 hidden-xs">
-							<img class="img-responsive" src="images/home-1.png"/>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
-		<div class="container">
-			<div class="row">
-			</div>
-		</div>
+		<a class="play" style="display: none">回 放</a>
+		<a class="detail btn btn-default" style="display: none" href="/huabanche">查 看<span class="arrow"></span></a>
 	</div>
 </div>
 </div>
+<script type="text/javascript">
+$('.article').first().on('resized', function(){
+	var origin = {
+			height: 1196,
+			width: 2560,
+			play: {
+				top: 550,
+				left: 1087
+			},
+			detail: {
+				top: 550,
+				right: 1076
+			}
+		},
+		containerHeight = $('video').height(),
+		containerWidth = $('video').width();
+
+	$('.play').css({
+		"top": containerHeight / origin.height * origin.play.top + parseFloat($('video').css("top")) + parseFloat($('.btn').css('padding')) + parseFloat($('.btn').css('margin')) + 3,
+		"left": containerWidth / origin.width * origin.play.left + parseFloat($('video').css("left"))
+	});
+	$('.detail').css({
+		"top": containerHeight / origin.height * origin.detail.top + parseFloat($('video').css("top")),
+		"right": containerWidth / origin.width * origin.detail.right - parseFloat($('video').css("left"))
+	});
+});
+$('video').on('ended', function(){
+	$('.article a').show();
+});
+$('.play').click(function(){
+	$('.article a').hide();
+	$('video')[0].play();
+})
+</script>
 </body>
 </html>

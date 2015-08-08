@@ -11,7 +11,7 @@ function redoLayoutArticle(article){
 
 	if(article.hasClass('article-full')) {
 		article.css({
-			height: window.innerHeight
+			height: $("html").height()
 		});
 		// content.css({
 		// 	paddingTop: (article.innerHeight() - content.innerHeight())/2
@@ -41,8 +41,8 @@ function redoLayoutArticle(article){
 				bgRealHeight;
 
 			// Let the bgImg fill height first. Calculate the width in that case
-			bgTheoryHeight = Math.ceil(containerHeight) + 1;
-			bgTheoryWidth = Math.ceil(bgTheoryHeight * bgWidthHeightRatio);
+			bgTheoryHeight = containerHeight;
+			bgTheoryWidth = bgTheoryHeight * bgWidthHeightRatio;
 			// The theortical width filled the container, good to go
 			if(containerWidth <= bgTheoryWidth) {
 				bgRealWidth = bgTheoryWidth;
@@ -50,8 +50,8 @@ function redoLayoutArticle(article){
 			}
 			// The theortical width is not wide enough to fill the container, reverse it.
 			else{
-				bgRealWidth = Math.ceil(containerWidth);
-				bgRealHeight = Math.ceil(bgRealWidth / bgWidthHeightRatio) + 1;
+				bgRealWidth = containerWidth;
+				bgRealHeight = bgRealWidth / bgWidthHeightRatio;
 			}
 			bgImg.css({
 				height: bgRealHeight,
@@ -60,6 +60,7 @@ function redoLayoutArticle(article){
 				top: (containerHeight - bgRealHeight) / 2 
 			}).show();
 		});
+		article.trigger("resized");
 	}
 }
 

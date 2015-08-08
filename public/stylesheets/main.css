@@ -12,7 +12,7 @@
   color: #dcdcdc; }
 
 /*This is brightest font color, should be used on dark background*/
-.text-reverse, footer h4, footer h6, nav.navbar.navbar-default .navbar-brand, nav.navbar.navbar-default li > a, nav.navbar.navbar-dark .navbar-brand, nav.navbar.navbar-dark li > a {
+.text-reverse, nav.navbar.navbar-default .navbar-brand, nav.navbar.navbar-default li > a, nav.navbar.navbar-dark .navbar-brand, nav.navbar.navbar-dark li > a {
   color: white; }
 
 .text-not-selectable, nav.navbar {
@@ -151,7 +151,7 @@ footer {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  background-color: #454545;
+  background-color: #f8f8f8;
   z-index: 9999; }
   footer h6 {
     font-weight: 600;
@@ -322,7 +322,8 @@ nav.navbar {
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   -ms-border-radius: 100px;
-  border-radius: 100px; }
+  border-radius: 100px;
+  background: #f55e66; }
   .bubble .inner {
     display: table-cell;
     vertical-align: middle;
@@ -332,10 +333,10 @@ nav.navbar {
     -moz-border-radius: 100px;
     -ms-border-radius: 100px;
     border-radius: 100px;
-    border: 2px solid #000;
+    border: 2px solid #d54753;
     text-align: center; }
     .bubble .inner h4 {
-      color: #ef483b; }
+      color: #fff; }
 
 /*override jquery-ui slider*/
 .container.is-dragging {
@@ -365,16 +366,23 @@ nav.navbar {
   margin: 8px 0px;
   padding: 3px 20px;
   font-size: 15px;
+  font-weight: 600;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none; }
-  .btn:hover {
-    background-color: #f15a4e; }
   .btn:focus, .btn:active {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none; }
 
 .btn-danger {
-  background-color: #ef483b;
-  font-weight: 600; }
+  background-color: #ef483b; }
+  .btn-danger:hover, .btn-danger:active, .btn-danger:focus, .btn-danger:visited {
+    background-color: #f15a4e; }
+
+.btn-default {
+  color: #ef483b; }
+  .btn-default:hover, .btn-default:active, .btn-default:focus, .btn-default:visited {
+    color: #ef483b;
+    border-color: #fafafa;
+    background-color: #fafafa; }

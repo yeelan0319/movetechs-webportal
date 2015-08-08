@@ -235,13 +235,10 @@ footer{
 
 	@include transition(all 0.5s ease);
 	
-	background-color: #454545;
+	background-color: #f8f8f8;
 
 	z-index: 9999;
 
-	h4, h6{
-		@extend .text-reverse;
-	}
 	h6{
 		font-weight: 600;
 		margin-bottom: 16px;
@@ -502,6 +499,7 @@ nav.navbar{
 .bubble{
 	display: table;
 	@include border-radius(100px);
+	background: #f55e66;
 
 	.inner{
 		display: table-cell;
@@ -509,11 +507,11 @@ nav.navbar{
 		width: 100%;
 		height: 100%;
 		@include border-radius(100px);
-		border: 2px solid #000;
+		border: 2px solid #d54753;
 		text-align: center;
 
 		h4{
-			color: $red;
+			color: #fff;
 		}
 	}
 }
@@ -555,11 +553,8 @@ nav.navbar{
 	margin: 8px 0px;
 	padding: 3px 20px;
 	font-size: $default-font-size;
+	font-weight: 600;
 	@include box-shadow(none);
-
-	&:hover{
-		background-color: $red-hover;
-	}
 
 	&:focus, &:active{
 		@include box-shadow(none);
@@ -567,5 +562,17 @@ nav.navbar{
 }
 .btn-danger{
 	background-color: $red;
-	font-weight: 600;
+
+	&:hover, &:active, &:focus, &:visited{
+		background-color: $red-hover;
+	}
+}
+.btn-default{
+	color: $red;
+
+	&:hover, &:active, &:focus, &:visited{
+		color: $red;
+		border-color: #fafafa;
+		background-color: #fafafa;
+	}
 }
