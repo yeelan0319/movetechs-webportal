@@ -1,8 +1,5 @@
 {{> header }}
 <style type="text/css">
-html{
-	padding-top: 50px;
-}
 .page-wrap{
 	margin-bottom: 0px;
 }
@@ -46,24 +43,24 @@ $('.article').first().on('resized', function(){
 			height: 1080,
 			width: 2314,
 			play: {
-				top: 550,
-				left: 1090
+				top: 500,
+				left: 984
 			},
 			detail: {
-				top: 550,
-				right: 1076
+				top: 500,
+				right: 972
 			}
 		},
 		containerHeight = $('video').height(),
 		containerWidth = $('video').width();
 
 	$('.play').css({
-		"top": containerHeight / origin.height * origin.play.top + parseFloat($('video').css("top")) + parseFloat($('.btn').css('padding')) + parseFloat($('.btn').css('margin')) + 3,
+		"top": containerHeight / origin.height * origin.play.top + parseFloat($('.btn').css('padding')) + parseFloat($('.btn').css('margin')) + 3,
 		"left": containerWidth / origin.width * origin.play.left + parseFloat($('video').css("left"))
 	});
 	$('.detail').css({
-		"top": containerHeight / origin.height * origin.detail.top + parseFloat($('video').css("top")),
-		"right": containerWidth / origin.width * origin.detail.right - parseFloat($('video').css("left"))
+		"top": containerHeight / origin.height * origin.detail.top,
+		"right": containerWidth / origin.width * origin.detail.right + parseFloat($('video').css("left"))
 	});
 });
 $('video').on('ended', function(){

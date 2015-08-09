@@ -70,6 +70,10 @@ $grey-fallback: #30343b;
 				line-height: 1;
     		vertical-align: middle;
     		padding: 0px 8px;
+
+    		p{
+    			line-height: 26px;
+    		}
 			}
 		}
 	}
@@ -202,7 +206,7 @@ html, body {
 	height: 100%;
 	font-size: $default-font-size;
 	color: #333;
-	line-height: 22px;
+	line-height: 26px;
 	background: white;
 	font-family: "Gotham light","Helvetica Neue", Helvetica, Arial, "Han Sans", sans-serif;
 	

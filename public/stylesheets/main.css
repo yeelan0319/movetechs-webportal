@@ -30,6 +30,8 @@
   line-height: 1;
   vertical-align: middle;
   padding: 0px 8px; }
+  .table-borderless thead tr th p, .table-borderless thead tr td p, .table-borderless tbody tr th p, .table-borderless tbody tr td p, .table-borderless tfoot tr th p, .table-borderless tfoot tr td p {
+    line-height: 26px; }
 
 .divider {
   width: 42px;
@@ -125,7 +127,7 @@ html, body {
   height: 100%;
   font-size: 15px;
   color: #333;
-  line-height: 22px;
+  line-height: 26px;
   background: white;
   font-family: "Gotham light","Helvetica Neue", Helvetica, Arial, "Han Sans", sans-serif; }
   @media (min-width: 768px) {

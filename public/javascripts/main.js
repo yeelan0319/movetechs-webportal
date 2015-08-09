@@ -11,7 +11,7 @@ function redoLayoutArticle(article){
 
 	if(article.hasClass('article-full')) {
 		article.css({
-			height: $("html").height()
+			height: $("html").height() * 1.02
 		});
 		// content.css({
 		// 	paddingTop: (article.innerHeight() - content.innerHeight())/2
