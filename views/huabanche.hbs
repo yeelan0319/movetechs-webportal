@@ -1,5 +1,184 @@
 {{> header }}
 <style type="text/css">
+@media (max-width: 768px) {
+	.article{
+		text-align: center;
+	}
+	.navbar-secondary .btn .plus{
+		padding: 8px;
+		background: url("/images/plus.png") 5px 12px no-repeat;
+	}
+	.article#jumbotron{
+		padding-top: 60px;
+		padding-top: 4rem;
+		padding-bottom: 30px;
+		padding-bottom: 2rem;
+	}
+	.article#jumbotron .foreground{
+		background-color: #fbfbfb;
+	}
+	.article#article-1>.container{
+		padding-top: 60px;
+		padding-top: 4rem;
+		padding-bottom: 30px;
+		padding-bottom: 2rem;
+	}
+	.article#article-1 .title{
+		margin-bottom: 50px;
+	}
+	.article#article-1 table{
+		vertical-align: bottom;
+		margin-bottom: 60px;
+		margin-bottom: 4rem;
+	}
+	.article#article-1 h1{
+		vertical-align: top;
+	}
+	.article#article-2>.container{
+		position: relative;
+		padding-top: 360px;
+		padding-top: 24rem;
+		padding-bottom: 30px;
+		padding-bottom: 2rem;
+	}
+	.article#article-3>.container{
+		padding-top: 30px;
+		padding-top: 2rem;
+		padding-bottom: 585px;
+		padding-bottom: 39rem;
+	}
+	.article#article-3 h4{
+		font-weight: 600;
+	}
+	.article#article-4>.container{
+		padding-top: 60px;
+		padding-top: 4rem;
+		padding-bottom: 390px;
+		padding-bottom: 26rem;
+	}
+	.article#article-5>.container{
+		padding-top: 60px;
+		padding-top: 4rem;
+		padding-bottom: 450px;
+		padding-bottom: 30rem;
+	}
+	.article#article-5 p{
+		margin-top: 5px;
+	}
+	.article#article-6 .container{
+		padding-top: 60px;
+		padding-top: 4rem;
+		padding-bottom: 360px;
+		padding-bottom: 24rem;
+	}
+	.article#article-6 .container h2, .article#article-6 .container p{
+		color: #fff;
+	}
+	.article#article-6 .bg .foreground .col-md-7{
+		background-color: rgba(48,52,59,0.95);
+		background-color: #30343b;
+		height: 100%;
+	}
+	.article#article-6 .bg .foreground .col-md-5{
+		height: 100%;
+		background: #3e414a;
+	}
+	.article#article-6 .bg .bg-items .photo-container{
+		padding: 270px 0px 0px 0px;
+		padding: 18rem 0rem 0 0;
+	}
+	.article#article-7 .container{
+		padding-top: 105px;
+		padding-top: 7rem;
+		padding-bottom: 255px;
+		padding-bottom: 17rem;
+	}
+	.article#article-7 .bubble{
+		width: 195px;
+		height: 195px;
+		padding: 7px;
+	}
+	.article#article-7 .bubble .inner h3{
+		color: #fff;
+		font-weight: 200;
+	}
+	.article#article-7 .bubble .inner .divider{
+		margin: 0 auto;
+	}
+	.article#article-7 #bubble-left{
+		background: #393939;
+	}
+	.article#article-7 #bubble-left .inner{
+		border-color: #808080;
+	}
+	.article#article-7 #bubble-left .inner h5{
+		color: #a9a9a9;
+		font-weight: 600;
+	}
+	.article#article-7 #bubble-left .inner .divider{
+		background-color:#a9a9a9;
+	}
+	.article#article-7 #bubble-right{
+		margin-top: 285px;
+		margin-top: 19rem;
+		background: #f55e66;
+	}
+	.article#article-7 #bubble-right .inner{
+		border-color: #d54753;
+	}
+	.article#article-7 #bubble-right .inner h5{
+		color: #972738;
+		font-weight: 600;
+	}
+	.article#article-7 #bubble-right .inner .divider{
+		background-color:#972738;
+	}
+	.article#article-8 .container{
+		text-align: left;
+		padding-top: 105px;
+		padding-top: 7rem;
+		padding-bottom: 105px;
+		padding-bottom: 7rem;
+	}
+	.article#article-8 .bg .foreground{
+		background-color: #3e414a;
+	}
+	.article#article-8 .container h4{
+		color: #a9a9a9;
+		font-weight: 600;
+	}
+	.article#article-8 .container p{
+		color: #fff;
+	}
+	.article#article-8 table td{
+		padding: 10px 0px;
+	}
+	.article#article-9 .container{
+		text-align: left;
+		padding-top: 28px;
+		padding-top: 2rem;
+		padding-bottom: 42px;
+		padding-bottom: 3rem;
+	}	
+	.article#article-10 .container{
+		padding-top: 28px;
+		padding-top: 2rem;
+		padding-bottom: 28px;
+		padding-bottom: 2rem;
+	}
+	.article#article-10 h1{
+		color: #fff;
+	}
+	.btn-danger{
+		background: #ff6468;
+		float: right;
+	}
+	.article#article-10 .btn .arrow{
+		padding: 6px;
+		background: url("/images/arrow.png") 6px 12px no-repeat;
+	}
+}
+@media (min-width: 768px) {
 	.navbar-secondary .btn .plus{
 		padding: 8px;
 		background: url("/images/plus.png") 5px 12px no-repeat;
@@ -56,7 +235,7 @@
 	.article#article-3>.container{
 		padding-top: 105px;
 		padding-top: 7rem;
-		padding-bottom: 56px;
+		padding-bottom: 60px;
 		padding-bottom: 4rem;
 	}
 	.article#article-3 .title{
@@ -203,22 +382,26 @@
 		padding: 6px;
 		background: url("/images/arrow.png") 6px 12px no-repeat;
 	}
+}
 </style>
 <div class="main">
 	<div class="article" id="jumbotron">
 		<div class="bg">
-			<img class="background" src="images/k1-jumbo.jpg"/>
+			<img class="background hidden-xs" src="images/k1-jumbo.jpg"/>
 			<div class="foreground"></div>
 			<div class="bg-items"></div>
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-5 col-md-offset-7">
+				<div class="col-xs-12 col-md-5 col-md-offset-7">
 					<div class="title">
 						<h1>K1滑板车</h1>
 						<h4>简易的出行方式</h4>
 					</div>
 				</div> 
+				<div class="col-xs-12 visible-xs-*">
+					<img class="img-responsive" src="images/k1-jumbo-mobi.jpg"/>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -255,7 +438,7 @@
 						</div>
 					</div>
 				</div>
-				<table class="table table-borderless">
+				<table class="table table-borderless hidden-xs">
 					<tr class="row">
 						<td style="vertical-align: bottom" colspan="2"><h1 style="font-weight: 200"><strong>78-90</strong>公里</h1></td>
 						<td class="col-md-4 col-md-offset-1" rowspan="2"><img class="img-responsive" src="images/k1-article1.png"/></td>
@@ -265,7 +448,15 @@
 						<td style="vertical-align: top; line-height: 25px;" ><span>续航长，选择23.4ah或27ah两种电池，分别续航78公里和90公里</span></td>
 					</tr>
 				</table>
-				<div class="row">
+				<table class="table table-borderless visible-xs-*">
+					<tr class="row">
+						<td style="vertical-align: bottom; text-align:center"><h1 style="font-weight: 200"><strong>78-90</strong>公里</h1></td>
+					</tr>
+					<tr class="row">
+						<td style="vertical-align: top; line-height: 25px; text-align:center" ><span>续航长，选择23.4ah或27ah两种电池，分别续航78公里和90公里</span></td>
+					</tr>
+				</table>
+				<div class="row hidden-xs">
 					<div class="col-md-12">
 						<img class="img-responsive" src="images/k1-article1-2.jpg">
 					</div>
@@ -274,7 +465,7 @@
 		</div>
 		<div class="article anchor-2" id="article-2">
 			<div class="bg">
-				<img class="background" src="images/k1-article2-bg.jpg"/>
+				<img class="background hidden-xs" src="images/k1-article2-bg.jpg"/>
 				<div class="foreground"></div>
 				<div class="bg-items">
 					<div class="container">
@@ -296,12 +487,12 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-4 col-md-offset-4">
+					<div class="col-xs-12 col-md-4 col-md-offset-4">
 						<p>K1滑板车侧面装配有反光条，作为被动灯光提示保障夜间骑行安全。</p>
 					</div>
 				</div>
 			</div>
-			<div class="rotate-slider-container">
+			<div class="rotate-slider-container hidden-xs">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
@@ -320,10 +511,11 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
+					<div class="col-xs-12 col-md-10 col-md-offset-1">
 						<div class="title">
-							<h1>防水设计</h1>
-							<h4>同样适用于雨天出行</h4>
+							<h1 class="hidden-xs">防水设计</h1>
+							<h4 class="hidden-xs">同样适用于雨天出行</h4>
+							<h1 class="visible-xs-*">防水设计,同样适用于雨天出行</h1>
 						</div>
 						<p>有时候出于工作要求，我们不得不在雨天出行。K1经过严格的防水测试，在雨天它不是你的负担。</p>
 					</div>
@@ -350,7 +542,7 @@
 						<p>一般滑板车不提供原厂座椅，需要购买者自行安装。K1滑板车为您省去麻烦。</p>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row hidden-xs">
 					<div class="col-md-12">
 						<div class="bubble">
 							<div class="inner">
@@ -387,8 +579,8 @@
 			<div class="bg">
 				<div class="background"></div>
 				<div class="foreground">
-					<div class="col-md-7"></div>
-					<div class="col-md-5"></div>
+					<div class="col-md-7 hidden-xs"></div>
+					<div class="col-xs-12 col-md-5"></div>
 				</div>
 				<div class="bg-items">
 					<div class="container-fluid">
@@ -409,7 +601,7 @@
 						<p>导航耗电快，途中手机没电是一个棘手的问题。k1 滑板车自带 USB 充电口，让您安心做好代驾的工作。</p>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row hidden-xs">
 					<div class="col-md-2">
 						<img class="img-responsive" src="images/k1-article6.png">
 					</div>

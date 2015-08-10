@@ -231,7 +231,6 @@ html, body {
 footer{
 	height: $footer-height;
 
-	text-align: left;
 	font-size: $default-font-size;
 	line-height: $footer-height;
 	padding-top: 56px;
@@ -243,12 +242,15 @@ footer{
 
 	z-index: 9999;
 
-	h6{
-		font-weight: 600;
-		margin-bottom: 16px;
-	}
-	h4{
-		font-weight: 200;
+	.article{
+		text-align: left !important;
+		h6{
+			font-weight: 600;
+			margin-bottom: 16px;
+		}
+		h4{
+			font-weight: 200;
+		}
 	}
 
 	&.footer-fixed{
@@ -286,18 +288,35 @@ nav.navbar{
 		margin-right: 0px;
 	}
 
+	.navbar-toggle{
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+
 	/*apply to all navbars, when on laptop remove padding*/
 	.navbar-brand{
-		width: 85px;
-		background: url('/images/logo.png') 0 16px no-repeat;
 		opacity: 1;
 
 		&:hover{
 			opacity: 0.8;
 		}
+
+		@media (min-width: 768px) {
+			width: 85px;
+			background: url('/images/logo.png') 0 17px no-repeat;
+		}
+
+		@media (max-width: 768px) {
+			position: absolute;
+			width: 100%;
+			height: auto;
+			background: url('/images/logo.png') 50% 17px no-repeat;
+		}
 	}
 
-	.navbar-brand, li>a{	
+	.navbar-brand, li>a{
+		text-align: center;
+
 		&:hover, &:visited, &:focus{
 			text-decoration: none;
 	  	background-color: transparent;

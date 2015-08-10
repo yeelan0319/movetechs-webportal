@@ -144,7 +144,6 @@ html, body {
 
 footer {
   height: 250px;
-  text-align: left;
   font-size: 15px;
   line-height: 250px;
   padding-top: 56px;
@@ -155,11 +154,13 @@ footer {
   transition: all 0.5s ease;
   background-color: #f8f8f8;
   z-index: 9999; }
-  footer h6 {
-    font-weight: 600;
-    margin-bottom: 16px; }
-  footer h4 {
-    font-weight: 200; }
+  footer .article {
+    text-align: left !important; }
+    footer .article h6 {
+      font-weight: 600;
+      margin-bottom: 16px; }
+    footer .article h4 {
+      font-weight: 200; }
   footer.footer-fixed {
     position: fixed;
     left: 0px;
@@ -192,15 +193,28 @@ nav.navbar {
     position: fixed; }
   nav.navbar .navbar-right {
     margin-right: 0px; }
+  nav.navbar .navbar-toggle {
+    margin-top: 8px;
+    margin-bottom: 8px; }
   nav.navbar .navbar-brand {
-    width: 85px;
-    background: url("/images/logo.png") 0 16px no-repeat;
     opacity: 1; }
     nav.navbar .navbar-brand:hover {
       opacity: 0.8; }
-  nav.navbar .navbar-brand:hover, nav.navbar .navbar-brand:visited, nav.navbar .navbar-brand:focus, nav.navbar li > a:hover, nav.navbar li > a:visited, nav.navbar li > a:focus {
-    text-decoration: none;
-    background-color: transparent; }
+    @media (min-width: 768px) {
+      nav.navbar .navbar-brand {
+        width: 85px;
+        background: url("/images/logo.png") 0 17px no-repeat; } }
+    @media (max-width: 768px) {
+      nav.navbar .navbar-brand {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        background: url("/images/logo.png") 50% 17px no-repeat; } }
+  nav.navbar .navbar-brand, nav.navbar li > a {
+    text-align: center; }
+    nav.navbar .navbar-brand:hover, nav.navbar .navbar-brand:visited, nav.navbar .navbar-brand:focus, nav.navbar li > a:hover, nav.navbar li > a:visited, nav.navbar li > a:focus {
+      text-decoration: none;
+      background-color: transparent; }
   @media (min-width: 768px) {
     nav.navbar .navbar-collapse {
       padding: 0px; }
