@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res) {
   res.render('index', {});
 });
-router.get('/huabanche', function(req, res){
+router.get('/scooter', function(req, res){
 	res.render('huabanche', {});
 });
 router.get('/contact', function(req, res){

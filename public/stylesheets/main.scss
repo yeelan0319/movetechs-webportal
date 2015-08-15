@@ -15,8 +15,8 @@ $footer-height: 250px;
 /*color-palette*/
 $red: #ef483b;
 $red-hover: #f15a4e;
-$grey: rgba(48,52,59,0.95);
-$grey-fallback: #30343b;
+$grey: rgba(35,37,43,0.96);
+$grey-fallback: rgb(35,37,43);
 
 @mixin box-shadow($shadows) {
   -moz-box-shadow: $shadows;
@@ -296,21 +296,11 @@ nav.navbar{
 	/*apply to all navbars, when on laptop remove padding*/
 	.navbar-brand{
 		opacity: 1;
-
-		&:hover{
+		/*&:hover{
 			opacity: 0.8;
-		}
-
-		@media (min-width: 768px) {
-			width: 85px;
-			background: url('/images/logo.png') 0 17px no-repeat;
-		}
-
-		@media (max-width: 768px) {
-			position: absolute;
-			width: 100%;
-			height: auto;
-			background: url('/images/logo.png') 50% 17px no-repeat;
+		}*/
+		img {
+			padding: 17px 0px;
 		}
 	}
 
@@ -429,7 +419,7 @@ nav.navbar{
 }
 
 /*main style*/
-.product-intro{
+.main-intro{
 	position: relative;
 	padding-top: $navbar-height;
 }
@@ -467,6 +457,9 @@ nav.navbar{
 		margin: 11.5px 0px;
 	}
 
+	.container{
+		position: relative;
+	}
 	.bg{
 		position: absolute;
 		top:0px;
@@ -533,7 +526,8 @@ nav.navbar{
 		border: 2px solid #d54753;
 		text-align: center;
 
-		h4{
+		h3, h4{
+			margin: 10px;
 			color: #fff;
 		}
 	}
