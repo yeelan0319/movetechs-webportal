@@ -9,12 +9,27 @@
 .article {
 	position: relative;
 }
+video.background {
+  object-fit: cover;
+}
 .play, .detail{
 	position: absolute;
 }
-.play, .play:hover{
+.play{
 	color: #333;
+	text-decoration: underline;
 	cursor: pointer;
+}
+.play:hover{
+	color: #7e7e7e;
+}
+.detail{
+	border-color: #fff;
+  background-color: #fff;
+}
+.detail:hover{
+	border-color: #f8f8f8;
+  background-color: #f8f8f8;
 }
 .detail .arrow{
 	padding: 7px;

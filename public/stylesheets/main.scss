@@ -113,6 +113,9 @@ h1, h2, h3, h4, h5, h6{
 }
 
 p, span {
+	text-align: justify; 
+  text-justify: ideographic;
+  
 	strong{
 		font-size: $strong-paragraph-font-size;
 		font-weight: normal;
@@ -206,7 +209,7 @@ html, body {
 	height: 100%;
 	font-size: $default-font-size;
 	color: #333;
-	line-height: 26px;
+	line-height: 1.7em;
 	background: white;
 	font-family: "Gotham light","Helvetica Neue", Helvetica, Arial, "Han Sans", sans-serif;
 	
@@ -288,11 +291,6 @@ nav.navbar{
 		margin-right: 0px;
 	}
 
-	.navbar-toggle{
-		margin-top: 8px;
-		margin-bottom: 8px;
-	}
-
 	/*apply to all navbars, when on laptop remove padding*/
 	.navbar-brand{
 		opacity: 1;
@@ -303,24 +301,37 @@ nav.navbar{
 			padding: 17px 0px;
 		}
 	}
-
 	.navbar-brand, li>a{
 		text-align: center;
+		height: $navbar-height;
+		padding: 0px;
+		line-height: $navbar-height;
 
 		&:hover, &:visited, &:focus{
 			text-decoration: none;
 	  	background-color: transparent;
 		}
 	}
+	li{
+		padding: 0px 20px;
+	}
 	@media (min-width: 768px){
 		.navbar-collapse{
 			padding: 0px;
 		}
-
-		.navbar-brand, li>a{	
-			height: $navbar-height;
-			padding: 0px 19px;
-			line-height: $navbar-height;
+	}
+	@media (max-width: 768px){
+		.navbar-toggle{
+			position: absolute;
+			right: 0px;
+			margin-top: 8px;
+			margin-bottom: 8px;
+		}
+		.navbar-brand{
+			float: none;
+			img{
+				display: inline;
+			}
 		}
 	}
 
@@ -340,6 +351,7 @@ nav.navbar{
 				&.active{
 					a {
 						color: $red;
+						border-bottom: 1px solid $red;
 					}
 				}
 				a{
@@ -372,6 +384,10 @@ nav.navbar{
 				@extend .text-whiteout;
 			}
 		}
+		.navbar-toggle .icon-bar{
+			background-color: #fff;
+		}
+
 	}
 
 	&.navbar-lite{
