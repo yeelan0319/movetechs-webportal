@@ -63,13 +63,20 @@ h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
   font-size: 130px;
   font-weight: 100;
   line-height: 0.8; }
+  @media only screen and (max-width: 768px) {
+    h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
+      font-size: 52px; } }
 
 p, span {
   text-align: justify;
   text-justify: ideographic; }
   p strong, span strong {
     font-size: 58px;
-    font-weight: normal; }
+    font-weight: normal;
+    line-height: 0.8; }
+    @media only screen and (max-width: 768px) {
+      p strong, span strong {
+        font-size: 42px; } }
 
 @font-face {
   font-family: 'Han Sans';

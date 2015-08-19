@@ -9,8 +9,8 @@ $forth-font-size: 24px;
 $fifth-font-size: 18px;
 $sixth-font-size: 15px;
 
-$strong-title-mobile-font-size: 52px;
-$strong-paragraph-mobile-font-size: 42px;
+$mobile-strong-title-font-size: 52px;
+$mobile-strong-paragraph-font-size: 42px;
 $mobile-first-font-size: 32px;
 $mobile-second-font-size: 28px;
 $mobile-third-font-size: 24px;
@@ -118,6 +118,9 @@ h1, h2, h3, h4, h5, h6{
 		font-size: $strong-title-font-size;
 		font-weight: 100;
 		line-height: 0.8;
+		@media only screen and (max-width: 768px){
+			font-size: $mobile-strong-title-font-size;
+		}
 	}
 }
 
@@ -128,6 +131,11 @@ p, span {
 	strong{
 		font-size: $strong-paragraph-font-size;
 		font-weight: normal;
+		line-height: 0.8;
+
+		@media only screen and (max-width: 768px){
+			font-size: $mobile-strong-paragraph-font-size;
+		}
 	}
 }
 @font-face {
