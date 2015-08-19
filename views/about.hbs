@@ -42,13 +42,22 @@
 	}
 	.article.profile .profile-name {
 		height: 63px;
+		padding-bottom: 15px;
+		padding-bottom: 1rem;
 	}
-	.article.profile .profile-name h5{
-		margin: 2px 0 -30px 0;
+	.article.profile .profile-name span{
+		position: absolute; 
+		top: 0px; 
+		padding-left: 10px; 
+		font-size: 18px; 
+		font-weight:400;
+		white-space: nowrap;
 	}
 	.article.profile .profile-name h1{
+		position: relative; 
+		width: 150px;
 		font-weight: 100;
-		margin: 0 0 -30px 0;
+		margin: 0px;
 	}
 	.article.profile .profile-text>td{
 		vertical-align: top
@@ -63,7 +72,7 @@
 		padding-left: 1em;
 	}
 	.article#article-12 .foreground{
-		background: #f8f8f8;
+		background: #fafafa;
 	}
 	.article#article-12 .container{
 		padding-top: 60px;
@@ -77,6 +86,24 @@
 	}
 	.article#article-12 h3{
 		font-weight: 200;
+	}
+	@media only screen and (max-width: 768px){
+		.article#jumbotron .container{
+			padding-top: 180px;
+			padding-top: 12rem;
+			padding-bottom: 210px;
+			padding-bottom: 14rem;
+		}
+		.article.profile .profile-name{
+			padding-top: 20px;
+		}
+		.article.profile .profile-name h1{
+			width: 120px;
+		}
+		.article.profile .container, .article.profile#article-1 .container, .article.profile#article-11 .container{
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
 	}
 </style>
 <div class="main">
@@ -103,10 +130,10 @@
 		</div>
 	</div>
 	<div class="main-intro">
-		<nav class="navbar navbar-lite navbar-secondary hidden-xs">
+		<nav class="navbar navbar-lite navbar-secondary">
 			<div class="outer-container">
 			  <div class="container">
-			    <div class="collapse navbar-collapse">
+			    <div class="navbar-collapse">
 			      <ul class="nav text-center">
 			      	<li><a>美步(move)团队 /</a></li>
 			      </ul>
@@ -119,26 +146,19 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<table class="table table-borderless">
-						<tr class="row profile-name">
-							<td class="col-md-6" rowspan="2">
-								<img class="img-responsive" src="images/about-article1.jpg">
-							</td>
-							<td style="vertical-align: top; width: 150px">
-								<h1 class="text-justify">俞浩</h1>
-							</td>
-							<td style="vertical-align: top">
-								<h5>CEO</h5>
-							</td>
-						</tr>
-						<tr class="row profile-text">
-							<td colspan="2">
-								<p><span class="slash">/</span>  87年，清华大学航天航空学院</p>
-								<p><span class="slash">/</span>  创建国内最早的企业协同工具 Colorwork </p>
-								<p><span class="slash">/</span>  国内最早的四旋翼开发者，创办清华大学最⼤的学生科技团队“天空⼯场”，并发明了国内第一个三旋翼飞⾏器。曾获全国气动创新设计⼤赛冠军；清华⼤学挑战杯⼀等奖；全国公益创业⼤赛冠军；全国小平科技团队等⼀系列奖项</p>
-							</td>
-						</tr>
-					</table>
+					<div class="col-xs-12 col-md-6">
+						<img class="img-responsive" src="images/about-article1.jpg">
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="profile-name">
+							<h1 class="text-justify">俞浩<span>CEO</span></h1>
+						</div>
+						<div class="profile-text">
+							<p><span class="slash">/</span>  87年，清华大学航天航空学院</p>
+							<p><span class="slash">/</span>  创建国内最早的企业协同工具 Colorwork </p>
+							<p><span class="slash">/</span>  国内最早的四旋翼开发者，创办清华大学最⼤的学生科技团队“天空⼯场”，并发明了国内第一个三旋翼飞⾏器。曾获全国气动创新设计⼤赛冠军；清华⼤学挑战杯⼀等奖；全国公益创业⼤赛冠军；全国小平科技团队等⼀系列奖项</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -147,27 +167,20 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<table class="table table-borderless">
-						<tr class="row profile-name">
-							<td class="col-md-6" rowspan="2">
-								<img class="img-responsive" src="images/about-article2.jpg">
-							</td>
-							<td style="vertical-align: top; width: 150px">
-								<h1 class="text-justify">陆健</h1>
-							</td>
-							<td style="vertical-align: top">
-								<h5>机械工程师</h5>
-							</td>
-						</tr>
-						<tr class="row profile-text">
-							<td colspan="2">
-								<p><span class="slash">/</span>  86 年，清华大学精密仪器系</p>
-								<p><span class="slash">/</span>  5 年机电⾏业工作经验 </p>
-								<p><span class="slash">/</span>  曾供职于 SEW 电机技术部，主要负责开发高效电机和制定相关企业标准，同时负责防爆电机的新品开发</p>
-								<p><span class="slash">/</span>  曾供职于永大电梯研发中心，主要负责电动扶梯驱动方案的设计，同时负责扶梯振动及噪音降低的研究，提升乘坐品质</p>
-							</td>
-						</tr>
-					</table>
+					<div class="col-xs-12 col-md-6">
+						<img class="img-responsive" src="images/about-article2.jpg">
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="profile-name">
+							<h1 class="text-justify">陆健<span>机械工程师</span></h1>
+						</div>
+						<div class="profile-text">
+							<p><span class="slash">/</span>  86 年，清华大学精密仪器系</p>
+							<p><span class="slash">/</span>  5 年机电⾏业工作经验 </p>
+							<p><span class="slash">/</span>  曾供职于 SEW 电机技术部，主要负责开发高效电机和制定相关企业标准，同时负责防爆电机的新品开发</p>
+							<p><span class="slash">/</span>  曾供职于永大电梯研发中心，主要负责电动扶梯驱动方案的设计，同时负责扶梯振动及噪音降低的研究，提升乘坐品质</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -176,27 +189,20 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<table class="table table-borderless">
-						<tr class="row profile-name">
-							<td class="col-md-6" rowspan="2">
-								<img class="img-responsive" src="images/about-article3.jpg">
-							</td>
-							<td style="vertical-align: top; width: 150px">
-								<h1 class="text-justify">张立国</h1>
-							</td>
-							<td style="vertical-align: top">
-								<h5>工业设计师</h5>
-							</td>
-						</tr>
-						<tr class="row profile-text">
-							<td colspan="2">
-								<p><span class="slash">/</span>  88 年，清华大学美术学院工业设计系交通工具设计专业</p>
-								<p><span class="slash">/</span>  担任清华大学天空工厂工业设计师，负责三旋翼飞机外观设计</p>
-								<p><span class="slash">/</span>  毕设”阿凡达”三旋翼飞行器设计被杂志《城市画报》采访并刊登，参加中国教育电视台展览</p>
-								<p><span class="slash">/</span>  毕业后加入中国国际航空 AmecoBeijing 公务机服务分部，负责并参与多架公务机内饰设计</p>
-							</td>
-						</tr>
-					</table>
+					<div class="col-xs-12 col-md-6">
+						<img class="img-responsive" src="images/about-article3.jpg">
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="profile-name">
+							<h1 class="text-justify">张立国<span>工业设计师</span></h1>
+						</div>
+						<div class="profile-text">
+							<p><span class="slash">/</span>  88 年，清华大学美术学院工业设计系交通工具设计专业</p>
+							<p><span class="slash">/</span>  担任清华大学天空工厂工业设计师，负责三旋翼飞机外观设计</p>
+							<p><span class="slash">/</span>  毕设”阿凡达”三旋翼飞行器设计被杂志《城市画报》采访并刊登，参加中国教育电视台展览</p>
+							<p><span class="slash">/</span>  毕业后加入中国国际航空 AmecoBeijing 公务机服务分部，负责并参与多架公务机内饰设计</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -205,25 +211,18 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<table class="table table-borderless">
-						<tr class="row profile-name">
-							<td class="col-md-6" rowspan="2">
-								<img class="img-responsive" src="images/about-article4.jpg">
-							</td>
-							<td style="vertical-align: top; width: 150px">
-								<h1 class="text-justify">王倩男</h1>
-							</td>
-							<td style="vertical-align: top">
-								<h5>工业设计师</h5>
-							</td>
-						</tr>
-						<tr class="row profile-text">
-							<td colspan="2">
-								<p><span class="slash">/</span>  88 年，清华大学汽车系</p>
-								<p><span class="slash">/</span>  英国皇家艺术学院 Vehicle Design专业硕士</p>
-							</td>
-						</tr>
-					</table>
+					<div class="col-xs-12 col-md-6">
+						<img class="img-responsive" src="images/about-article4.jpg">
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="profile-name">
+							<h1 class="text-justify">王倩男<span>工业设计师</span></h1>
+						</div>
+						<div class="profile-text">
+							<p><span class="slash">/</span>  88 年，清华大学汽车系</p>
+							<p><span class="slash">/</span>  英国皇家艺术学院 Vehicle Design专业硕士</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -232,25 +231,18 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<table class="table table-borderless">
-						<tr class="row profile-name">
-							<td class="col-md-6" rowspan="2">
-								<img class="img-responsive" src="images/about-article5.jpg">
-							</td>
-							<td style="vertical-align: top; width: 150px">
-								<h1 class="text-justify">谢小也</h1>
-							</td>
-							<td style="vertical-align: top">
-								<h5>平面设计师</h5>
-							</td>
-						</tr>
-						<tr class="row profile-text">
-							<td colspan="2">
-								<p><span class="slash">/</span>  清华⼤学美术学院信息设计专业</p>
-								<p><span class="slash">/</span>  原 Colorwork⾸席设计师，负责网站的交互设计和视觉设计。有多个项目视觉设计工作经历</p>
-							</td>
-						</tr>
-					</table>
+					<div class="col-xs-12 col-md-6">
+						<img class="img-responsive" src="images/about-article5.jpg">
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="profile-name">
+							<h1 class="text-justify">谢小也<span>平面设计师</span></h1>
+						</div>
+						<div class="profile-text">
+							<p><span class="slash">/</span>  清华⼤学美术学院信息设计专业</p>
+							<p><span class="slash">/</span>  原 Colorwork⾸席设计师，负责网站的交互设计和视觉设计。有多个项目视觉设计工作经历</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -259,26 +251,19 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<table class="table table-borderless">
-						<tr class="row profile-name">
-							<td class="col-md-6" rowspan="2">
-								<img class="img-responsive" src="images/about-article6.jpg">
-							</td>
-							<td style="vertical-align: top; width: 150px">
-								<h1 class="text-justify">常新伟</h1>
-							</td>
-							<td style="vertical-align: top">
-								<h5>电子工程师</h5>
-							</td>
-						</tr>
-						<tr class="row profile-text">
-							<td colspan="2">
-								<p><span class="slash">/</span>  89 年，清华大学航天航空学院本科、硕士</p>
-								<p><span class="slash">/</span>  清华大学三角洲工作室技术骨干，多年电路电子开发经验，曾多次带队参加全国飞思卡尔杯智能车大赛</p> 
-								<p><span class="slash">/</span>  将于 2015 年末硕士毕业后，全职加⼊公司</p>
-							</td>
-						</tr>
-					</table>
+					<div class="col-xs-12 col-md-6">
+						<img class="img-responsive" src="images/about-article6.jpg">
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="profile-name">
+							<h1 class="text-justify">常新伟<span>电子工程师</span></h1>
+						</div>
+						<div class="profile-text">
+							<p><span class="slash">/</span>  89 年，清华大学航天航空学院本科、硕士</p>
+							<p><span class="slash">/</span>  清华大学三角洲工作室技术骨干，多年电路电子开发经验，曾多次带队参加全国飞思卡尔杯智能车大赛</p> 
+							<p><span class="slash">/</span>  将于 2015 年末硕士毕业后，全职加⼊公司</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -287,25 +272,18 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<table class="table table-borderless">
-						<tr class="row profile-name">
-							<td class="col-md-6" rowspan="2">
-								<img class="img-responsive" src="images/about-article7.jpg">
-							</td>
-							<td style="vertical-align: top; width: 150px">
-								<h1 class="text-justify">毛一然</h1>
-							</td>
-							<td style="vertical-align: top">
-								<h5>IT工程师</h5>
-							</td>
-						</tr>
-						<tr class="row profile-text">
-							<td colspan="2">
-								<p><span class="slash">/</span>&nbsp;&nbsp;88 年，清华大学经济管理学院信息管理与信息系统本科</p>
-								<p><span class="slash">/</span>&nbsp;&nbsp;美国纽约大学计算机科学硕士</p>
-							</td>
-						</tr>
-					</table>
+					<div class="col-xs-12 col-md-6">
+						<img class="img-responsive" src="images/about-article7.jpg">
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="profile-name">
+							<h1 class="text-justify">毛一然<span>IT工程师</span></h1>
+						</div>
+						<div class="profile-text">
+							<p><span class="slash">/</span>88 年，清华大学经济管理学院信息管理与信息系统本科</p>
+							<p><span class="slash">/</span>美国纽约大学计算机科学硕士</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -314,26 +292,19 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<table class="table table-borderless">
-						<tr class="row profile-name">
-							<td class="col-md-6" rowspan="2">
-								<img class="img-responsive" src="images/about-article8.jpg">
-							</td>
-							<td style="vertical-align: top; width: 150px">
-								<h1 class="text-justify">于君强</h1>
-							</td>
-							<td style="vertical-align: top">
-								<h5>供应链管理</h5>
-							</td>
-						</tr>
-						<tr class="row profile-text">
-							<td colspan="2">
-								<p><span class="slash">/</span>  87年，西安空军工程大学</p>
-								<p><span class="slash">/</span>  5年制造业经验</p>
-								<p><span class="slash">/</span>  曾先后供职于江苏昆山希安思塑料制品有限公司开发部、苏州安健精密模具有限公司开发部</p>
-							</td>
-						</tr>
-					</table>
+					<div class="col-xs-12 col-md-6">
+						<img class="img-responsive" src="images/about-article8.jpg">
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="profile-name">
+							<h1 class="text-justify">于君强<span>供应链管理</span></h1>
+						</div>
+						<div class="profile-text">
+							<p><span class="slash">/</span>  87年，西安空军工程大学</p>
+							<p><span class="slash">/</span>  5年制造业经验</p>
+							<p><span class="slash">/</span>  曾先后供职于江苏昆山希安思塑料制品有限公司开发部、苏州安健精密模具有限公司开发部</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -342,24 +313,17 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<table class="table table-borderless">
-						<tr class="row profile-name">
-							<td class="col-md-6" rowspan="2">
-								<img class="img-responsive" src="images/about-article9.jpg">
-							</td>
-							<td style="vertical-align: top; width: 150px">
-								<h1 class="text-justify">俞敏</h1>
-							</td>
-							<td style="vertical-align: top">
-								<h5>生产管理</h5>
-							</td>
-						</tr>
-						<tr class="row profile-text">
-							<td colspan="2">
-								<p><span class="slash">/</span>  75 年，原启东色织厂生产管理，20 年机电⾏业经验</p>
-							</td>
-						</tr>
-					</table>
+					<div class="col-xs-12 col-md-6">
+						<img class="img-responsive" src="images/about-article9.jpg">
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="profile-name">
+							<h1 class="text-justify">俞敏<span>生产管理</span></h1>
+						</div>
+						<div class="profile-text">
+							<p><span class="slash">/</span>  75 年，原启东色织厂生产管理，20 年机电⾏业经验</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -368,24 +332,17 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<table class="table table-borderless">
-						<tr class="row profile-name">
-							<td class="col-md-6" rowspan="2">
-								<img class="img-responsive" src="images/about-article10.jpg">
-							</td>
-							<td style="vertical-align: top; width: 150px">
-								<h1 class="text-justify">安海超</h1>
-							</td>
-							<td style="vertical-align: top">
-								<h5>品质</h5>
-							</td>
-						</tr>
-						<tr class="row profile-text">
-							<td colspan="2">
-								<p><span class="slash">/</span>  原东升公司机修工，多年机修工作经历</p>
-							</td>
-						</tr>
-					</table>
+					<div class="col-xs-12 col-md-6">
+						<img class="img-responsive" src="images/about-article10.jpg">
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="profile-name">
+							<h1 class="text-justify">安海超<span>品质</span></h1>
+						</div>
+						<div class="profile-text">
+							<p><span class="slash">/</span>  原东升公司机修工，多年机修工作经历</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -394,24 +351,17 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<table class="table table-borderless">
-						<tr class="row profile-name">
-							<td class="col-md-6" rowspan="2">
-								<img class="img-responsive" src="images/about-article11.jpg">
-							</td>
-							<td style="vertical-align: top; width: 150px">
-								<h1 class="text-justify">赵文杰</h1>
-							</td>
-							<td style="vertical-align: top">
-								<h5>生产</h5>
-							</td>
-						</tr>
-						<tr class="row profile-text">
-							<td colspan="2">
-								<p><span class="slash">/</span>  原上海旭博外墙装饰有限公司资料员、施工员</p>
-							</td>
-						</tr>
-					</table>
+					<div class="col-xs-12 col-md-6">
+						<img class="img-responsive" src="images/about-article11.jpg">
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="profile-name">
+							<h1 class="text-justify">赵文杰<span>生产</span></h1>
+						</div>
+						<div class="profile-text">
+							<p><span class="slash">/</span>  原上海旭博外墙装饰有限公司资料员、施工员</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

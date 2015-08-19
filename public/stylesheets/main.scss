@@ -9,6 +9,15 @@ $forth-font-size: 24px;
 $fifth-font-size: 18px;
 $sixth-font-size: 15px;
 
+$strong-title-mobile-font-size: 52px;
+$strong-paragraph-mobile-font-size: 42px;
+$mobile-first-font-size: 32px;
+$mobile-second-font-size: 28px;
+$mobile-third-font-size: 24px;
+$mobile-forth-font-size: 18px;
+$mobile-fifth-font-size: 16px;
+$mobile-sixth-font-size: 15px;
+
 $navbar-height: 50px;
 $footer-height: 250px;
 
@@ -69,7 +78,7 @@ $grey-fallback: rgb(35,37,43);
 				border:none;
 				line-height: 1;
     		vertical-align: middle;
-    		padding: 0px 8px;
+    		padding: 0px;
 
     		p{
     			line-height: 26px;
@@ -93,7 +102,7 @@ $grey-fallback: rgb(35,37,43);
   -moz-text-align-last:justify;/*ff*/
   -webkit-text-align-last:justify;/*chrome 20+*/
 
-  @media screen and (-webkit-min-device-pixel-ratio:0){/* chrome*/
+  @media only screen and (-webkit-min-device-pixel-ratio:0){/* chrome*/
   	&:after{
   		content:".";
       display: inline-block;
@@ -213,7 +222,7 @@ html, body {
 	background: white;
 	font-family: "Gotham light","Helvetica Neue", Helvetica, Arial, "Han Sans", sans-serif;
 	
-	@media (min-width: 768px) {
+	@media only screen and (min-width: 768px) {
 		.container {
 			width:947px !important;
 		}
@@ -241,7 +250,7 @@ footer{
 
 	@include transition(all 0.5s ease);
 	
-	background-color: #f8f8f8;
+	background-color: #fafafa;
 
 	z-index: 9999;
 
@@ -298,6 +307,7 @@ nav.navbar{
 			opacity: 0.8;
 		}*/
 		img {
+			width: 77px;
 			padding: 17px 0px;
 		}
 	}
@@ -315,12 +325,12 @@ nav.navbar{
 	li{
 		padding: 0px 20px;
 	}
-	@media (min-width: 768px){
+	@media only screen and (min-width: 768px){
 		.navbar-collapse{
 			padding: 0px;
 		}
 	}
-	@media (max-width: 768px){
+	@media only screen and (max-width: 768px){
 		.navbar-toggle{
 			position: absolute;
 			right: 0px;
@@ -472,6 +482,26 @@ nav.navbar{
 	h6 {
 		font-size: $sixth-font-size;
 	}
+	@media only screen and (max-width: 768px){
+		h1 {
+			font-size: $mobile-first-font-size;
+		}
+		h2 {
+			font-size: $mobile-second-font-size;
+		}
+		h3 {
+			font-size: $mobile-third-font-size;
+		}
+		h4 {
+			font-size: $mobile-forth-font-size;
+		}
+		h5 {
+			font-size: $mobile-fifth-font-size;
+		}
+		h6 {
+			font-size: $mobile-sixth-font-size;
+		}
+	}
 	p{
 		margin: 11.5px 0px;
 	}
@@ -524,7 +554,7 @@ nav.navbar{
 	}
 	&.article-narrow{
 		.container{
-			@media (min-width: 768px){
+			@media only screen and (min-width: 768px){
 				width: 844px !important; 
 			}
 		}
@@ -573,7 +603,7 @@ nav.navbar{
 		top: -8px;
 		border: 1px solid #bbb;
 		border-radius: 14px;
-		background: #fcfcfc;
+		background: #fafafa;
 	  outline: none;
 
 	  &:hover{

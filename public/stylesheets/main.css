@@ -29,7 +29,7 @@
   border: none;
   line-height: 1;
   vertical-align: middle;
-  padding: 0px 8px; }
+  padding: 0px; }
   .table-borderless thead tr th p, .table-borderless thead tr td p, .table-borderless tbody tr th p, .table-borderless tbody tr td p, .table-borderless tfoot tr th p, .table-borderless tfoot tr td p {
     line-height: 26px; }
 
@@ -49,7 +49,7 @@
   /*ff*/
   -webkit-text-align-last: justify;
   /*chrome 20+*/ }
-  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @media only screen and (-webkit-min-device-pixel-ratio: 0) {
     .text-justify {
       /* chrome*/ }
       .text-justify:after {
@@ -133,7 +133,7 @@ html, body {
   line-height: 1.7em;
   background: white;
   font-family: "Gotham light","Helvetica Neue", Helvetica, Arial, "Han Sans", sans-serif; }
-  @media (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     html .container, body .container {
       width: 947px !important; } }
 
@@ -155,7 +155,7 @@ footer {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  background-color: #f8f8f8;
+  background-color: #fafafa;
   z-index: 9999; }
   footer .article {
     text-align: left !important; }
@@ -202,6 +202,7 @@ nav.navbar {
     	opacity: 0.8;
     }*/ }
     nav.navbar .navbar-brand img {
+      width: 77px;
       padding: 17px 0px; }
   nav.navbar .navbar-brand, nav.navbar li > a {
     text-align: center;
@@ -213,10 +214,10 @@ nav.navbar {
       background-color: transparent; }
   nav.navbar li {
     padding: 0px 20px; }
-  @media (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     nav.navbar .navbar-collapse {
       padding: 0px; } }
-  @media (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
     nav.navbar .navbar-toggle {
       position: absolute;
       right: 0px;
@@ -309,6 +310,19 @@ nav.navbar {
     font-size: 18px; }
   .article h6 {
     font-size: 15px; }
+  @media only screen and (max-width: 768px) {
+    .article h1 {
+      font-size: 32px; }
+    .article h2 {
+      font-size: 28px; }
+    .article h3 {
+      font-size: 24px; }
+    .article h4 {
+      font-size: 18px; }
+    .article h5 {
+      font-size: 16px; }
+    .article h6 {
+      font-size: 15px; } }
   .article p {
     margin: 11.5px 0px; }
   .article .container {
@@ -340,7 +354,7 @@ nav.navbar {
     text-align: center; }
     .article.article-center .container p {
       text-align: left; }
-  @media (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     .article.article-narrow .container {
       width: 844px !important; } }
 
@@ -382,7 +396,7 @@ nav.navbar {
   top: -8px;
   border: 1px solid #bbb;
   border-radius: 14px;
-  background: #fcfcfc;
+  background: #fafafa;
   outline: none; }
   .container .ui-slider-handle:hover {
     cursor: move;

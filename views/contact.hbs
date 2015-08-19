@@ -7,16 +7,18 @@ nav.navbar.navbar-default li > a[href~="/contact"], nav.navbar.navbar-default li
 	padding-top: 50px;
 }
 .article#header .container{
-	border-bottom: 1px solid #e5e5e5;
+	padding-top: 60px;
+	padding-top: 4rem;
+	padding-bottom: 60px;
+	padding-bottom: 4rem;
+	border-bottom: 1px solid #cdcdcd;
 }
-.article#header .title{
-	margin: 76px 0px;
-}
-.article#header .title h4{
+.article#header h4{
+	text-align: center;
 	font-weight: 600;
 }
 .article#article-1 .foreground{
-	background-color: #fcfcfc;
+	background-color: #fafafa;
 }
 .article#article-1 .container{
 	padding-top: 60px;
@@ -24,7 +26,7 @@ nav.navbar.navbar-default li > a[href~="/contact"], nav.navbar.navbar-default li
 	padding-bottom: 60px;
 	padding-bottom: 4rem;
 }
-.article#article-1 h2{
+.article#article-1 h2, .article#article-1 h3{
 	font-weight: 200;
 }
 .article#article-2 .container{
@@ -35,6 +37,43 @@ nav.navbar.navbar-default li > a[href~="/contact"], nav.navbar.navbar-default li
 }
 .article#article-2 h5{
 	font-size: 20px;
+	margin: 0px 0px 100px 0px;
+}
+@media only screen and (max-width: 768px){
+	.article#header .container{
+		padding-top: 30px;
+		padding-top: 2rem;
+		padding-bottom: 30px;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid #e5e5e5;
+	}
+	.article#header h4{
+		text-align: left;
+	}
+	.article#article-1 .container{
+		padding-top: 75px;
+		padding-top: 5rem;
+		padding-bottom: 120px;
+		padding-bottom: 8rem;
+	}
+	.article#article-2 .container{
+		padding-top: 45px;
+		padding-top: 3rem;
+		padding-bottom: 45px;
+		padding-bottom: 3rem;
+	}
+	.article#article-2 .container h4{
+		margin-bottom: 30px;
+		margin-bottom: 2rem;
+	}
+	.article#article-2 h5{
+		margin: 30px 0px 30px 0px;
+		font-size: 24px;
+		font-weight: 200;
+	}
+	.article#article-2 p{
+		margin: 0px;
+	}
 }
 </style>
 <div class="main">
@@ -44,9 +83,7 @@ nav.navbar.navbar-default li > a[href~="/contact"], nav.navbar.navbar-default li
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<div class="title text-center">
-						<h4>联系方式</h4>
-					</div>
+					<h4>联系方式</h4>
 				</div> 
 			</div>
 		</div>
@@ -58,8 +95,10 @@ nav.navbar.navbar-default li > a[href~="/contact"], nav.navbar.navbar-default li
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h2>13581640032</h2>
-					<h2>yuhao@movetechs.com</h2>
+					<h2 class="hidden-xs">13581640032</h2>
+					<h2 class="hidden-xs">yuhao@movetechs.com</h2>
+					<h3 class="visible-xs-block">13581640032</h2>
+					<h3 class="visible-xs-block">yuhao@movetechs.com</h2>
 				</div> 
 			</div>
 		</div>
@@ -69,25 +108,17 @@ nav.navbar.navbar-default li > a[href~="/contact"], nav.navbar.navbar-default li
 			<div class="foreground"></div>
 		</div>
 		<div class="container">
+			<h4>分布 /</h4>
 			<div class="row">
-				<div class="col-md-12">
-					<h4>分布 /</h4>
-					<table class="table table-borderless">
-						<tr class="row">
-							<td rowspan="4"><img class="img-responsive" src="images/contact-article1.jpg"></td>
-							<td height="100px" style="vertical-align: top"><h5>美步上海</h5></td>
-						</tr>
-						<tr class="row">
-							<td style="vertical-align: bottom"><p>工作时间：周一至周六，07:30-18:00（北京时间）</p></td>
-						</tr>
-						<tr class="row">
-							<td style="vertical-align: bottom"><p>地址：上海市嘉定区外冈镇沪宜公路5939号</p></td>
-						</tr>
-						<tr class="row">
-							<td style="vertical-align: bottom"><p>邮编：201806</p></td>
-						</tr>
-					</table>
-				</div> 
+				<div class="col-xs-12 col-md-6">
+					<img class="img-responsive" src="images/contact-article1.jpg">
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<h5>美步上海</h5>
+					<p>工作时间：周一至周六，07:30-18:00（北京时间）</p>
+					<p>地址：上海市嘉定区外冈镇沪宜公路5939号</p>
+					<p>邮编：201806</p>
+				</div>
 			</div>
 		</div>
 	</div>
