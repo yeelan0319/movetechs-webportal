@@ -15,24 +15,27 @@ nav.navbar.navbar-default li > a[href~="/"], nav.navbar.navbar-default li > a[hr
 video.background {
   object-fit: cover;
 }
+.btn-ghost{
+	background: transparent;
+}
 .play, .detail{
 	position: absolute;
 }
-.play{
+.play.btn-ghost{
 	color: #333;
-	text-decoration: underline;
-	cursor: pointer;
+	border: 1px solid #333;
 }
-.play:hover{
-	color: #7e7e7e;
+.play.btn-ghost:hover{
+	color: #fff;
+	background-color: #333;
 }
-.detail{
-	border-color: #fff;
-  background-color: #fff;
+.detail.btn-ghost{
+	color: #ef483b;
+	border: 1px solid #ef483b;
 }
-.detail:hover{
-	border-color: #f8f8f8;
-  background-color: #f8f8f8;
+.detail.btn-ghost:hover{
+	color: #fff;
+	background-color: #ef483b;
 }
 .detail .arrow{
 	padding: 7px;
@@ -40,13 +43,22 @@ video.background {
 }
 </style>
 <div class="main">
-	<div class="article article-full article-center">
+	<div class="article article-full article-center hidden-xs">
 		<div class="bg">
 			<video class="background hidden-xs" autoplay style="visibility: visible;" width="2314px" height="1080px">
 				<source src="index.mp4" type="video/mp4">
 				<img src="/images/index-jumbo.png">
 			</video>
-			<img class="background visible-xs-block" src="/images/index-jumbo.png">
+			<div class="foreground"></div>
+			<div class="bg-items">
+			</div>
+		</div>
+		<a class="play btn btn-ghost" style="display: none">回 放</a>
+		<a class="detail btn btn-ghost" style="display: none" href="/scooter">查 看<span class="arrow"></span></a>
+	</div>
+	<div class="article article-full article-center visible-xs-block">
+		<div class="bg">
+			<img class="background visible-xs-block" src="/images/index-jumbo-mobi.png">
 			<div class="foreground"></div>
 			<div class="bg-items">
 			</div>
@@ -59,22 +71,22 @@ video.background {
 <script type="text/javascript">
 $('.article').first().on('resized', function(){
 	var origin = {
-			height: 1080,
-			width: 2314,
+			height: 1194,
+			width: 2560,
 			play: {
-				top: 500,
-				left: 984
+				top: 560,
+				left: 1055
 			},
 			detail: {
-				top: 500,
-				right: 972
+				top: 560,
+				right: 1061
 			}
 		},
 		containerHeight = $('video').height(),
 		containerWidth = $('video').width();
 
 	$('.play').css({
-		"top": containerHeight / origin.height * origin.play.top + parseFloat($('.btn').css('padding')) + parseFloat($('.btn').css('margin')) + 3,
+		"top": containerHeight / origin.height * origin.detail.top,
 		"left": containerWidth / origin.width * origin.play.left + parseFloat($('video').css("left"))
 	});
 	$('.detail').css({
