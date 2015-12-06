@@ -1,6 +1,6 @@
 /*color-palette*/
 /*This is default font color, darkest, should be used on lite background*/
-.text-default, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a {
+.text-default, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a, nav.navbar.navbar-lite.navbar-secondary .outer-container li:first-child > a:hover {
   color: #333; }
 
 /*This is a lighter version for default font color, should be used when hover on default*/
@@ -221,6 +221,7 @@ nav.navbar {
     margin: 0px 10px;
     padding: 0px 10px; }
     nav.navbar .navbar-nav li:first-child {
+      margin-left: 0px;
       padding-left: 0px; }
     nav.navbar .navbar-nav li a {
       text-align: center;
@@ -261,6 +262,8 @@ nav.navbar {
           border-bottom: 2px solid #ef483b; }
           nav.navbar.navbar-secondary .navbar-collapse li.active a {
             color: #ef483b; }
+        nav.navbar.navbar-secondary .navbar-collapse li:first-child a {
+          cursor: default; }
         nav.navbar.navbar-secondary .navbar-collapse li a {
           display: inline-block;
           line-height: 50px;
@@ -307,9 +310,9 @@ nav.navbar {
     top: 0px;
     left: 0px;
     width: 100%;
-    opacity: 0; }
+    display: none; }
     .main .content.content-active {
-      opacity: 1; }
+      display: block; }
 
 .article {
   position: relative;

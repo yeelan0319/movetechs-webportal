@@ -331,6 +331,7 @@ nav.navbar{
 			margin: 0px 10px;
 			padding: 0px 10px;
 			&:first-child {
+				margin-left: 0px;
 				padding-left: 0px;
 			}
 			a {
@@ -382,6 +383,9 @@ nav.navbar{
 					a {
 						color: $red;
 					}
+				}
+				&:first-child a{
+					cursor: default;
 				}
 				a{
 					display: inline-block;
@@ -436,7 +440,11 @@ nav.navbar{
 				}
 			}
 		}
-		
+		&.navbar-secondary {
+			.outer-container li:first-child>a:hover {
+				@extend .text-default;
+			}
+		}
 	}
 	&.navbar-dark{
 		background-color: black;
@@ -470,9 +478,9 @@ nav.navbar{
 		top: 0px;
 		left:0px;
 		width: 100%;
-		opacity: 0;
+		display: none;
 		&.content-active{
-			opacity: 1;
+			display: block;
 		}
 	}
 }
