@@ -232,7 +232,7 @@ html, body {
 	
 	@media only screen and (min-width: 768px) {
 		.container {
-			width:947px !important;
+			width:1004px !important;
 		}
 	}
 }
@@ -290,6 +290,7 @@ nav.navbar{
 	left: 0px;
 	width: 100%;
 	min-height: $navbar-height;
+	margin-bottom: 0px;
 
 	border:none;
 	@include border-radius(0px);
@@ -304,34 +305,46 @@ nav.navbar{
 	&.navbar-fixed{
 		position: fixed;
 	}
-	.navbar-right{
-		margin-right: 0px;
-	}
 
 	/*apply to all navbars, when on laptop remove padding*/
 	.navbar-brand{
+		height: auto;
+		line-height: auto;
+		padding: 16px 15px;
 		opacity: 1;
 		/*&:hover{
 			opacity: 0.8;
 		}*/
 		img {
-			width: 77px;
-			padding: 17px 0px;
+			width: 88px;
+			padding: 0px;
 		}
 	}
-	.navbar-brand, li>a{
-		text-align: center;
-		height: $navbar-height;
-		padding: 0px;
-		line-height: $navbar-height;
+	.navbar-nav {
+		&.navbar-right{
+			margin-right: 0px;
+			&:last-child {
+				padding-right: 0px;
+			}
+		}
+		li{
+			margin: 0px 10px;
+			padding: 0px 10px;
+			&:first-child {
+				padding-left: 0px;
+			}
+			a {
+				text-align: center;
+				height: $navbar-height;
+				padding: 0px;
+				line-height: $navbar-height;
 
-		&:hover, &:visited, &:focus{
-			text-decoration: none;
-	  	background-color: transparent;
+				&:hover, &:visited, &:focus{
+					text-decoration: none;
+			  	background-color: transparent;
+				}
+			}
 		}
-	}
-	li{
-		padding: 0px 20px;
 	}
 	@media only screen and (min-width: 768px){
 		.navbar-collapse{
@@ -359,23 +372,22 @@ nav.navbar{
 		.navbar-collapse{
 			height: $navbar-height !important;
 			overflow: hidden !important;
-			border-bottom-width: 1px;
-			border-bottom-style: solid;
 
 			li{
 				font-size: $default-font-size;
 				@include transition(all 0.2s ease);
 
 				&.active{
+					border-bottom: 2px solid $red;
 					a {
 						color: $red;
-						border-bottom: 1px solid $red;
 					}
 				}
 				a{
 					display: inline-block;
 					line-height: $navbar-height;
 					cursor: pointer;
+					margin-bottom: -2px;
 				}
 			}
 		}
@@ -416,10 +428,6 @@ nav.navbar{
 			background-color: #fff;
 			background: rgba(255,255,255,0.96);
 
-			.navbar-collapse{
-				border-bottom-color: #e5e5e5;
-			}
-
 			.navbar-brand, li>a{
 				@extend .text-default;
 
@@ -453,9 +461,20 @@ nav.navbar{
 }
 
 /*main style*/
-.main-intro{
+.main{
 	position: relative;
+	margin-top: $navbar-height;
 	padding-top: $navbar-height;
+	.content {
+		position:absolute;
+		top: 0px;
+		left:0px;
+		width: 100%;
+		opacity: 0;
+		&.content-active{
+			opacity: 1;
+		}
+	}
 }
 .article{
 	position: relative;

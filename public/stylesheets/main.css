@@ -142,7 +142,7 @@ html, body {
   font-family: "Gotham light","Helvetica Neue", Helvetica, Arial, "Han Sans", sans-serif; }
   @media only screen and (min-width: 768px) {
     html .container, body .container {
-      width: 947px !important; } }
+      width: 1004px !important; } }
 
 .page-wrap {
   min-height: 100%;
@@ -185,6 +185,7 @@ nav.navbar {
   left: 0px;
   width: 100%;
   min-height: 50px;
+  margin-bottom: 0px;
   border: none;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -201,26 +202,34 @@ nav.navbar {
   /*default, lite, etc.. are only adjust styles*/ }
   nav.navbar.navbar-fixed {
     position: fixed; }
-  nav.navbar .navbar-right {
-    margin-right: 0px; }
   nav.navbar .navbar-brand {
+    height: auto;
+    line-height: auto;
+    padding: 16px 15px;
     opacity: 1;
     /*&:hover{
     	opacity: 0.8;
     }*/ }
     nav.navbar .navbar-brand img {
-      width: 77px;
-      padding: 17px 0px; }
-  nav.navbar .navbar-brand, nav.navbar li > a {
-    text-align: center;
-    height: 50px;
-    padding: 0px;
-    line-height: 50px; }
-    nav.navbar .navbar-brand:hover, nav.navbar .navbar-brand:visited, nav.navbar .navbar-brand:focus, nav.navbar li > a:hover, nav.navbar li > a:visited, nav.navbar li > a:focus {
-      text-decoration: none;
-      background-color: transparent; }
-  nav.navbar li {
-    padding: 0px 20px; }
+      width: 88px;
+      padding: 0px; }
+  nav.navbar .navbar-nav.navbar-right {
+    margin-right: 0px; }
+    nav.navbar .navbar-nav.navbar-right:last-child {
+      padding-right: 0px; }
+  nav.navbar .navbar-nav li {
+    margin: 0px 10px;
+    padding: 0px 10px; }
+    nav.navbar .navbar-nav li:first-child {
+      padding-left: 0px; }
+    nav.navbar .navbar-nav li a {
+      text-align: center;
+      height: 50px;
+      padding: 0px;
+      line-height: 50px; }
+      nav.navbar .navbar-nav li a:hover, nav.navbar .navbar-nav li a:visited, nav.navbar .navbar-nav li a:focus {
+        text-decoration: none;
+        background-color: transparent; }
   @media only screen and (min-width: 768px) {
     nav.navbar .navbar-collapse {
       padding: 0px; } }
@@ -241,22 +250,22 @@ nav.navbar {
     transition: none; }
     nav.navbar.navbar-secondary .navbar-collapse {
       height: 50px !important;
-      overflow: hidden !important;
-      border-bottom-width: 1px;
-      border-bottom-style: solid; }
+      overflow: hidden !important; }
       nav.navbar.navbar-secondary .navbar-collapse li {
         font-size: 15px;
         -webkit-transition: all 0.2s ease;
         -moz-transition: all 0.2s ease;
         -o-transition: all 0.2s ease;
         transition: all 0.2s ease; }
-        nav.navbar.navbar-secondary .navbar-collapse li.active a {
-          color: #ef483b;
-          border-bottom: 1px solid #ef483b; }
+        nav.navbar.navbar-secondary .navbar-collapse li.active {
+          border-bottom: 2px solid #ef483b; }
+          nav.navbar.navbar-secondary .navbar-collapse li.active a {
+            color: #ef483b; }
         nav.navbar.navbar-secondary .navbar-collapse li a {
           display: inline-block;
           line-height: 50px;
-          cursor: pointer; }
+          cursor: pointer;
+          margin-bottom: -2px; }
     nav.navbar.navbar-secondary.navbar-fixed {
       border-bottom: 1px solid #e5e5e5;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
@@ -278,8 +287,6 @@ nav.navbar {
     nav.navbar.navbar-lite .outer-container {
       background-color: #fff;
       background: rgba(255, 255, 255, 0.96); }
-      nav.navbar.navbar-lite .outer-container .navbar-collapse {
-        border-bottom-color: #e5e5e5; }
   nav.navbar.navbar-dark {
     background-color: black;
     -moz-box-shadow: none;
@@ -291,9 +298,18 @@ nav.navbar {
         border-bottom-color: white; }
 
 /*main style*/
-.main-intro {
+.main {
   position: relative;
+  margin-top: 50px;
   padding-top: 50px; }
+  .main .content {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    opacity: 0; }
+    .main .content.content-active {
+      opacity: 1; }
 
 .article {
   position: relative;
