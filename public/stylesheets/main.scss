@@ -1,31 +1,88 @@
-$default-font-size: 15px;
-
-$strong-title-font-size: 130px;
-$strong-paragraph-font-size: 58px;
-$first-font-size: 42px;
-$second-font-size: 36px;
-$third-font-size: 28px;
-$forth-font-size: 24px;
-$fifth-font-size: 18px;
-$sixth-font-size: 15px;
-
-$mobile-strong-title-font-size: 52px;
-$mobile-strong-paragraph-font-size: 42px;
-$mobile-first-font-size: 32px;
-$mobile-second-font-size: 28px;
-$mobile-third-font-size: 24px;
-$mobile-forth-font-size: 18px;
-$mobile-fifth-font-size: 16px;
-$mobile-sixth-font-size: 15px;
-
-$navbar-height: 50px;
-$footer-height: 250px;
-
 /*color-palette*/
-$red: #ef483b;
+$red: #f04e41;
 $red-hover: #f15a4e;
 $grey: rgba(35,37,43,0.96);
 $grey-fallback: rgb(35,37,43);
+/*This is default font color, darkest, should be used on lite background*/
+.text-default{
+	color: #333;
+}
+/*This is brightest font color, should be used on dark background*/
+.text-reverse{
+	color: white;
+}
+/*This is a lighter version for default font color, should be used when hover on default*/
+.text-blackout{
+	color: #7e7e7e;
+}
+/*This is a darker version for reverse font color, should be used when hover on reverse*/
+.text-whiteout{
+	color: #dcdcdc;
+}
+
+.font-cleanup {
+	margin: 0px;
+	padding: 0px;
+	line-height: auto;
+	display: inline;
+	@extend .text-default;
+}
+.catch-copy {
+	@extend .font-cleanup;
+	font-size: 32px;
+	font-weight: 800;
+	line-height: 42px;
+}
+h1 {
+	@extend .font-cleanup;
+	font-size: 36px;
+	font-weight: 100;
+	line-height: 48px;
+	display: block;
+}
+h2 {
+	@extend .font-cleanup;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 36px;
+	display: block;
+}
+h3 {
+	@extend .font-cleanup;
+	font-size: 24px;
+	font-weight: 100;
+	line-height: 36px;
+	display: block;
+}
+p {
+	@extend .font-cleanup;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 32px;
+	text-align: justify; 
+  text-justify: ideographic;
+}
+small {
+	@extend .font-cleanup;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 18px;
+}
+span {
+	@extend .font-cleanup;
+	text-align: justify; 
+  text-justify: ideographic;
+	font-weight: 400;
+	&.mis1 {
+		font-size: 20px;
+	}
+	&.mis2 {
+		font-size: 16px;
+	}
+}
+
+$navbar-height: 50px;
+$footer-height: 50px;
 
 @mixin box-shadow($shadows) {
   -moz-box-shadow: $shadows;
@@ -45,23 +102,6 @@ $grey-fallback: rgb(35,37,43);
   -moz-transition: $animation;
   -o-transition: $animation;
   transition: $animation;
-}
-
-/*This is default font color, darkest, should be used on lite background*/
-.text-default{
-	color: #333;
-}
-/*This is a lighter version for default font color, should be used when hover on default*/
-.text-blackout{
-	color: #7e7e7e;
-}
-/*This is a darker version for reverse font color, should be used when hover on reverse*/
-.text-whiteout{
-	color: #dcdcdc;
-}
-/*This is brightest font color, should be used on dark background*/
-.text-reverse{
-	color: white;
 }
 
 .text-not-selectable{
@@ -88,6 +128,12 @@ $grey-fallback: rgb(35,37,43);
 	}
 }
 
+.block-display {
+	display: block;
+}
+.inline-display {
+	display: inline;
+}
 .divider{
 	width: 42px;
 	height: 1px;
@@ -111,32 +157,6 @@ $grey-fallback: rgb(35,37,43);
       height:0;
   	}
   }
-}
-
-h1, h2, h3, h4, h5, h6{
-	strong{
-		font-size: $strong-title-font-size;
-		font-weight: 100;
-		line-height: 0.8;
-		@media only screen and (max-width: 768px){
-			font-size: $mobile-strong-title-font-size;
-		}
-	}
-}
-
-p, span {
-	text-align: justify; 
-  text-justify: ideographic;
-
-	strong{
-		font-size: $strong-paragraph-font-size;
-		font-weight: normal;
-		line-height: 0.8;
-
-		@media only screen and (max-width: 768px){
-			font-size: $mobile-strong-paragraph-font-size;
-		}
-	}
 }
 @font-face {
   font-family: 'Han Sans';
@@ -198,7 +218,7 @@ p, span {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: $default-font-size; /* Preferred icon size */
+  font-size: 14px; /* Preferred icon size */
   display: inline-block;
   width: 1rem;
   line-height: inherit;
@@ -223,10 +243,8 @@ p, span {
 }
 
 html, body {
+	@extend p;
 	height: 100%;
-	font-size: $default-font-size;
-	color: #333;
-	line-height: 1.7em;
 	background: white;
 	font-family: "Gotham light","Helvetica Neue", Helvetica, Arial, "Han Sans", sans-serif;
 	
@@ -249,29 +267,11 @@ html, body {
 }
 
 footer{
+	position: relative;
 	height: $footer-height;
-
-	font-size: $default-font-size;
-	line-height: $footer-height;
-	padding-top: 56px;
-	padding-top: 4rem;
-
-	@include transition(all 0.5s ease);
-	
-	background-color: #fafafa;
-
+	line-height: $footer-height;	
 	z-index: 9999;
-
-	.article{
-		text-align: left !important;
-		h6{
-			font-weight: 600;
-			margin-bottom: 16px;
-		}
-		h4{
-			font-weight: 200;
-		}
-	}
+	@extend p;
 
 	&.footer-fixed{
 		position: fixed;
@@ -279,8 +279,13 @@ footer{
 		right: 0px;
 		bottom: 0px;
 	}
-	&.footer-transparent{
-		background-color: transparent;
+	.article {
+		position: relative;
+		height: $footer-height;
+		background-color: #f8f8f8;
+		p {
+			color: #888;
+		}
 	}
 }
 
@@ -296,7 +301,7 @@ nav.navbar{
 	@include border-radius(0px);
 	@include transition(all 0.5s ease);
 	
-	font-size: $default-font-size;
+	@extend p;
 	@extend .text-not-selectable;
 
 	z-index: 9999;
@@ -375,7 +380,6 @@ nav.navbar{
 			overflow: hidden !important;
 
 			li{
-				font-size: $default-font-size;
 				@include transition(all 0.2s ease);
 
 				&.active{
@@ -487,59 +491,7 @@ nav.navbar{
 .article{
 	position: relative;
 	width: 100%;
-
-	.title{
-		margin: 0px 0px 30px 0px;
-
-		h1, h2, h3{
-			font-weight: 100;
-		}
-		h4, h5{
-			font-weight: 200;
-		}
-	}
-	h1 {
-		font-size: $first-font-size;
-	}
-	h2 {
-		font-size: $second-font-size;
-		margin: 10px 0px;
-	}
-	h3 {
-		font-size: $third-font-size;
-	}
-	h4 {
-		font-size: $forth-font-size;
-	}
-	h5 {
-		font-size: $fifth-font-size;
-	}
-	h6 {
-		font-size: $sixth-font-size;
-	}
-	@media only screen and (max-width: 768px){
-		h1 {
-			font-size: $mobile-first-font-size;
-		}
-		h2 {
-			font-size: $mobile-second-font-size;
-		}
-		h3 {
-			font-size: $mobile-third-font-size;
-		}
-		h4 {
-			font-size: $mobile-forth-font-size;
-		}
-		h5 {
-			font-size: $mobile-fifth-font-size;
-		}
-		h6 {
-			font-size: $mobile-sixth-font-size;
-		}
-	}
-	p{
-		margin: 11.5px 0px;
-	}
+	height: 750px;
 
 	.container{
 		position: relative;
@@ -584,13 +536,6 @@ nav.navbar{
 
 			p{
 				text-align: left;
-			}
-		}
-	}
-	&.article-narrow{
-		.container{
-			@media only screen and (min-width: 768px){
-				width: 844px !important; 
 			}
 		}
 	}
@@ -653,8 +598,7 @@ nav.navbar{
 .btn{
 	margin: 8px 0px;
 	padding: 3px 20px;
-	font-size: $default-font-size;
-	font-weight: 600;
+	@extend p;
 	@include box-shadow(none);
 
 	&:focus, &:active{

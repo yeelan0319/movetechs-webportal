@@ -1,7 +1,11 @@
 /*color-palette*/
 /*This is default font color, darkest, should be used on lite background*/
-.text-default, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a, nav.navbar.navbar-lite.navbar-secondary .outer-container li:first-child > a:hover {
+.text-default, .font-cleanup, .catch-copy, h1, h2, h3, p, html, body, footer, nav.navbar, .btn, small, span, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a, nav.navbar.navbar-lite.navbar-secondary .outer-container li:first-child > a:hover {
   color: #333; }
+
+/*This is brightest font color, should be used on dark background*/
+.text-reverse, nav.navbar.navbar-default .navbar-brand, nav.navbar.navbar-default li > a, nav.navbar.navbar-dark .navbar-brand, nav.navbar.navbar-dark li > a {
+  color: white; }
 
 /*This is a lighter version for default font color, should be used when hover on default*/
 .text-blackout, nav.navbar.navbar-lite .outer-container .navbar-brand:hover, nav.navbar.navbar-lite .outer-container li > a:hover {
@@ -11,9 +15,55 @@
 .text-whiteout, nav.navbar.navbar-default .navbar-brand:hover, nav.navbar.navbar-default li > a:hover, nav.navbar.navbar-dark .navbar-brand:hover, nav.navbar.navbar-dark li > a:hover {
   color: #dcdcdc; }
 
-/*This is brightest font color, should be used on dark background*/
-.text-reverse, nav.navbar.navbar-default .navbar-brand, nav.navbar.navbar-default li > a, nav.navbar.navbar-dark .navbar-brand, nav.navbar.navbar-dark li > a {
-  color: white; }
+.font-cleanup, .catch-copy, h1, h2, h3, p, html, body, footer, nav.navbar, .btn, small, span {
+  margin: 0px;
+  padding: 0px;
+  line-height: auto;
+  display: inline; }
+
+.catch-copy {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 42px; }
+
+h1 {
+  font-size: 36px;
+  font-weight: 100;
+  line-height: 48px;
+  display: block; }
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  display: block; }
+
+h3 {
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 36px;
+  display: block; }
+
+p, html, body, footer, nav.navbar, .btn {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: justify;
+  text-justify: ideographic; }
+
+small {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px; }
+
+span {
+  text-align: justify;
+  text-justify: ideographic;
+  font-weight: 400; }
+  span.mis1 {
+    font-size: 20px; }
+  span.mis2 {
+    font-size: 16px; }
 
 .text-not-selectable, nav.navbar {
   -webkit-user-select: none;
@@ -30,8 +80,14 @@
   line-height: 1;
   vertical-align: middle;
   padding: 0px; }
-  .table-borderless thead tr th p, .table-borderless thead tr td p, .table-borderless tbody tr th p, .table-borderless tbody tr td p, .table-borderless tfoot tr th p, .table-borderless tfoot tr td p {
+  .table-borderless thead tr th p, .table-borderless thead tr th html, .table-borderless thead tr th body, .table-borderless thead tr th footer, .table-borderless thead tr th nav.navbar, .table-borderless thead tr th .btn, .table-borderless thead tr td p, .table-borderless thead tr td html, .table-borderless thead tr td body, .table-borderless thead tr td footer, .table-borderless thead tr td nav.navbar, .table-borderless thead tr td .btn, .table-borderless tbody tr th p, .table-borderless tbody tr th html, .table-borderless tbody tr th body, .table-borderless tbody tr th footer, .table-borderless tbody tr th nav.navbar, .table-borderless tbody tr th .btn, .table-borderless tbody tr td p, .table-borderless tbody tr td html, .table-borderless tbody tr td body, .table-borderless tbody tr td footer, .table-borderless tbody tr td nav.navbar, .table-borderless tbody tr td .btn, .table-borderless tfoot tr th p, .table-borderless tfoot tr th html, .table-borderless tfoot tr th body, .table-borderless tfoot tr th footer, .table-borderless tfoot tr th nav.navbar, .table-borderless tfoot tr th .btn, .table-borderless tfoot tr td p, .table-borderless tfoot tr td html, .table-borderless tfoot tr td body, .table-borderless tfoot tr td footer, .table-borderless tfoot tr td nav.navbar, .table-borderless tfoot tr td .btn {
     line-height: 26px; }
+
+.block-display {
+  display: block; }
+
+.inline-display {
+  display: inline; }
 
 .divider {
   width: 42px;
@@ -58,25 +114,6 @@
         width: 100%;
         overflow: hidden;
         height: 0; } }
-
-h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
-  font-size: 130px;
-  font-weight: 100;
-  line-height: 0.8; }
-  @media only screen and (max-width: 768px) {
-    h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
-      font-size: 52px; } }
-
-p, span {
-  text-align: justify;
-  text-justify: ideographic; }
-  p strong, span strong {
-    font-size: 58px;
-    font-weight: normal;
-    line-height: 0.8; }
-    @media only screen and (max-width: 768px) {
-      p strong, span strong {
-        font-size: 42px; } }
 
 @font-face {
   font-family: 'Han Sans';
@@ -113,7 +150,7 @@ p, span {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 15px;
+  font-size: 14px;
   /* Preferred icon size */
   display: inline-block;
   width: 1rem;
@@ -135,9 +172,6 @@ p, span {
 
 html, body {
   height: 100%;
-  font-size: 15px;
-  color: #333;
-  line-height: 1.7em;
   background: white;
   font-family: "Gotham light","Helvetica Neue", Helvetica, Arial, "Han Sans", sans-serif; }
   @media only screen and (min-width: 768px) {
@@ -146,38 +180,28 @@ html, body {
 
 .page-wrap {
   min-height: 100%;
-  margin-bottom: -250px; }
+  margin-bottom: -50px; }
   .page-wrap:after {
     content: '';
     display: block;
-    height: 250px; }
+    height: 50px; }
 
 footer {
-  height: 250px;
-  font-size: 15px;
-  line-height: 250px;
-  padding-top: 56px;
-  padding-top: 4rem;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  background-color: #fafafa;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
   z-index: 9999; }
-  footer .article {
-    text-align: left !important; }
-    footer .article h6 {
-      font-weight: 600;
-      margin-bottom: 16px; }
-    footer .article h4 {
-      font-weight: 200; }
   footer.footer-fixed {
     position: fixed;
     left: 0px;
     right: 0px;
     bottom: 0px; }
-  footer.footer-transparent {
-    background-color: transparent; }
+  footer .article {
+    position: relative;
+    height: 50px;
+    background-color: #f8f8f8; }
+    footer .article p, footer .article html, footer .article body, footer .article footer, footer .article nav.navbar, footer .article .btn {
+      color: #888; }
 
 nav.navbar {
   position: absolute;
@@ -195,7 +219,6 @@ nav.navbar {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  font-size: 15px;
   z-index: 9999;
   /*override when navbar is fixed at top*/
   /*apply to all navbars, when on laptop remove padding*/
@@ -253,15 +276,14 @@ nav.navbar {
       height: 50px !important;
       overflow: hidden !important; }
       nav.navbar.navbar-secondary .navbar-collapse li {
-        font-size: 15px;
         -webkit-transition: all 0.2s ease;
         -moz-transition: all 0.2s ease;
         -o-transition: all 0.2s ease;
         transition: all 0.2s ease; }
         nav.navbar.navbar-secondary .navbar-collapse li.active {
-          border-bottom: 2px solid #ef483b; }
+          border-bottom: 2px solid #f04e41; }
           nav.navbar.navbar-secondary .navbar-collapse li.active a {
-            color: #ef483b; }
+            color: #f04e41; }
         nav.navbar.navbar-secondary .navbar-collapse li:first-child a {
           cursor: default; }
         nav.navbar.navbar-secondary .navbar-collapse li a {
@@ -316,41 +338,8 @@ nav.navbar {
 
 .article {
   position: relative;
-  width: 100%; }
-  .article .title {
-    margin: 0px 0px 30px 0px; }
-    .article .title h1, .article .title h2, .article .title h3 {
-      font-weight: 100; }
-    .article .title h4, .article .title h5 {
-      font-weight: 200; }
-  .article h1 {
-    font-size: 42px; }
-  .article h2 {
-    font-size: 36px;
-    margin: 10px 0px; }
-  .article h3 {
-    font-size: 28px; }
-  .article h4 {
-    font-size: 24px; }
-  .article h5 {
-    font-size: 18px; }
-  .article h6 {
-    font-size: 15px; }
-  @media only screen and (max-width: 768px) {
-    .article h1 {
-      font-size: 32px; }
-    .article h2 {
-      font-size: 28px; }
-    .article h3 {
-      font-size: 24px; }
-    .article h4 {
-      font-size: 18px; }
-    .article h5 {
-      font-size: 16px; }
-    .article h6 {
-      font-size: 15px; } }
-  .article p {
-    margin: 11.5px 0px; }
+  width: 100%;
+  height: 750px; }
   .article .container {
     position: relative; }
   .article .bg {
@@ -378,11 +367,8 @@ nav.navbar {
     overflow: hidden; }
   .article.article-center .container {
     text-align: center; }
-    .article.article-center .container p {
+    .article.article-center .container p, .article.article-center .container html, .article.article-center .container body, .article.article-center .container footer, .article.article-center .container nav.navbar, .article.article-center .container .btn {
       text-align: left; }
-  @media only screen and (min-width: 768px) {
-    .article.article-narrow .container {
-      width: 844px !important; } }
 
 .bubble {
   display: table;
@@ -433,8 +419,6 @@ nav.navbar {
 .btn {
   margin: 8px 0px;
   padding: 3px 20px;
-  font-size: 15px;
-  font-weight: 600;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none; }
@@ -444,13 +428,13 @@ nav.navbar {
     box-shadow: none; }
 
 .btn-danger {
-  background-color: #ef483b; }
+  background-color: #f04e41; }
   .btn-danger:hover, .btn-danger:active, .btn-danger:focus, .btn-danger:visited {
     background-color: #f15a4e; }
 
 .btn-default {
-  color: #ef483b; }
+  color: #f04e41; }
   .btn-default:hover, .btn-default:active, .btn-default:focus, .btn-default:visited {
-    color: #ef483b;
+    color: #f04e41;
     border-color: #fafafa;
     background-color: #fafafa; }
