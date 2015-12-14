@@ -19,9 +19,13 @@ $grey-fallback: rgb(35,37,43);
 .text-whiteout{
 	color: #dcdcdc;
 }
+.text-red {
+	color: $red;
+}
 
 .font-cleanup {
 	margin: 0px;
+	margin-bottom: 16px;
 	padding: 0px;
 	line-height: auto;
 	display: inline;
@@ -262,13 +266,11 @@ html, body {
 	&:after {
 		content: '';
 		display: block;
-		height: $footer-height;
 	}
 }
 
 footer{
 	position: relative;
-	height: $footer-height;
 	line-height: $footer-height;	
 	z-index: 9999;
 	@extend p;
@@ -289,6 +291,9 @@ footer{
 	}
 }
 
+footer, .page-wrap:after {
+	height: $footer-height;
+}
 nav.navbar{
 	position: absolute;
 	top: 0px;
@@ -328,7 +333,8 @@ nav.navbar{
 	.navbar-nav {
 		&.navbar-right{
 			margin-right: 0px;
-			&:last-child {
+			li:last-child {
+				margin-right: 0px;
 				padding-right: 0px;
 			}
 		}
@@ -491,7 +497,6 @@ nav.navbar{
 .article{
 	position: relative;
 	width: 100%;
-	height: 750px;
 
 	.container{
 		position: relative;
@@ -524,12 +529,6 @@ nav.navbar{
 			position: relative;
 		}
 	}
-
-	&.article-full{
-		height:100%;
-		overflow: hidden;
-	}
-
 	&.article-center{
 		.container{
 			text-align: center;
@@ -539,7 +538,46 @@ nav.navbar{
 			}
 		}
 	}
+	&.article-v-bottom {
+		.container {
+			position: absolute;
+			left: 50%;
+			bottom: 0px;
+			.row {
+				position: relative;
+				left: -50%;
+			}
+		}
+	}
+	&.article-v-center {
+		.container {
+			display: table;
+			height: 100%;
+			.row {
+				display: table-row;
+				height: 0px;
+				vertical-align: middle;
+			}
+		}
+	}
+	&.article-full{
+		height:100%;
+		overflow: hidden;
+	}
+	&.article-750 {
+		height: 750px;
+	}
+	&.article-300 {
+		height: 300px;
+	}
+	&.article-wrapcontent {
+		h1, h2, h3 {
+			margin-bottom: 0px;
+		}
+	}
 }
+
+
 
 .bubble{
 	display: table;

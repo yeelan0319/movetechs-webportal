@@ -15,8 +15,12 @@
 .text-whiteout, nav.navbar.navbar-default .navbar-brand:hover, nav.navbar.navbar-default li > a:hover, nav.navbar.navbar-dark .navbar-brand:hover, nav.navbar.navbar-dark li > a:hover {
   color: #dcdcdc; }
 
+.text-red {
+  color: #f04e41; }
+
 .font-cleanup, .catch-copy, h1, h2, h3, p, html, body, footer, nav.navbar, .btn, small, span {
   margin: 0px;
+  margin-bottom: 16px;
   padding: 0px;
   line-height: auto;
   display: inline; }
@@ -183,12 +187,10 @@ html, body {
   margin-bottom: -50px; }
   .page-wrap:after {
     content: '';
-    display: block;
-    height: 50px; }
+    display: block; }
 
 footer {
   position: relative;
-  height: 50px;
   line-height: 50px;
   z-index: 9999; }
   footer.footer-fixed {
@@ -202,6 +204,9 @@ footer {
     background-color: #f8f8f8; }
     footer .article p, footer .article html, footer .article body, footer .article footer, footer .article nav.navbar, footer .article .btn {
       color: #888; }
+
+footer, .page-wrap:after {
+  height: 50px; }
 
 nav.navbar {
   position: absolute;
@@ -238,7 +243,8 @@ nav.navbar {
       padding: 0px; }
   nav.navbar .navbar-nav.navbar-right {
     margin-right: 0px; }
-    nav.navbar .navbar-nav.navbar-right:last-child {
+    nav.navbar .navbar-nav.navbar-right li:last-child {
+      margin-right: 0px;
       padding-right: 0px; }
   nav.navbar .navbar-nav li {
     margin: 0px 10px;
@@ -338,8 +344,7 @@ nav.navbar {
 
 .article {
   position: relative;
-  width: 100%;
-  height: 750px; }
+  width: 100%; }
   .article .container {
     position: relative; }
   .article .bg {
@@ -362,13 +367,33 @@ nav.navbar {
         background-color: rgba(0, 0, 0, 0.1); }
     .article .bg .bg-items {
       position: relative; }
-  .article.article-full {
-    height: 100%;
-    overflow: hidden; }
   .article.article-center .container {
     text-align: center; }
     .article.article-center .container p, .article.article-center .container html, .article.article-center .container body, .article.article-center .container footer, .article.article-center .container nav.navbar, .article.article-center .container .btn {
       text-align: left; }
+  .article.article-v-bottom .container {
+    position: absolute;
+    left: 50%;
+    bottom: 0px; }
+    .article.article-v-bottom .container .row {
+      position: relative;
+      left: -50%; }
+  .article.article-v-center .container {
+    display: table;
+    height: 100%; }
+    .article.article-v-center .container .row {
+      display: table-row;
+      height: 0px;
+      vertical-align: middle; }
+  .article.article-full {
+    height: 100%;
+    overflow: hidden; }
+  .article.article-750 {
+    height: 750px; }
+  .article.article-300 {
+    height: 300px; }
+  .article.article-wrapcontent h1, .article.article-wrapcontent h2, .article.article-wrapcontent h3 {
+    margin-bottom: 0px; }
 
 .bubble {
   display: table;
