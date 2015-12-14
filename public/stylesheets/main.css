@@ -18,7 +18,7 @@
 .text-red {
   color: #f04e41; }
 
-.text-not-selectable, .hyperlink-underscore, nav.navbar {
+.text-not-selectable, .hyperlink, nav.navbar {
   -webkit-user-select: none;
   /* Chrome all / Safari all */
   -moz-user-select: none;
@@ -48,9 +48,10 @@
   line-height: 42px;
   display: block; }
 
-.hyperlink-underscore {
-  cursor: pointer;
-  text-decoration: underline; }
+.hyperlink {
+  cursor: pointer; }
+  .hyperlink:hover {
+    text-decoration: underline; }
 
 h1 {
   font-size: 36px;

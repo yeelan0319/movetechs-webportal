@@ -51,10 +51,12 @@ $grey-fallback: rgb(35,37,43);
 	line-height: 42px;
 	display:block;
 }
-.hyperlink-underscore {
+.hyperlink {
 	cursor: pointer;
-	text-decoration: underline;
 	@extend .text-not-selectable;
+	&:hover {
+		text-decoration: underline;
+	}
 }
 h1 {
 	@extend .font-cleanup;
