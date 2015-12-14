@@ -8,7 +8,8 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 	background: url("/images/plus.png") 5px 12px no-repeat;
 }
 .article .container{
-	padding: 48px 0px;
+	padding-top: 48px;
+	padding-bottom: 48px;
 }
 .article:first-child .container{
 	margin-top: 50px;
@@ -19,6 +20,28 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 #improvements .article .row .col-md-6:last-child{
 	 padding-left: 57px;
 }
+#metrics #metrics-1 .foreground {
+	background-color: #2b2d33;
+}
+#metrics .table-container {
+	padding-top: 18px;
+	padding-bottom: 18px;
+	border-bottom: 1px solid #6e6e6e;
+}
+#metrics .container>.row:first-child .table-container {
+	padding-top: 0px;
+}
+#metrics .container>.row:last-child .table-container {
+	padding-bottom: 0px;
+	border-bottom: none;
+}
+#metrics table{
+	margin: 0px;
+}
+#metrics table tr{
+	height: 32px;
+}
+
 </style>
 <div class="main">
 	<nav class="navbar navbar-lite navbar-secondary hidden-xs">
@@ -27,10 +50,10 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 		    <div class="collapse navbar-collapse">
 		      <ul class="nav navbar-nav">
 		      	<li><a>K1</a></li>
-		      	<li class="active" data-hyperlink="overview"><a>概览</a></li>
-		        <li data-hyperlink="breakthroughs"><a>四大突破</a></li>
-		        <li data-hyperlink="improvements"><a>数十项改进</a></li>
-		        <li data-hyperlink="metrics"><a>产品规格</a></li>
+		      	<li class="hyperlink active" data-hyperlink="overview"><a>概览</a></li>
+		        <li class="hyperlink" data-hyperlink="breakthroughs"><a>四大突破</a></li>
+		        <li class="hyperlink" data-hyperlink="improvements"><a>数十项改进</a></li>
+		        <li class="hyperlink" data-hyperlink="metrics"><a>产品规格</a></li>
 		      </ul>
 		      <!-- <ul class="nav navbar-nav navbar-right">
 		        <a href="#" class="btn btn-danger hide">购 买<span class="plus"></span></a>
@@ -95,7 +118,7 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 				<div class="row">
 					<div class="col-md-6 col-md-offset-6">
 						<h1>四大核心突破</h1>
-						<span class="mis1 block-display">/ 百里续航 <br>/ IP65级防水 <br>/ 360度照明 <br>/ 结构创新</span>
+						<span class="mis1 block-display">/ 百里续航 <br>/ IP65级防水 <br>/ 360°照明 <br>/ 结构创新</span>
 						<p class="block-display">采用三星原装电池，主打性能与车身强度，是首款达到IP65级防水级别的电动滑板车。<br>配选27AH电池，续航可达100KM。车身采用多角度的灯光防护设计，可反射汽车灯光源，同样适用于夜间骑行。</p>
 						<span class="mis2 block-display text-red">了解核心突破 ></span>
 					</div>
@@ -127,8 +150,9 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<h2 class="text-reverse">世界上性能最强的电动滑板车！</h2>
-						<span class="mis2 text-reverse">了解整车规格 ></span>
+						<h1 class="headline text-red">K1</h1>
+						<h1 class="catch-copy text-reverse">世界上性能最强的电动滑板车！</h1>
+						<span class="mis2 text-reverse hyperlink hyperlink-underscore" data-hyperlink="metrics">了解整车规格 ></span>
 					</div>
 				</div>
 			</div>
@@ -144,6 +168,7 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
+						<h1 class="headline text-red text-center">突破1 ／</h1>
 						<h1 class="text-center text-reverse">百公里续航</h1>
 						<p class="text-reverse">27AH电池组，提供100km超长续航。在频繁加减速的综合路况下，也能达到70km*。是世界上续航最长的滑板车。</h1>
 					</div>
@@ -162,6 +187,7 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 						<h3>三星原装电池，品质有保障</h3>
 						<p class="block-display">进口三星高倍率锂电池组，续航和动力性更均衡。</p>
 						<small>电池组合作伙伴</small>
+						<img src="images/samsung-icon.png" />
 					</div>
 				</div>
 			</div>
@@ -175,6 +201,7 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-6">
+						<h1 class="headline text-red">突破2 ／</h1>
 						<h1>IP65级防水</h1>
 						<p>行业首创的IP65级防水，将汽车级别的防水方式应用到滑板车领域。可以在雨、雪等各种路况下骑行。</p>
 					</div>
@@ -206,8 +233,9 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-reverse">360度照明防护，夜间骑行无忧</h1>
-						<p class="text-reverse">考虑到夜间骑行的可视性，作为整车安全防护，加上了360度可见的主被动灯光辅助系统，旨在满足夜间出行的需求。</p>
+						<h1 class="headline text-red text-center">突破3 ／</h1>
+						<h1 class="text-reverse">360°照明防护，夜间骑行无忧</h1>
+						<p class="text-reverse">考虑到夜间骑行的可视性，作为整车安全防护，加上了360°可见的主被动灯光辅助系统，旨在满足夜间出行的需求。</p>
 					</div>
 				</div>
 			</div>
@@ -222,7 +250,7 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
 						<h3 class="text-center">引入反光材料，全方位的灯光辅助系统</h3>
-						<p>K1组合灯光包括前LED大灯，后LED尾灯，左右侧被动灯光，可以反射汽车灯光源。通过360度灯光系统，提高夜间行车的安全性。</p>
+						<p>K1组合灯光包括前LED大灯，后LED尾灯，左右侧被动灯光，可以反射汽车灯光源。通过360°灯光系统，提高夜间行车的安全性。</p>
 					</div>
 				</div>
 			</div>
@@ -236,6 +264,7 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
+						<h1 class="headline text-red">突破4 ／</h1>
 						<h1 class="text-reverse">结构创新，将强度发挥到极致</h1>
 						<p class="text-reverse">我们用“化整为零”的思路设计整车部件，做精简的结构探索。部件一体成型，更加强悍。提升了安全性，并大幅提高车辆寿命。</p>
 					</div>
@@ -266,7 +295,7 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<span class="mis2 text-reverse">其他数十项改进 ></span>
+						<span class="mis2 text-reverse hyperlink hyperlink-underscore" data-hyperlink="improvements">其他数十项改进 ></span>
 					</div>
 				</div>
 			</div>
@@ -405,7 +434,7 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 				</div>
 			</div>
 		</div>
-		<div class="article article-wrapcontent" id="improvements-1">
+		<div class="article article-wrapcontent" id="improvements-4">
 			<div class="bg">
 				<div class="background"/></div>
 				<div class="foreground"></div>
@@ -446,14 +475,134 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<span class="mis2 text-reverse">更多技术细节 ></span>
+						<span class="mis2 text-reverse hyperlink hyperlink-underscore" data-hyperlink="metrics">更多技术细节 ></span>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="content" id="metrics">
-		<h1>产品规格</h1>
+		<div class="article" id="metrics-1">
+			<div class="bg">
+				<div class="background"></div>
+				<div class="foreground"></div>
+				<div class="bg-items"></div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="table-container">
+							<table class="table table-borderless text-reverse">
+								<tr class="row">
+									<td class="col-md-2">整车重量：</td>
+									<td class="col-md-10">18kg</td>
+								</tr>
+								<tr class="row">
+									<td class="col-md-2">整车尺寸：</td>
+									<td class="col-md-10">展开尺寸：1045*538*1200mm</td>
+								</tr>
+								<tr class="row">
+									<td class="col-md-2"></td>
+									<td class="col-md-10">折叠尺寸：1045*160*362mm</td>
+								</tr>
+								<tr class="row">
+									<td class="col-md-2">踏板宽度：</td>
+									<td class="col-md-10">16cm</td>
+								</tr>
+								<tr class="row">
+									<td class="col-md-2">离地高度：</td>
+									<td class="col-md-10">8-9cm</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="table-container">		
+							<table class="table table-borderless text-reverse">
+								<tr class="row">
+									<td class="col-md-2">续航：</td>
+									<td class="col-md-10">62公里(18.4AH) / 78公里(23.4AH)</td>
+								</tr>
+								<tr class="row">
+									<td class="col-md-2">最高设计车速：</td>
+									<td class="col-md-10">30km/h</td>
+								</tr>
+								<tr class="row">
+									<td class="col-md-2">动力：</td>
+									<td class="col-md-10">250W，后置电动马达</td>
+								</tr>
+								<tr class="row">
+									<td class="col-md-2">电池规格：</td>
+									<td class="col-md-10">36V 18.4AH/23.4AH，锂聚合物电池</td>
+								</tr>
+								<tr class="row">
+									<td class="col-md-2">充电要求：</td>
+									<td class="col-md-10">220伏</td>
+								</tr>
+								<tr class="row">
+									<td class="col-md-2">充电时间：</td>
+									<td class="col-md-10">8小时</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="table-container">	
+							<table class="table table-borderless text-reverse">
+								<tr class="row">
+									<td class="col-md-2">刹车：</td>
+									<td class="col-md-10">后轮鼓刹</td>
+								</tr>
+								<tr class="row">
+									<td class="col-md-2">轮胎：</td>
+									<td class="col-md-10">防爆胎，8寸，宽版</td>
+								</tr>
+								<tr class="row">
+									<td class="col-md-2">爬坡性能：</td>
+									<td class="col-md-10">≤20°</td>
+								</tr>
+								<tr class="row">
+									<td class="col-md-2">折叠性能：</td>
+									<td class="col-md-10">一秒折叠</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="article article-wrapcontent" id="metrics-2">
+			<div class="bg">
+				<div class="background"/></div>
+				<div class="foreground"></div>
+				<div class="bg-items"></div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<img class="img-responsive" src="images/k1-metrics-1.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="article article-300 article-center article-v-center">
+			<div class="bg">
+				<img class="background" src="images/k1-metrics-2.jpg"/>
+				<div class="foreground"></div>
+				<div class="bg-items"></div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<span class="mis2 text-reverse hyperlink hyperlink-underscore" data-hyperlink="breakthroughs">了解核心突破 ></span>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 <script type="text/javascript">
@@ -471,23 +620,13 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 			}
 		});
 
-		$('.navbar-secondary li').not(':first-child').click(function(){
+		$('.hyperlink').click(function(){
 			var current = $('.content-active');
 			var target = $(this).data('hyperlink');
 			if(current.attr('id') == target) {
 				return;
 			}
-			$('.navbar-secondary .navbar-nav li.active').removeClass('active');
-			$(this).addClass('active');
-			
-			var next = $('#' + target);
-			current.removeClass('content-active')
-				.data('scroll', $(document).scrollTop());
-			next.addClass('content-active');
-			$('.main').css('height', next.height());
-			if($(document).scrollTop() > 50){
-				$(document).scrollTop(50);
-			}
+			jumpToContent(target);
 		});
 		$('#rotate-slider').slider({
 			start: function( event, ui ) {
@@ -498,6 +637,18 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 			}
 		});
 	});
-		
+	function jumpToContent(contentId){
+			var current = $('.content-active');	
+			var next = $('#' + contentId);
+			$('.navbar-secondary .navbar-nav li.active').removeClass('active');
+			$('.navbar-secondary li[data-hyperlink="'+ contentId +'"]').addClass('active');
+			current.removeClass('content-active')
+				.data('scroll', $(document).scrollTop());
+			next.addClass('content-active');
+			$('.main').css('height', next.height());
+			if($(document).scrollTop() > 50){
+				$(document).scrollTop(50);
+			}
+		}	
 </script>
 {{> footer }}

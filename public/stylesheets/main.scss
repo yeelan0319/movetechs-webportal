@@ -22,7 +22,12 @@ $grey-fallback: rgb(35,37,43);
 .text-red {
 	color: $red;
 }
-
+.text-not-selectable{
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */   
+}
 .font-cleanup {
 	margin: 0px;
 	margin-bottom: 16px;
@@ -31,11 +36,25 @@ $grey-fallback: rgb(35,37,43);
 	display: inline;
 	@extend .text-default;
 }
+.headline {
+	@extend .font-cleanup;
+	font-family: Gotham;
+	font-size: 32px;
+	font-weight: 800;
+	line-height: 42px;
+	display:block;
+}
 .catch-copy {
 	@extend .font-cleanup;
 	font-size: 32px;
 	font-weight: 800;
 	line-height: 42px;
+	display:block;
+}
+.hyperlink-underscore {
+	cursor: pointer;
+	text-decoration: underline;
+	@extend .text-not-selectable;
 }
 h1 {
 	@extend .font-cleanup;
@@ -71,6 +90,8 @@ small {
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 18px;
+	display: block;
+	margin-bottom: 5px;
 }
 span {
 	@extend .font-cleanup;
@@ -106,13 +127,6 @@ $footer-height: 50px;
   -moz-transition: $animation;
   -o-transition: $animation;
   transition: $animation;
-}
-
-.text-not-selectable{
-	-webkit-user-select: none;  /* Chrome all / Safari all */
-  -moz-user-select: none;     /* Firefox all */
-  -ms-user-select: none;      /* IE 10+ */
-  user-select: none;          /* Likely future */   
 }
 
 .table-borderless{

@@ -1,6 +1,6 @@
 /*color-palette*/
 /*This is default font color, darkest, should be used on lite background*/
-.text-default, .font-cleanup, .catch-copy, h1, h2, h3, p, html, body, footer, nav.navbar, .btn, small, span, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a, nav.navbar.navbar-lite.navbar-secondary .outer-container li:first-child > a:hover {
+.text-default, .font-cleanup, .headline, .catch-copy, h1, h2, h3, p, html, body, footer, nav.navbar, .btn, small, span, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a, nav.navbar.navbar-lite.navbar-secondary .outer-container li:first-child > a:hover {
   color: #333; }
 
 /*This is brightest font color, should be used on dark background*/
@@ -18,17 +18,39 @@
 .text-red {
   color: #f04e41; }
 
-.font-cleanup, .catch-copy, h1, h2, h3, p, html, body, footer, nav.navbar, .btn, small, span {
+.text-not-selectable, .hyperlink-underscore, nav.navbar {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */ }
+
+.font-cleanup, .headline, .catch-copy, h1, h2, h3, p, html, body, footer, nav.navbar, .btn, small, span {
   margin: 0px;
   margin-bottom: 16px;
   padding: 0px;
   line-height: auto;
   display: inline; }
 
+.headline {
+  font-family: Gotham;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 42px;
+  display: block; }
+
 .catch-copy {
   font-size: 32px;
   font-weight: 800;
-  line-height: 42px; }
+  line-height: 42px;
+  display: block; }
+
+.hyperlink-underscore {
+  cursor: pointer;
+  text-decoration: underline; }
 
 h1 {
   font-size: 36px;
@@ -58,7 +80,9 @@ p, html, body, footer, nav.navbar, .btn {
 small {
   font-size: 12px;
   font-weight: 400;
-  line-height: 18px; }
+  line-height: 18px;
+  display: block;
+  margin-bottom: 5px; }
 
 span {
   text-align: justify;
@@ -68,16 +92,6 @@ span {
     font-size: 20px; }
   span.mis2 {
     font-size: 16px; }
-
-.text-not-selectable, nav.navbar {
-  -webkit-user-select: none;
-  /* Chrome all / Safari all */
-  -moz-user-select: none;
-  /* Firefox all */
-  -ms-user-select: none;
-  /* IE 10+ */
-  user-select: none;
-  /* Likely future */ }
 
 .table-borderless thead tr th, .table-borderless thead tr td, .table-borderless tbody tr th, .table-borderless tbody tr td, .table-borderless tfoot tr th, .table-borderless tfoot tr td {
   border: none;
