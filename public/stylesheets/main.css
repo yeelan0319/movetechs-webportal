@@ -74,7 +74,7 @@ h3 {
 p, html, body, footer, nav.navbar, .btn {
   font-size: 14px;
   font-weight: 400;
-  line-height: 32px;
+  line-height: 24px;
   text-align: justify;
   text-justify: ideographic; }
 
@@ -90,7 +90,8 @@ span {
   text-justify: ideographic;
   font-weight: 400; }
   span.mis1 {
-    font-size: 20px; }
+    font-size: 20px;
+    line-height: 36px; }
   span.mis2 {
     font-size: 16px; }
 
@@ -221,7 +222,10 @@ footer {
       color: #888; }
 
 footer, .page-wrap:after {
-  height: 50px; }
+  height: 50px;
+  background-color: #f8f8f8; }
+  footer .container, .page-wrap:after .container {
+    border-top: 1px solid #e6e6e6; }
 
 nav.navbar {
   position: absolute;
@@ -256,23 +260,23 @@ nav.navbar {
     nav.navbar .navbar-brand img {
       width: 88px;
       padding: 0px; }
-  nav.navbar .navbar-nav.navbar-right {
+  nav.navbar .nav.navbar-right {
     margin-right: 0px; }
-    nav.navbar .navbar-nav.navbar-right li:last-child {
+    nav.navbar .nav.navbar-right li:last-child {
       margin-right: 0px;
       padding-right: 0px; }
-  nav.navbar .navbar-nav li {
+  nav.navbar .nav li {
     margin: 0px 10px;
     padding: 0px 10px; }
-    nav.navbar .navbar-nav li:first-child {
+    nav.navbar .nav li:first-child {
       margin-left: 0px;
       padding-left: 0px; }
-    nav.navbar .navbar-nav li a {
+    nav.navbar .nav li a {
       text-align: center;
       height: 50px;
       padding: 0px;
       line-height: 50px; }
-      nav.navbar .navbar-nav li a:hover, nav.navbar .navbar-nav li a:visited, nav.navbar .navbar-nav li a:focus {
+      nav.navbar .nav li a:hover, nav.navbar .nav li a:visited, nav.navbar .nav li a:focus {
         text-decoration: none;
         background-color: transparent; }
   @media only screen and (min-width: 768px) {
@@ -346,8 +350,9 @@ nav.navbar {
 /*main style*/
 .main {
   position: relative;
-  margin-top: 50px;
-  padding-top: 50px; }
+  margin-top: 50px; }
+  .main .main-intro {
+    position: relative; }
   .main .content {
     position: absolute;
     top: 0px;
@@ -407,30 +412,8 @@ nav.navbar {
     height: 750px; }
   .article.article-300 {
     height: 300px; }
-  .article.article-wrapcontent h1, .article.article-wrapcontent h2, .article.article-wrapcontent h3 {
+  .article.article-wrapcontent h2 {
     margin-bottom: 0px; }
-
-.bubble {
-  display: table;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  -ms-border-radius: 100px;
-  border-radius: 100px;
-  background: #f55e66; }
-  .bubble .inner {
-    display: table-cell;
-    vertical-align: middle;
-    width: 100%;
-    height: 100%;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    -ms-border-radius: 100px;
-    border-radius: 100px;
-    border: 2px solid #d54753;
-    text-align: center; }
-    .bubble .inner h3, .bubble .inner h4 {
-      margin: 10px;
-      color: #fff; }
 
 /*override jquery-ui slider*/
 .container.is-dragging {

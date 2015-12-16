@@ -3,11 +3,8 @@
 	nav.navbar.navbar-default li > a[href~="/about"], nav.navbar.navbar-default li > a[href~="/about"]:hover{
 		color:#999;
 	}
-	nav.navbar.navbar-secondary .navbar-collapse li a{
-		cursor: default;
-	}
-	nav.navbar.navbar-lite .outer-container li > a:hover{
-		color: #333;
+	.navbar-secondary .nav {
+		border-bottom: 1px solid #e6e6e6;
 	}
 	.article#jumbotron .foreground{
 		background: #ECECEC;
@@ -18,91 +15,43 @@
 		left:0px;
 	}
 	.article#jumbotron .container{
-		padding-top: 120px;
-		padding-top: 8rem;
-		padding-bottom: 510px;
-		padding-bottom: 34rem;
+		padding-top: 48px;
+		padding-bottom: 410px;
 	}
-	.article#jumbotron .container .title h2{
-		margin-top: 2px;
-		margin-bottom: 30px;
+	.article#profile .container{
+		padding-top: 98px;
 	}
-	.article.profile .container{
-		padding-top: 50px;
-		padding-bottom: 50px;
+	.article#profile .container .row{
+		margin-bottom: 25px;
 	}
-	.article.profile#article-1 .container{
-		padding-top: 100px;
-	}
-	.article.profile#article-11 .container{
-		padding-bottom: 100px;
-	}
-	.article.profile .profile-name {
+	.article#profile .profile-name {
 		height: 63px;
 		padding-bottom: 15px;
 		padding-bottom: 1rem;
 	}
-	.article.profile .profile-name span{
+	.article#profile .profile-name p{
 		position: absolute; 
 		top: 0px; 
 		padding-left: 10px; 
-		font-size: 18px; 
-		font-weight:400;
 		white-space: nowrap;
 	}
-	.article.profile .profile-name h1{
+	.article#profile .profile-name h3{
 		position: relative; 
-		width: 150px;
-		font-weight: 100;
-		margin: 0px;
+		width: 100px;
+		margin-top: 25px;
 	}
-	.article.profile .profile-text .slash{
+	.article#profile .profile-text .slash{
 		position: absolute;
 		left: 0;
 		font-size: 12px;
 	}
-	.article.profile .profile-text p {
+	.article#profile .profile-text p {
 		position: relative;
 		padding-left: 1em;
+		margin-top: -10px;
 	}
-	.article#article-12 .foreground{
-		background: #fafafa;
-	}
-	.article#article-12 .container{
-		padding-top: 60px;
-		padding-top: 4rem;
-		padding-bottom: 60px;
-		padding-bottom: 4rem;
-		border-bottom: 1px solid #cdcdcd;
-	}
-	.article#article-12 h4{
-		color: #b51f2e;
-	}
-	.article#article-12 h3{
-		font-weight: 200;
-	}
-	@media only screen and (min-width: 768px) {
-		.article.profile img{
-			max-width: 97%;
-		}
-	}
-	@media only screen and (max-width: 768px){
-		.article#jumbotron .container{
-			padding-top: 180px;
-			padding-top: 12rem;
-			padding-bottom: 210px;
-			padding-bottom: 14rem;
-		}
-		.article.profile .profile-name{
-			padding-top: 20px;
-		}
-		.article.profile .profile-name h1{
-			width: 120px;
-		}
-		.article.profile .container, .article.profile#article-1 .container, .article.profile#article-11 .container{
-			padding-top: 30px;
-			padding-bottom: 30px;
-		}
+	.article#joinus .foreground{
+		background: #f8f8f8;
 	}
 </style>
 <div class="main">
@@ -121,8 +70,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="title text-center">
-						<h2>我们是move</h2>
-						<h5>一个专业的交通工具研发团队，从体验的视角开发产品</h5>
+						<h1>我们是美步</h1>
+						<p>一个专业的交通工具研发团队，从体验的视角开发产品</p>
 					</div>
 				</div> 
 			</div>
@@ -132,250 +81,172 @@
 		<nav class="navbar navbar-lite navbar-secondary">
 			<div class="outer-container">
 			  <div class="container">
-			    <div class="navbar-collapse">
+			    <div class="collapse navbar-collapse">
 			      <ul class="nav text-center">
-			      	<li><a>美步(move)团队 /</a></li>
+			      	<li><a>美步（move）团队 /</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div>
 			</div><!-- /.outer-container -->
 		</nav>
-		<div class="article profile" id="article-1">
+		<div class="article" id="profile">
 			<div class="bg">
 			</div>
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 col-md-6">
-						<img class="img-responsive" src="images/about-article1.jpg">
-					</div>
-					<div class="col-xs-12 col-md-6">
+					<div class="col-xs-12 col-md-4">
+						<img class="img-responsive" src="images/about-profile-yuhao.jpg">
 						<div class="profile-name">
-							<h1 class="text-justify">俞浩<span>CEO</span></h1>
+							<h3 class="text-justify">俞浩<p>CEO</p></h3>
 						</div>
 						<div class="profile-text">
-							<p><span class="slash">/</span>  87年，清华大学航天航空学院</p>
-							<p><span class="slash">/</span>  创建国内最早的企业协同工具 Colorwork </p>
-							<p><span class="slash">/</span>  国内最早的四旋翼开发者，创办清华大学最⼤的学生科技团队“天空⼯场”，并发明了国内第一个三旋翼飞⾏器。曾获全国气动创新设计⼤赛冠军；清华⼤学挑战杯⼀等奖；全国公益创业⼤赛冠军；全国小平科技团队等⼀系列奖项</p>
+							<p class="block-display"><span class="slash">/</span>  清华大学本科毕业，研究生肄业</p>
+							<p class="block-display"><span class="slash">/</span>  创建国内最早的企业协同工具 Colorwork</p>
+							<p class="block-display"><span class="slash">/</span>  清华大学“天空⼯场”创始人，12岁发明第一个双控开关，国内最早的四旋翼开发者，发明世界上第一个三旋翼飞行器，曾任清华大学航天航空学院学生会主席等</p>
+							<p class="block-display"><span class="slash">/</span>  曾获全国气动创新设计⼤赛冠军；清华⼤学挑战杯⼀等奖；全国公益创业⼤赛冠军；全国小平科技团队等⼀系列奖项</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<img class="img-responsive" src="images/about-profile-lujian.jpg">
+						<div class="profile-name">
+							<h3 class="text-justify">陆健<p>机械设计师</p></h3>
+						</div>
+						<div class="profile-text">
+							<p class="block-display"><span class="slash">/</span>  清华大学精密仪器系</p>
+							<p class="block-display"><span class="slash">/</span>  5 年机电⾏业工作经验</p> 
+							<p class="block-display"><span class="slash">/</span>  曾供职于 SEW 电机技术部，主要负责开发高效电机和制定相关企业标准，同时负责防爆电机的新品开发</p>
+							<p class="block-display"><span class="slash">/</span>  曾供职于永大电梯研发中心，主要负责电动扶梯驱动方案的设计，同时负责扶梯振动及噪音降低的研究，提升乘坐品质</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<img class="img-responsive" src="images/about-profile-zhangliguo.jpg">
+						<div class="profile-name">
+							<h3 class="text-justify">张立国<p>工业设计师</p></h3>
+						</div>
+						<div class="profile-text">
+							<p class="block-display"><span class="slash">/</span>  清华大学美术学院工业设计系</p>
+							<p class="block-display"><span class="slash">/</span>  担任清华大学天空工厂工业设计师，负责三旋翼飞机外观设计</p>
+							<p class="block-display"><span class="slash">/</span>  毕设“阿凡达”三旋翼飞行器设计被杂志《城市画报》采访并刊登，参加中国教育电视台展览</p>
+							<p class="block-display"><span class="slash">/</span>  中国国际航空 AmecoBeijing 公务机服务分部，负责并参与多架公务机内饰设计</p>
+							<p class="block-display"><span class="slash">/</span>  曾在波音中国实习</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-4">
+						<img class="img-responsive" src="images/about-profile-xiexiaoye.jpg">
+						<div class="profile-name">
+							<h3 class="text-justify">谢小也<p>平面设计师</p></h3>
+						</div>
+						<div class="profile-text">
+							<p class="block-display"><span class="slash">/</span>  清华⼤学美术学院信息设计专业</p>
+							<p class="block-display"><span class="slash">/</span>  原 Colorwork 首席设计师</p>
+							<p class="block-display"><span class="slash">/</span>  曾参与 OSTINATO 智能硬件项目，负责软件端交互设计及平面设计</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<img class="img-responsive" src="images/about-profile-changxinwei.jpg">
+						<div class="profile-name">
+							<h3 class="text-justify">常新伟<p>电子工程师</p></h3>
+						</div>
+						<div class="profile-text">
+							<p class="block-display"><span class="slash">/</span>  清华大学航天航空学院本科、硕士</p>
+							<p class="block-display"><span class="slash">/</span>  三角洲工作室技术骨干，多年电路电子开发经验</p>
+							<p class="block-display"><span class="slash">/</span>  曾多次带队参加飞思卡尔智能车大赛，屡获国家级奖项</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<img class="img-responsive" src="images/about-profile-fuhongchang.jpg">
+						<div class="profile-name">
+							<h3 class="text-justify">付宏昌<p>电子工程师</p></h3>
+						</div>
+						<div class="profile-text">
+							<p class="block-display"><span class="slash">/</span>  清华大学机械工程系本科毕业</p>
+							<p class="block-display"><span class="slash">/</span>  曾供职于清华大学生物制造工程研究所，有3年机电相关工作经验</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-4">
+						<img class="img-responsive" src="images/about-profile-yanbo.jpg">
+						<div class="profile-name">
+							<h3 class="text-justify">闫波<p>结构工程师</p></h3>
+						</div>
+						<div class="profile-text">
+							<p class="block-display"><span class="slash">/</span>  南京航天航空大学本科、硕士</p>
+							<p class="block-display"><span class="slash">/</span>  空客（北京）工程技术中心，飞机结构设计工程师</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<img class="img-responsive" src="images/about-profile-xuchuanhui.jpg">
+						<div class="profile-name">
+							<h3 class="text-justify">徐川辉<p>机械工程师</p></h3>
+						</div>
+						<div class="profile-text">
+							<p class="block-display"><span class="slash">/</span>  上海交通大学机械工程专业 硕士</p>
+							<p class="block-display"><span class="slash">/</span>  费斯托（中国）自动化制造有限公司，研发工程师</p>
+							<p class="block-display"><span class="slash">/</span>  上海市优秀毕业生</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<img class="img-responsive" src="images/about-profile-shanjun.jpg">
+						<div class="profile-name">
+							<h3 class="text-justify">单军<p>销售</p></h3>
+						</div>
+						<div class="profile-text">
+							<p class="block-display"><span class="slash">/</span>  8年相关行业经验</p>
+							<p class="block-display"><span class="slash">/</span>  原国内最大电动滑板车企业销售总监</p>
+							<p class="block-display"><span class="slash">/</span>  拥有良好的经销商资源与供应商关系</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-4">
+						<img class="img-responsive" src="images/about-profile-yujunqiang.jpg">
+						<div class="profile-name">
+							<h3 class="text-justify">于君强<p>供应链管理</p></h3>
+						</div>
+						<div class="profile-text">
+							<p class="block-display"><span class="slash">/</span>  西安军工大学</p>
+							<p class="block-display"><span class="slash">/</span>  5年制造业经验</p>
+							<p class="block-display"><span class="slash">/</span>  曾先后供职于江苏昆山希安思塑料制品有限公司开发部、苏州安健精密模具有限公司开发部</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<img class="img-responsive" src="images/about-profile-yumin.jpg">
+						<div class="profile-name">
+							<h3 class="text-justify">俞敏<p>生产技术</p></h3>
+						</div>
+						<div class="profile-text">
+							<p class="block-display"><span class="slash">/</span>  原启东色织厂生产技术</p>
+							<p class="block-display"><span class="slash">/</span>  20 年机电⾏业经验</p>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<img class="img-responsive" src="images/about-profile-xujunyong.jpg">
+						<div class="profile-name">
+							<h3 class="text-justify">徐军勇<p>生产管理</p></h3>
+						</div>
+						<div class="profile-text">
+							<p class="block-display"><span class="slash">/</span>  原乔山健康科技（上海）有限公司  课长，下属组长4人，班长22人</p>
+							<p class="block-display"><span class="slash">/</span>  10年车间主管经历</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="article profile" id="article-2">
+		<div class="article article-300 article-center article-v-center" id="joinus">
 			<div class="bg">
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-md-6">
-						<img class="img-responsive" src="images/about-article2.jpg">
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="profile-name">
-							<h1 class="text-justify">陆健<span>机械工程师</span></h1>
-						</div>
-						<div class="profile-text">
-							<p><span class="slash">/</span>  86 年，清华大学精密仪器系</p>
-							<p><span class="slash">/</span>  5 年机电⾏业工作经验 </p>
-							<p><span class="slash">/</span>  曾供职于 SEW 电机技术部，主要负责开发高效电机和制定相关企业标准，同时负责防爆电机的新品开发</p>
-							<p><span class="slash">/</span>  曾供职于永大电梯研发中心，主要负责电动扶梯驱动方案的设计，同时负责扶梯振动及噪音降低的研究，提升乘坐品质</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="article profile" id="article-3">
-			<div class="bg">
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-md-6">
-						<img class="img-responsive" src="images/about-article3.jpg">
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="profile-name">
-							<h1 class="text-justify">张立国<span>工业设计师</span></h1>
-						</div>
-						<div class="profile-text">
-							<p><span class="slash">/</span>  88 年，清华大学美术学院工业设计系交通工具设计专业</p>
-							<p><span class="slash">/</span>  担任清华大学天空工厂工业设计师，负责三旋翼飞机外观设计</p>
-							<p><span class="slash">/</span>  毕设”阿凡达”三旋翼飞行器设计被杂志《城市画报》采访并刊登，参加中国教育电视台展览</p>
-							<p><span class="slash">/</span>  毕业后加入中国国际航空 AmecoBeijing 公务机服务分部，负责并参与多架公务机内饰设计</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="article profile" id="article-4">
-			<div class="bg">
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-md-6">
-						<img class="img-responsive" src="images/about-article4.jpg">
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="profile-name">
-							<h1 class="text-justify">王倩男<span>工业设计师</span></h1>
-						</div>
-						<div class="profile-text">
-							<p><span class="slash">/</span>  88 年，清华大学汽车系</p>
-							<p><span class="slash">/</span>  英国皇家艺术学院 Vehicle Design专业硕士</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="article profile" id="article-5">
-			<div class="bg">
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-md-6">
-						<img class="img-responsive" src="images/about-article5.jpg">
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="profile-name">
-							<h1 class="text-justify">谢小也<span>平面设计师</span></h1>
-						</div>
-						<div class="profile-text">
-							<p><span class="slash">/</span>  清华⼤学美术学院信息设计专业</p>
-							<p><span class="slash">/</span>  原 Colorwork⾸席设计师，负责网站的交互设计和视觉设计。有多个项目视觉设计工作经历</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="article profile" id="article-6">
-			<div class="bg">
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-md-6">
-						<img class="img-responsive" src="images/about-article6.jpg">
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="profile-name">
-							<h1 class="text-justify">常新伟<span>电子工程师</span></h1>
-						</div>
-						<div class="profile-text">
-							<p><span class="slash">/</span>  89 年，清华大学航天航空学院本科、硕士</p>
-							<p><span class="slash">/</span>  清华大学三角洲工作室技术骨干，多年电路电子开发经验，曾多次带队参加全国飞思卡尔杯智能车大赛</p> 
-							<p><span class="slash">/</span>  将于 2015 年末硕士毕业后，全职加⼊公司</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="article profile" id="article-7">
-			<div class="bg">
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-md-6">
-						<img class="img-responsive" src="images/about-article7.jpg">
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="profile-name">
-							<h1 class="text-justify">毛一然<span>IT工程师</span></h1>
-						</div>
-						<div class="profile-text">
-							<p><span class="slash">/</span>88 年，清华大学经济管理学院信息管理与信息系统本科</p>
-							<p><span class="slash">/</span>美国纽约大学计算机科学硕士</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="article profile" id="article-8">
-			<div class="bg">
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-md-6">
-						<img class="img-responsive" src="images/about-article8.jpg">
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="profile-name">
-							<h1 class="text-justify">于君强<span>供应链管理</span></h1>
-						</div>
-						<div class="profile-text">
-							<p><span class="slash">/</span>  87年，西安空军工程大学</p>
-							<p><span class="slash">/</span>  5年制造业经验</p>
-							<p><span class="slash">/</span>  曾先后供职于江苏昆山希安思塑料制品有限公司开发部、苏州安健精密模具有限公司开发部</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="article profile" id="article-9">
-			<div class="bg">
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-md-6">
-						<img class="img-responsive" src="images/about-article9.jpg">
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="profile-name">
-							<h1 class="text-justify">俞敏<span>生产管理</span></h1>
-						</div>
-						<div class="profile-text">
-							<p><span class="slash">/</span>  75 年，原启东色织厂生产管理，20 年机电⾏业经验</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="article profile" id="article-10">
-			<div class="bg">
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-md-6">
-						<img class="img-responsive" src="images/about-article10.jpg">
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="profile-name">
-							<h1 class="text-justify">安海超<span>品质</span></h1>
-						</div>
-						<div class="profile-text">
-							<p><span class="slash">/</span>  原东升公司机修工，多年机修工作经历</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="article profile" id="article-11">
-			<div class="bg">
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-md-6">
-						<img class="img-responsive" src="images/about-article11.jpg">
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="profile-name">
-							<h1 class="text-justify">赵文杰<span>生产</span></h1>
-						</div>
-						<div class="profile-text">
-							<p><span class="slash">/</span>  原上海旭博外墙装饰有限公司资料员、施工员</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="article article-narrow article-center" id="article-12">
-			<div class="bg">
+				<div class="background"></div>
 				<div class="foreground"></div>
+				<div class="bg-items"></div>
 			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="title">
-							<h2>这个团队可以更壮大</h2>
-						</div>
-						<h4>如果你喜欢我们的愿景，不妨联系我们</h4>
-						<h3>join@movetechs.com</h3>
+						<h1>这个团队可以更壮大</h1>
+						<span class="mis-2">如果你喜欢我们的愿景，不妨联系我们</span>
+						<h3>yuhao@movetechs.com</h3>
 					</div>
 				</div>
 			</div>
