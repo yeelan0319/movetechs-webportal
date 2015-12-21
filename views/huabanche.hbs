@@ -44,10 +44,16 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 
 </style>
 <div class="main">
-	<nav class="navbar navbar-lite navbar-secondary hidden-xs">
+	<nav class="navbar navbar-lite navbar-secondary">
 		<div class="outer-container">
 		  <div class="container">
-		    <div class="collapse navbar-collapse">
+			  <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#secondary-nav">
+		        <span class="sr-only">Toggle navigation</span>
+		        K1<i class="material-icons">&#xE313;</i>
+		      </button>
+		    </div>
+		    <div class="collapse navbar-collapse" id="secondary-nav">
 		      <ul class="nav navbar-nav">
 		      	<li><a>K1</a></li>
 		      	<li class="hyperlink active" data-hyperlink="overview"><a>概览</a></li>

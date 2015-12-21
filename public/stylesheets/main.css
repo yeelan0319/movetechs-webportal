@@ -58,18 +58,38 @@ h1 {
   font-weight: 100;
   line-height: 48px;
   display: block; }
+  @media only screen and (max-width: 992px) {
+    h1 {
+      font-size: 32px;
+      line-height: 42px; } }
+  @media only screen and (max-width: 768px) {
+    h1 {
+      font-size: 24px;
+      line-height: 36px; } }
 
 h2 {
   font-size: 24px;
   font-weight: 600;
   line-height: 36px;
   display: block; }
+  @media only screen and (max-width: 992px) {
+    h2 {
+      font-size: 22px; } }
+  @media only screen and (max-width: 768px) {
+    h2 {
+      font-size: 20px; } }
 
 h3 {
   font-size: 24px;
   font-weight: 100;
   line-height: 36px;
   display: block; }
+  @media only screen and (max-width: 992px) {
+    h3 {
+      font-size: 22px; } }
+  @media only screen and (max-width: 768px) {
+    h3 {
+      font-size: 20px; } }
 
 p, html, body, footer, nav.navbar, .btn {
   font-size: 14px;
@@ -84,6 +104,9 @@ small {
   line-height: 18px;
   display: block;
   margin-bottom: 5px; }
+  @media only screen and (max-width: 768px) {
+    small {
+      font-size: 14px; } }
 
 span {
   text-align: justify;
@@ -92,8 +115,15 @@ span {
   span.mis1 {
     font-size: 20px;
     line-height: 36px; }
+    @media only screen and (max-width: 768px) {
+      span.mis1 {
+        font-size: 18px; } }
   span.mis2 {
     font-size: 16px; }
+    @media only screen and (max-width: 768px) {
+      span.mis2 {
+        font-size: 14px;
+        line-height: 24px; } }
 
 .table-borderless thead tr th, .table-borderless thead tr td, .table-borderless tbody tr th, .table-borderless tbody tr td, .table-borderless tfoot tr th, .table-borderless tfoot tr td {
   border: none;
@@ -159,6 +189,12 @@ span {
   font-weight: 600;
   src: url("../fonts/SourceHanSansSC-Medium.eot");
   src: url("../fonts/SourceHanSansSC-Medium.eot?#font-spider") format("embedded-opentype"), url("../fonts/SourceHanSansSC-Medium.woff") format("woff"), url("../fonts/SourceHanSansSC-Medium.ttf") format("truetype"), url("../fonts/SourceHanSansSC-Medium.svg") format("svg"); }
+@font-face {
+  font-family: 'Han Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/SourceHanSansSC-Bold.eot");
+  src: url("../fonts/SourceHanSansSC-Bold.eot?#font-spider") format("embedded-opentype"), url("../fonts/SourceHanSansSC-Bold.woff") format("woff"), url("../fonts/SourceHanSansSC-Bold.ttf") format("truetype"), url("../fonts/SourceHanSansSC-Bold.svg") format("svg"); }
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -250,6 +286,7 @@ nav.navbar {
   nav.navbar.navbar-fixed {
     position: fixed; }
   nav.navbar .navbar-brand {
+    display: block;
     height: auto;
     line-height: auto;
     padding: 16px 15px;
@@ -260,17 +297,22 @@ nav.navbar {
     nav.navbar .navbar-brand img {
       width: 88px;
       padding: 0px; }
+      @media only screen and (max-width: 768px) {
+        nav.navbar .navbar-brand img {
+          margin: 0 auto; } }
   nav.navbar .nav.navbar-right {
     margin-right: 0px; }
-    nav.navbar .nav.navbar-right li:last-child {
-      margin-right: 0px;
-      padding-right: 0px; }
+    @media only screen and (min-width: 992px) {
+      nav.navbar .nav.navbar-right li:last-child {
+        margin-right: 0px;
+        padding-right: 0px; } }
   nav.navbar .nav li {
     margin: 0px 10px;
     padding: 0px 10px; }
-    nav.navbar .nav li:first-child {
-      margin-left: 0px;
-      padding-left: 0px; }
+    @media only screen and (min-width: 992px) {
+      nav.navbar .nav li:first-child {
+        margin-left: 0px;
+        padding-left: 0px; } }
     nav.navbar .nav li a {
       text-align: center;
       height: 50px;
@@ -285,37 +327,35 @@ nav.navbar {
   @media only screen and (max-width: 768px) {
     nav.navbar .navbar-toggle {
       position: absolute;
+      top: 0px;
       right: 0px;
       margin-top: 8px;
       margin-bottom: 8px; }
+      nav.navbar .navbar-toggle .icon-bar {
+        margin-bottom: 0px; }
     nav.navbar .navbar-brand {
-      float: none; }
-      nav.navbar .navbar-brand img {
-        display: inline; } }
+      float: none; } }
   nav.navbar.navbar-secondary {
     -webkit-transition: none;
     -moz-transition: none;
     -o-transition: none;
     transition: none; }
-    nav.navbar.navbar-secondary .navbar-collapse {
-      height: 50px !important;
-      overflow: hidden !important; }
-      nav.navbar.navbar-secondary .navbar-collapse li {
-        -webkit-transition: all 0.2s ease;
-        -moz-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
-        transition: all 0.2s ease; }
-        nav.navbar.navbar-secondary .navbar-collapse li.active {
-          border-bottom: 2px solid #f04e41; }
-          nav.navbar.navbar-secondary .navbar-collapse li.active a {
-            color: #f04e41; }
-        nav.navbar.navbar-secondary .navbar-collapse li:first-child a {
-          cursor: default; }
-        nav.navbar.navbar-secondary .navbar-collapse li a {
-          display: inline-block;
-          line-height: 50px;
-          cursor: pointer;
-          margin-bottom: -2px; }
+    nav.navbar.navbar-secondary .navbar-collapse li {
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      transition: all 0.2s ease; }
+      nav.navbar.navbar-secondary .navbar-collapse li.active {
+        border-bottom: 2px solid #f04e41; }
+        nav.navbar.navbar-secondary .navbar-collapse li.active a {
+          color: #f04e41; }
+      nav.navbar.navbar-secondary .navbar-collapse li:first-child a {
+        cursor: default; }
+      nav.navbar.navbar-secondary .navbar-collapse li a {
+        display: inline-block;
+        line-height: 50px;
+        cursor: pointer;
+        margin-bottom: -2px; }
     nav.navbar.navbar-secondary.navbar-fixed {
       border-bottom: 1px solid #e5e5e5;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1); }

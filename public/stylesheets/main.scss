@@ -36,7 +36,7 @@ $grey-fallback: rgb(35,37,43);
 	display: inline;
 	@extend .text-default;
 }
-.headline {
+.headline {  // 与h1配合的段落特殊字体标题（突破X）
 	@extend .font-cleanup;
 	font-family: Gotham;
 	font-size: 32px;
@@ -44,42 +44,62 @@ $grey-fallback: rgb(35,37,43);
 	line-height: 42px;
 	display:block;
 }
-.catch-copy {
+.catch-copy {  //强调
 	@extend .font-cleanup;
 	font-size: 32px;
 	font-weight: 800;
 	line-height: 42px;
 	display:block;
 }
-.hyperlink {
+.hyperlink {  
 	cursor: pointer;
 	@extend .text-not-selectable;
 	&:hover {
 		text-decoration: underline;
 	}
 }
-h1 {
+h1 {  //标题1
 	@extend .font-cleanup;
 	font-size: 36px;
 	font-weight: 100;
 	line-height: 48px;
 	display: block;
+	@media only screen and (max-width: 992px) {  //Tablet
+		font-size: 32px;
+		line-height: 42px;
+	}
+	@media only screen and (max-width: 768px) {  //Phone
+		font-size: 24px;
+		line-height: 36px;
+	}
 }
-h2 {
+h2 {  //副标题
 	@extend .font-cleanup;
 	font-size: 24px;
 	font-weight: 600;
 	line-height: 36px;
 	display: block;
+	@media only screen and (max-width: 992px) {  //Tablet
+		font-size: 22px;
+	}
+	@media only screen and (max-width: 768px) {  //Phone
+		font-size: 20px;
+	}
 }
-h3 {
+h3 {   //标题2
 	@extend .font-cleanup;
 	font-size: 24px;
 	font-weight: 100;
 	line-height: 36px;
 	display: block;
+	@media only screen and (max-width: 992px) {  //Tablet
+		font-size: 22px;
+	}
+	@media only screen and (max-width: 768px) {  //Phone
+		font-size: 20px;
+	}
 }
-p {
+p {   //正文
 	@extend .font-cleanup;
 	font-size: 14px;
 	font-weight: 400;
@@ -87,25 +107,35 @@ p {
 	text-align: justify; 
   text-justify: ideographic;
 }
-small {
+small {  //补充说明
 	@extend .font-cleanup;
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 18px;
 	display: block;
 	margin-bottom: 5px;
+	@media only screen and (max-width: 768px) {  //Phone
+		font-size: 14px;
+	}
 }
 span {
 	@extend .font-cleanup;
 	text-align: justify; 
   text-justify: ideographic;
 	font-weight: 400;
-	&.mis1 {
+	&.mis1 {  //其他文字1
 		font-size: 20px;
 		line-height: 36px;
+		@media only screen and (max-width: 768px) {  //Phone
+			font-size: 18px;
+		}
 	}
-	&.mis2 {
+	&.mis2 {   //其他文字2
 		font-size: 16px;
+		@media only screen and (max-width: 768px) {  //Phone
+			font-size: 14px;
+			line-height: 24px;
+		}
 	}
 }
 
@@ -224,6 +254,17 @@ $footer-height: 50px;
     url('../fonts/SourceHanSansSC-Medium.svg') format('svg');
 }
 @font-face {
+  font-family: 'Han Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/SourceHanSansSC-Bold.eot');
+  src:
+    url('../fonts/SourceHanSansSC-Bold.eot?#font-spider') format('embedded-opentype'),
+    url('../fonts/SourceHanSansSC-Bold.woff') format('woff'),
+    url('../fonts/SourceHanSansSC-Bold.ttf') format('truetype'),
+    url('../fonts/SourceHanSansSC-Bold.svg') format('svg');
+}
+@font-face {
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
@@ -339,6 +380,7 @@ nav.navbar{
 
 	/*apply to all navbars, when on laptop remove padding*/
 	.navbar-brand{
+		display: block;
 		height: auto;
 		line-height: auto;
 		padding: 16px 15px;
@@ -349,22 +391,29 @@ nav.navbar{
 		img {
 			width: 88px;
 			padding: 0px;
+			@media only screen and (max-width: 768px){
+				margin: 0 auto;
+			}
 		}
 	}
 	.nav {
 		&.navbar-right{
 			margin-right: 0px;
-			li:last-child {
-				margin-right: 0px;
-				padding-right: 0px;
+			@media only screen and (min-width: 992px){
+				li:last-child {
+					margin-right: 0px;
+					padding-right: 0px;
+				}
 			}
 		}
 		li{
 			margin: 0px 10px;
 			padding: 0px 10px;
-			&:first-child {
-				margin-left: 0px;
-				padding-left: 0px;
+			@media only screen and (min-width: 992px){
+				&:first-child {
+					margin-left: 0px;
+					padding-left: 0px;
+				}
 			}
 			a {
 				text-align: center;
@@ -387,15 +436,16 @@ nav.navbar{
 	@media only screen and (max-width: 768px){
 		.navbar-toggle{
 			position: absolute;
+			top: 0px;
 			right: 0px;
 			margin-top: 8px;
 			margin-bottom: 8px;
+			.icon-bar{
+				margin-bottom: 0px;
+			}
 		}
 		.navbar-brand{
 			float: none;
-			img{
-				display: inline;
-			}
 		}
 	}
 
@@ -403,8 +453,8 @@ nav.navbar{
 		@include transition(none);
 
 		.navbar-collapse{
-			height: $navbar-height !important;
-			overflow: hidden !important;
+			// height: $navbar-height !important;
+			// overflow: hidden !important;
 
 			li{
 				@include transition(all 0.2s ease);
