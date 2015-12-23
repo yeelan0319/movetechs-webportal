@@ -67,4 +67,10 @@ function redoLayoutArticle(article){
 $(document).ready(function(){
 	redoLayout();
 	$(window).resize(redoLayout);
+	$('.navbar-collapse').on('show.bs.collapse', function(){
+		$(this).parents('.navbar').addClass('bg-opaque');
+	});
+	$('.navbar-collapse').on('hide.bs.collapse', function(){
+		$(this).parents('.navbar').removeClass('bg-opaque');
+	});
 });

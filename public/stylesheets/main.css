@@ -1,3 +1,4 @@
+/*media query*/
 /*color-palette*/
 /*This is default font color, darkest, should be used on lite background*/
 .text-default, .font-cleanup, .catch-copy, h1, h2, h3, p, html, body, footer, nav.navbar, .btn, small, span, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a, nav.navbar.navbar-lite.navbar-secondary .outer-container .navbar-collapse li:first-child > a:hover {
@@ -55,7 +56,7 @@ h1 {
   font-weight: 100;
   line-height: 48px;
   display: block; }
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 1069px) {
     h1 {
       font-size: 32px;
       line-height: 42px; } }
@@ -69,7 +70,7 @@ h2 {
   font-weight: 600;
   line-height: 36px;
   display: block; }
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 1069px) {
     h2 {
       font-size: 22px; } }
   @media only screen and (max-width: 768px) {
@@ -81,7 +82,7 @@ h3 {
   font-weight: 100;
   line-height: 36px;
   display: block; }
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 1069px) {
     h3 {
       font-size: 22px; } }
   @media only screen and (max-width: 768px) {
@@ -116,7 +117,8 @@ span {
       span.mis1 {
         font-size: 18px; } }
   span.mis2 {
-    font-size: 16px; }
+    font-size: 16px;
+    line-height: 16px; }
     @media only screen and (max-width: 768px) {
       span.mis2 {
         font-size: 14px;
@@ -227,7 +229,7 @@ html, body {
   height: 100%;
   background: white;
   font-family: "Gotham light","Helvetica Neue", Helvetica, Arial, "Han Sans", sans-serif; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1069px) {
     html .container, body .container {
       width: 1004px !important; } }
 
@@ -299,14 +301,14 @@ nav.navbar {
           margin: 0 auto; } }
   nav.navbar .nav.navbar-right {
     margin-right: 0px; }
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: 1069px) {
       nav.navbar .nav.navbar-right li:last-child {
         margin-right: 0px;
         padding-right: 0px; } }
   nav.navbar .nav li {
     margin: 0px 10px;
     padding: 0px 10px; }
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: 1069px) {
       nav.navbar .nav li:first-child {
         margin-left: 0px;
         padding-left: 0px; } }
@@ -318,7 +320,7 @@ nav.navbar {
       nav.navbar .nav li a:hover, nav.navbar .nav li a:visited, nav.navbar .nav li a:focus {
         text-decoration: none;
         background-color: transparent; }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1069px) {
     nav.navbar .navbar-collapse {
       padding: 0px; } }
   @media only screen and (max-width: 768px) {
@@ -330,6 +332,17 @@ nav.navbar {
       margin-bottom: 8px; }
       nav.navbar .navbar-toggle .icon-bar {
         margin-bottom: 0px; } }
+  @media only screen and (max-width: 768px) {
+    nav.navbar.navbar-primary .navbar-collapse {
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none; }
+      nav.navbar.navbar-primary .navbar-collapse .nav li:last-child {
+        margin-bottom: 12px; }
+      nav.navbar.navbar-primary .navbar-collapse .nav li a {
+        font-size: 18px;
+        line-height: 60px;
+        height: 60px; } }
   nav.navbar.navbar-secondary {
     -webkit-transition: none;
     -moz-transition: none;
@@ -362,19 +375,25 @@ nav.navbar {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none; }
+    nav.navbar.navbar-default.bg-opaque {
+      background-color: #23252b; }
     nav.navbar.navbar-default .navbar-toggle .icon-bar {
       background-color: #fff; }
   nav.navbar.navbar-lite {
-    background-color: transparent;
+    background-color: #fff;
+    background: rgba(255, 255, 255, 0.96);
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none; }
-    nav.navbar.navbar-lite .outer-container {
-      background-color: #fff;
-      background: rgba(255, 255, 255, 0.96); }
+    nav.navbar.navbar-lite.bg-opaque {
+      background-color: #fff; }
     nav.navbar.navbar-lite.navbar-secondary .outer-container .navbar-collapse {
+      -moz-box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
+      -webkit-box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
       box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1); }
     nav.navbar.navbar-lite.navbar-secondary.navbar-fixed .outer-container .navbar-collapse {
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
       box-shadow: none; }
   nav.navbar.navbar-dark {
     background-color: black;

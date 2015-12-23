@@ -1,8 +1,13 @@
+/*media query*/
+$desktop-min: 1069px;
+$tablet-max: $desktop-min;
+$tablet-min: 768px;
+$phone-max: $tablet-min;
 /*color-palette*/
 $red: #f04e41;
 $red-hover: #f15a4e;
-$grey: rgba(35,37,43,0.96);
-$grey-fallback: rgb(35,37,43);
+$grey-opacity96: rgba(35,37,43,0.96);
+$grey-opaque: rgb(35,37,43);
 /*This is default font color, darkest, should be used on lite background*/
 .text-default{
 	color: #333;
@@ -61,11 +66,11 @@ h1 {  //标题1
 	font-weight: 100;
 	line-height: 48px;
 	display: block;
-	@media only screen and (max-width: 992px) {  //Tablet
+	@media only screen and (max-width: $tablet-max) {  //Tablet
 		font-size: 32px;
 		line-height: 42px;
 	}
-	@media only screen and (max-width: 768px) {  //Phone
+	@media only screen and (max-width: $phone-max) {  //Phone
 		font-size: 24px;
 		line-height: 36px;
 	}
@@ -76,10 +81,10 @@ h2 {  //副标题
 	font-weight: 600;
 	line-height: 36px;
 	display: block;
-	@media only screen and (max-width: 992px) {  //Tablet
+	@media only screen and (max-width: $tablet-max) {  //Tablet
 		font-size: 22px;
 	}
-	@media only screen and (max-width: 768px) {  //Phone
+	@media only screen and (max-width: $phone-max) {  //Phone
 		font-size: 20px;
 	}
 }
@@ -89,10 +94,10 @@ h3 {   //标题2
 	font-weight: 100;
 	line-height: 36px;
 	display: block;
-	@media only screen and (max-width: 992px) {  //Tablet
+	@media only screen and (max-width: $tablet-max) {  //Tablet
 		font-size: 22px;
 	}
-	@media only screen and (max-width: 768px) {  //Phone
+	@media only screen and (max-width: $phone-max) {  //Phone
 		font-size: 20px;
 	}
 }
@@ -111,7 +116,7 @@ small {  //补充说明
 	line-height: 18px;
 	display: block;
 	margin-bottom: 5px;
-	@media only screen and (max-width: 768px) {  //Phone
+	@media only screen and (max-width: $phone-max) {  //Phone
 		font-size: 14px;
 	}
 }
@@ -123,13 +128,14 @@ span {
 	&.mis1 {  //其他文字1
 		font-size: 20px;
 		line-height: 36px;
-		@media only screen and (max-width: 768px) {  //Phone
+		@media only screen and (max-width: $phone-max) {  //Phone
 			font-size: 18px;
 		}
 	}
 	&.mis2 {   //其他文字2
 		font-size: 16px;
-		@media only screen and (max-width: 768px) {  //Phone
+		line-height:16px;
+		@media only screen and (max-width: $phone-max) {  //Phone
 			font-size: 14px;
 			line-height: 24px;
 		}
@@ -307,7 +313,7 @@ html, body {
 	background: white;
 	font-family: "Gotham light","Helvetica Neue", Helvetica, Arial, "Han Sans", sans-serif;
 	
-	@media only screen and (min-width: 768px) {
+	@media only screen and (min-width: $desktop-min) {
 		.container {
 			width:1004px !important;
 		}
@@ -388,7 +394,7 @@ nav.navbar{
 		img {
 			width: 88px;
 			padding: 0px;
-			@media only screen and (max-width: 768px){
+			@media only screen and (max-width: $phone-max) {  //Phone
 				margin: 0 auto;
 			}
 		}
@@ -396,7 +402,7 @@ nav.navbar{
 	.nav {
 		&.navbar-right{
 			margin-right: 0px;
-			@media only screen and (min-width: 992px){
+			@media only screen and (min-width: $desktop-min){  //Desktop
 				li:last-child {
 					margin-right: 0px;
 					padding-right: 0px;
@@ -406,7 +412,7 @@ nav.navbar{
 		li{
 			margin: 0px 10px;
 			padding: 0px 10px;
-			@media only screen and (min-width: 992px){
+			@media only screen and (min-width: $desktop-min){  //Desktop
 				&:first-child {
 					margin-left: 0px;
 					padding-left: 0px;
@@ -425,12 +431,12 @@ nav.navbar{
 			}
 		}
 	}
-	@media only screen and (min-width: 768px){
+	@media only screen and (min-width: $desktop-min){  //Desktop
 		.navbar-collapse{
 			padding: 0px;
 		}
 	}
-	@media only screen and (max-width: 768px){
+	@media only screen and (max-width: $phone-max){  // Phone
 		.navbar-toggle{
 			position: absolute;
 			top: 0px;
@@ -441,11 +447,24 @@ nav.navbar{
 				margin-bottom: 0px;
 			}
 		}
-		// .navbar-brand{
-		// 	float: none;
-		// }
 	}
-
+	&.navbar-primary {
+		@media only screen and (max-width: $phone-max){  // Phone
+			.navbar-collapse {
+				@include box-shadow(none);
+				.nav li {			
+					&:last-child {
+						margin-bottom: 12px;
+					}
+					a{
+						font-size: 18px;
+						line-height: 60px;
+						height:60px;
+					}
+				}
+			}
+		}
+	}
 	&.navbar-secondary{
 		@include transition(none);
 
@@ -485,8 +504,11 @@ nav.navbar{
 
 	/*default, lite, etc.. are only adjust styles*/
 	&.navbar-default{
-		background-color: $grey-fallback;
-		background-color: $grey;
+		background-color: $grey-opaque;  //use this as fallback
+		background-color: $grey-opacity96;
+		&.bg-opaque {
+			background-color: $grey-opaque;
+		}
 		@include box-shadow(none);
 
 		.navbar-brand, li>a{
@@ -503,13 +525,14 @@ nav.navbar{
 	}
 
 	&.navbar-lite{
-		background-color: transparent;
+		background-color: #fff;
+		background: rgba(255,255,255,0.96);
+		&.bg-opaque{
+			background-color: #fff;
+		}
 		@include box-shadow(none);
 
 		.outer-container{
-			background-color: #fff;
-			background: rgba(255,255,255,0.96);
-
 			.navbar-brand, li>a{
 				@extend .text-default;
 
@@ -520,7 +543,7 @@ nav.navbar{
 		}
 		&.navbar-secondary {
 			.outer-container .navbar-collapse {
-				box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
+				@include box-shadow(inset 0px -1px 0px rgba(0, 0, 0, 0.1));
 
 				li:first-child>a:hover {
 					@extend .text-default;
@@ -529,7 +552,7 @@ nav.navbar{
 		}
 		&.navbar-secondary.navbar-fixed {
 			.outer-container .navbar-collapse {
-				box-shadow: none;
+				@include box-shadow(none);
 			}
 		}
 	}
