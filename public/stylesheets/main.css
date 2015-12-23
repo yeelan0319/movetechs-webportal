@@ -1,6 +1,6 @@
 /*color-palette*/
 /*This is default font color, darkest, should be used on lite background*/
-.text-default, .font-cleanup, .headline, .catch-copy, h1, h2, h3, p, html, body, footer, nav.navbar, .btn, small, span, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a, nav.navbar.navbar-lite.navbar-secondary .outer-container li:first-child > a:hover {
+.text-default, .font-cleanup, .catch-copy, h1, h2, h3, p, html, body, footer, nav.navbar, .btn, small, span, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a, nav.navbar.navbar-lite.navbar-secondary .outer-container .navbar-collapse li:first-child > a:hover {
   color: #333; }
 
 /*This is brightest font color, should be used on dark background*/
@@ -28,25 +28,22 @@
   user-select: none;
   /* Likely future */ }
 
-.font-cleanup, .headline, .catch-copy, h1, h2, h3, p, html, body, footer, nav.navbar, .btn, small, span {
+.font-cleanup, .catch-copy, h1, h2, h3, p, html, body, footer, nav.navbar, .btn, small, span {
   margin: 0px;
   margin-bottom: 16px;
   padding: 0px;
   line-height: auto;
   display: inline; }
 
-.headline {
-  font-family: Gotham;
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 42px;
-  display: block; }
-
 .catch-copy {
   font-size: 32px;
   font-weight: 800;
   line-height: 42px;
   display: block; }
+  .catch-copy em {
+    font-family: Gotham;
+    font-size: 65px;
+    font-style: normal; }
 
 .hyperlink {
   cursor: pointer; }
@@ -332,9 +329,7 @@ nav.navbar {
       margin-top: 8px;
       margin-bottom: 8px; }
       nav.navbar .navbar-toggle .icon-bar {
-        margin-bottom: 0px; }
-    nav.navbar .navbar-brand {
-      float: none; } }
+        margin-bottom: 0px; } }
   nav.navbar.navbar-secondary {
     -webkit-transition: none;
     -moz-transition: none;
@@ -377,6 +372,10 @@ nav.navbar {
     nav.navbar.navbar-lite .outer-container {
       background-color: #fff;
       background: rgba(255, 255, 255, 0.96); }
+    nav.navbar.navbar-lite.navbar-secondary .outer-container .navbar-collapse {
+      box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1); }
+    nav.navbar.navbar-lite.navbar-secondary.navbar-fixed .outer-container .navbar-collapse {
+      box-shadow: none; }
   nav.navbar.navbar-dark {
     background-color: black;
     -moz-box-shadow: none;

@@ -36,20 +36,17 @@ $grey-fallback: rgb(35,37,43);
 	display: inline;
 	@extend .text-default;
 }
-.headline {  // 与h1配合的段落特殊字体标题（突破X）
-	@extend .font-cleanup;
-	font-family: Gotham;
-	font-size: 32px;
-	font-weight: 800;
-	line-height: 42px;
-	display:block;
-}
 .catch-copy {  //强调
 	@extend .font-cleanup;
 	font-size: 32px;
 	font-weight: 800;
 	line-height: 42px;
 	display:block;
+	em {
+		font-family: Gotham;
+    font-size: 65px;
+    font-style: normal;
+	}
 }
 .hyperlink {  
 	cursor: pointer;
@@ -444,9 +441,9 @@ nav.navbar{
 				margin-bottom: 0px;
 			}
 		}
-		.navbar-brand{
-			float: none;
-		}
+		// .navbar-brand{
+		// 	float: none;
+		// }
 	}
 
 	&.navbar-secondary{
@@ -522,8 +519,17 @@ nav.navbar{
 			}
 		}
 		&.navbar-secondary {
-			.outer-container li:first-child>a:hover {
-				@extend .text-default;
+			.outer-container .navbar-collapse {
+				box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
+
+				li:first-child>a:hover {
+					@extend .text-default;
+				}
+			}
+		}
+		&.navbar-secondary.navbar-fixed {
+			.outer-container .navbar-collapse {
+				box-shadow: none;
 			}
 		}
 	}
