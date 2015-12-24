@@ -67,14 +67,14 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 		<div class="outer-container">
 		  <div class="container">
 			  <div class="navbar-header">
+			  	<a class="navbar-brand"><span>K1</span></a>
 		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#secondary-nav">
 		        <span class="sr-only">Toggle navigation</span>
-		        <a class="navbar-brand">K1<i class="material-icons">&#xE313;</i></a>
+		        <i class="material-icons">&#xE313;</i>
 		      </button>
 		    </div>
 		    <div class="collapse navbar-collapse" id="secondary-nav">
 		      <ul class="nav navbar-nav">
-		      	<li><a>K1</a></li>
 		      	<li class="hyperlink active" data-hyperlink="overview"><a>概览</a></li>
 		        <li class="hyperlink" data-hyperlink="breakthroughs"><a>四大突破</a></li>
 		        <li class="hyperlink" data-hyperlink="improvements"><a>数十项改进</a></li>
@@ -656,6 +656,7 @@ nav.navbar.navbar-default li > a[href~="/scooter"], nav.navbar.navbar-default li
 			if(current.attr('id') == target) {
 				return;
 			}
+			$('#secondary-nav').collapse('hide');
 			jumpToContent(target);
 		});
 		$('#rotate-slider').slider({

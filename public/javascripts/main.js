@@ -68,9 +68,20 @@ $(document).ready(function(){
 	redoLayout();
 	$(window).resize(redoLayout);
 	$('.navbar-collapse').on('show.bs.collapse', function(){
-		$(this).parents('.navbar').addClass('bg-opaque');
+		var nav = $(this).parents('.navbar');
+		nav.addClass('bg-opaque');
+		if(nav.hasClass('navbar-primary')) {
+			$('#secondary-nav').collapse('hide');
+		}
+		else {
+			nav.find('.navbar-header button').addClass('in');
+		}
 	});
 	$('.navbar-collapse').on('hide.bs.collapse', function(){
-		$(this).parents('.navbar').removeClass('bg-opaque');
+		var nav = $(this).parents('.navbar')
+		nav.removeClass('bg-opaque');
+		if(nav.hasClass('navbar-secondary')) {
+			nav.find('.navbar-header button').removeClass('in');
+		}
 	});
 });

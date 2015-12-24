@@ -140,6 +140,12 @@ span {
 			line-height: 24px;
 		}
 	}
+	&.misnav {
+		@extend p;
+		@media only screen and (max-width: $phone-max) {  //Phone
+			font-size: 18px;
+		}
+	}
 }
 
 $navbar-height: 50px;
@@ -163,6 +169,12 @@ $footer-height: 50px;
   -moz-transition: $animation;
   -o-transition: $animation;
   transition: $animation;
+}
+@mixin transform($transform){
+  -ms-transform: $transform;
+  -moz-transform: $transform;
+  -webkit-transform: $transform;
+  transform: $transform;
 }
 
 .table-borderless{
@@ -371,10 +383,7 @@ nav.navbar{
 	@include border-radius(0px);
 	@include transition(all 0.5s ease);
 	
-	@extend p;
 	@extend .text-not-selectable;
-
-	z-index: 9999;
 
 	/*override when navbar is fixed at top*/
 	&.navbar-fixed{
@@ -386,7 +395,6 @@ nav.navbar{
 		display: block;
 		height: auto;
 		line-height: auto;
-		padding: 16px 15px;
 		opacity: 1;
 		/*&:hover{
 			opacity: 0.8;
@@ -412,12 +420,6 @@ nav.navbar{
 		li{
 			margin: 0px 10px;
 			padding: 0px 10px;
-			@media only screen and (min-width: $desktop-min){  //Desktop
-				&:first-child {
-					margin-left: 0px;
-					padding-left: 0px;
-				}
-			}
 			a {
 				text-align: center;
 				height: $navbar-height;
@@ -449,6 +451,11 @@ nav.navbar{
 		}
 	}
 	&.navbar-primary {
+		@extend span.misnav;
+		z-index:10000;
+		.navbar-brand{
+			padding: 16px 15px;
+		}
 		@media only screen and (max-width: $phone-max){  // Phone
 			.navbar-collapse {
 				@include box-shadow(none);
@@ -457,7 +464,6 @@ nav.navbar{
 						margin-bottom: 12px;
 					}
 					a{
-						font-size: 18px;
 						line-height: 60px;
 						height:60px;
 					}
@@ -466,8 +472,28 @@ nav.navbar{
 		}
 	}
 	&.navbar-secondary{
+		@extend p;
+		z-index:9999;
 		@include transition(none);
-
+		.navbar-header {
+			.navbar-brand {
+				padding: 11px 10px 11px 0px;
+				margin-right: 10px;
+				cursor: default;
+				@media only screen and (max-width: $phone-max){  // Phone
+					padding-left: 15px;
+				}
+			}
+			button{
+				@include transition(all 0.2s ease);
+				&.in{
+					@include transform(rotate(180deg));
+				}
+			}
+			.navbar-brand span, button i{
+				@extend span.misnav;
+			}	
+		}
 		.navbar-collapse{
 			// height: $navbar-height !important;
 			// overflow: hidden !important;
@@ -477,6 +503,9 @@ nav.navbar{
 
 				&.active{
 					border-bottom: 2px solid $red;
+					@media only screen and (max-width: $phone-max){  // Phone
+						border: none;
+					}
 					a {
 						color: $red;
 					}
@@ -544,10 +573,6 @@ nav.navbar{
 		&.navbar-secondary {
 			.outer-container .navbar-collapse {
 				@include box-shadow(inset 0px -1px 0px rgba(0, 0, 0, 0.1));
-
-				li:first-child>a:hover {
-					@extend .text-default;
-				}
 			}
 		}
 		&.navbar-secondary.navbar-fixed {
