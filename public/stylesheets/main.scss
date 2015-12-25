@@ -1,8 +1,8 @@
 /*media query*/
 $desktop-min: 1069px;
-$tablet-max: $desktop-min;
+$tablet-max: 1068px;
 $tablet-min: 768px;
-$phone-max: $tablet-min;
+$phone-max: 767px;
 /*color-palette*/
 $red: #f04e41;
 $red-hover: #f15a4e;
@@ -346,8 +346,11 @@ footer{
 	position: relative;
 	line-height: $footer-height;	
 	z-index: 9999;
-	@extend p;
-
+	background-color: #f8f8f8;
+	.container {
+		border-top: 1px solid #e6e6e6;
+	}
+	
 	&.footer-fixed{
 		position: fixed;
 		left: 0px;
@@ -358,6 +361,7 @@ footer{
 		position: relative;
 		height: $footer-height;
 		background-color: #f8f8f8;
+		@extend p;
 		p {
 			color: #888;
 		}
@@ -365,11 +369,8 @@ footer{
 }
 
 footer, .page-wrap:after {
+	display:block;
 	height: $footer-height;
-	background-color: #f8f8f8;
-	.container {
-		border-top: 1px solid #e6e6e6;
-	}
 }
 nav.navbar{
 	position: absolute;
@@ -523,8 +524,8 @@ nav.navbar{
 		}
 
 		&.navbar-fixed{
-			border-bottom: 1px solid #e5e5e5;
-			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			border-bottom: 1px solid #e5e5e5\9; /* IE8 and below */
+			@include box-shadow(inset 0px -1px 0px rgba(0, 0, 0, 0.1));
 			.navbar-collapse{
 				border-bottom: none;
 			}
