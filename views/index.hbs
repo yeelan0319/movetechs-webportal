@@ -3,11 +3,30 @@
 	nav.navbar.navbar-default li > a[href~="/"], nav.navbar.navbar-default li > a[href~="/about"]:hover{
 		color:#999;
 	}
+	nav.navbar.navbar-secondary .navbar-collapse li a:hover{
+		color:#333;
+	}
 	.article#jumbotron .container-fluid, .article#jumbotron .col-sm-6{
 		padding: 0px;
 	}
 	.article#jumbotron>.container-fluid{
 		width: 100%;
+	}
+	.article#jumbotron-mobile .carousel-indicators{
+		bottom: 6.5px;
+	}
+	.article#jumbotron-mobile .carousel-indicators li{
+		width:8px;
+		height:8px;
+		background-color:#888;
+		margin: 0px 6px;
+		border: 1px solid #888;
+	}
+	.article#jumbotron-mobile .carousel-indicators li.active {
+		width: 8px;
+		height: 8px;
+		background-color:#fff;
+		border-color: #888;
 	}
 	.main-intro {
 		padding-bottom: 48px;
@@ -39,7 +58,7 @@
 	});
 </script>
 <div class="main">
-	<div class="article article-750 article-center article-v-center" id="jumbotron">
+	<div class="article article-750 article-center article-v-center hidden-sm hidden-xs" id="jumbotron">
 		<div class="bg">
 			<div class="foreground"></div>
 			<div class="bg-items">
@@ -68,11 +87,38 @@
 			</div>
 		</div>
 	</div>
+	<div class="article hidden-md hidden-lg" id="jumbotron-mobile">
+		<div id="index-carousel" class="carousel slide" data-ride="carousel">
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#index-carousel" data-slide-to="0" class="active"></li>
+		    <li data-target="#index-carousel" data-slide-to="1"></li>
+		  </ol>
+
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+		    <div class="item active">
+		      <img src="images/index-k1.jpg" alt="..."/>
+		      <div class="carousel-caption">
+		        <h1 class="text-red">质胜每一步</h1>
+						<span class="mis1 text-red"><a class="hyperlink" href="/scooter">一号滑板车 ></a></span>
+		      </div>
+		    </div>
+		    <div class="item">
+		      <img src="images/index-l1.jpg" alt="..."/>
+		      <div class="carousel-caption">
+		        <h1 class="text-reverse">轻生活，骑出彩</h1>
+						<span class="mis1 text-reverse">/ 规划中的智慧出行蓝图，敬请期待</span>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
 	<div class="main-intro">
 		<nav class="navbar navbar-lite navbar-secondary">
 			<div class="outer-container">
 			  <div class="container">
-			    <div class="collapse navbar-collapse">
+			    <div class="navbar-collapse">
 			      <ul class="nav text-center">
 			      	<li><a>关于美步科技 /</a></li>
 			      </ul>
@@ -85,10 +131,10 @@
 			</div>
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-6">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
 						<h3>不止步于滑板车</h3>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-0">
 						<p class="block-display">美步公司专注于个人电动载具。随着个性化的生活和出行方式越来越普及，一人单独出行占据日常交通的大部分；电动化交通工具的技术发展，为轻量化、个性化、智能化的，更加符合个人出行需求的新型绿色交通工具的出现做好了技术储备。<br>
 						我们定义 P.E.T 为 90% 以上的时间为个人使用，偶尔两人使用的电动交通工具。创始人俞浩 5 年前在清华大学成立专门团队从事该领域的研究。公司现有来自清华大学、同济大学汽车学院的博士、硕士等组成的核心团队 12 人。公司计划从短途代步工具领域切入，逐渐发展到城市中等距离行驶的交通工具。产品形态从电动滑板车，发展到 smart 式的两门两座中程代步工具，再到未来的无人驾驶个人交通工具。P.E.T 的最终形态是一种交通机器人。<br>
 						截至 2015 年 12 月，公司一号产品（K1 系列）已经研发完成并投入生产。 <br></p>
