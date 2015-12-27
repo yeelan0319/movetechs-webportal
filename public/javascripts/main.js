@@ -84,4 +84,7 @@ $(document).ready(function(){
 			nav.find('.navbar-header button').removeClass('in');
 		}
 	});
+	$(function () {
+	  $('[data-toggle="popover"]').popover();
+	});
 });

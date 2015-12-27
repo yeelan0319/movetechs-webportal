@@ -5,7 +5,7 @@ $tablet-min: 768px;
 $phone-max: 767px;
 /*color-palette*/
 $red: #f04e41;
-$red-hover: #f15a4e;
+$red-hover: #EE4F47;
 $grey-opacity96: rgba(35,37,43,0.96);
 $grey-opaque: rgb(35,37,43);
 /*This is default font color, darkest, should be used on lite background*/
@@ -26,6 +26,12 @@ $grey-opaque: rgb(35,37,43);
 }
 .text-red {
 	color: $red;
+	a {
+		color: $red;
+		&:hover {
+			color: $red-hover;
+		}	
+	}
 }
 .text-not-selectable{
 	-webkit-user-select: none;  /* Chrome all / Safari all */
@@ -347,24 +353,45 @@ footer{
 	line-height: $footer-height;	
 	z-index: 9999;
 	background-color: #f8f8f8;
+	@include transition(all 0.5s ease);
 	.container {
 		border-top: 1px solid #e6e6e6;
-	}
-	
-	&.footer-fixed{
-		position: fixed;
-		left: 0px;
-		right: 0px;
-		bottom: 0px;
-	}
-	.article {
-		position: relative;
-		height: $footer-height;
-		background-color: #f8f8f8;
-		@extend p;
-		p {
-			color: #888;
+		a.btn{
+			color: #6e6e6e;
+			padding: 3px 5px;
+			&:last-child {
+				padding: 3px 0px 3px 25px; 
+			}
+			&:hover{
+				opacity: 0.75;
+			}
+			&:focus{
+				border: none;
+    		outline:none;
+			}
+			&>img{
+				width: 16px;
+			}
 		}
+		.popover {
+			width: 450px;
+			max-width: 450px;
+			.popover-title {
+				background: transparent;
+				font-size: 14px;
+				font-weight: 400;
+				text-align: center;
+			}
+			.popover-content {
+				position: relative;
+				padding-bottom: 178px;
+				img.qrcode{
+					position: absolute;
+					bottom: 28px;
+					width: 150px;
+				}
+			}
+		}	
 	}
 }
 
@@ -610,6 +637,7 @@ nav.navbar{
 	margin-top: $navbar-height;
 	.main-intro {
 		position: relative;
+		padding-top: 98px;
 	}
 	.content {
 		position:absolute;
@@ -626,7 +654,7 @@ nav.navbar{
 	position: relative;
 	width: 100%;
 
-	.container{
+	.container, .container-fluid{
 		position: relative;
 	}
 	.bg{
@@ -658,7 +686,7 @@ nav.navbar{
 		}
 	}
 	&.article-center{
-		.container{
+		.container, .container-fluid {
 			text-align: center;
 
 			p{
@@ -667,7 +695,7 @@ nav.navbar{
 		}
 	}
 	&.article-v-bottom {
-		.container {
+		.container, .container-fluid {
 			position: absolute;
 			left: 50%;
 			bottom: 0px;
@@ -678,7 +706,7 @@ nav.navbar{
 		}
 	}
 	&.article-v-center {
-		.container {
+		.container, .container-fluid {
 			display: table;
 			height: 100%;
 			.row {

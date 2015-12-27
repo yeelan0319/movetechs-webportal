@@ -1,7 +1,7 @@
 /*media query*/
 /*color-palette*/
 /*This is default font color, darkest, should be used on lite background*/
-.text-default, .font-cleanup, .catch-copy, h1, h2, h3, p, span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i, html, body, footer .article, nav.navbar.navbar-secondary, .btn, small, span, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a {
+.text-default, .font-cleanup, .catch-copy, h1, h2, h3, p, span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i, html, body, nav.navbar.navbar-secondary, .btn, small, span, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a {
   color: #333; }
 
 /*This is brightest font color, should be used on dark background*/
@@ -18,6 +18,10 @@
 
 .text-red {
   color: #f04e41; }
+  .text-red a {
+    color: #f04e41; }
+    .text-red a:hover {
+      color: #ee4f47; }
 
 .text-not-selectable, .hyperlink, nav.navbar {
   -webkit-user-select: none;
@@ -29,7 +33,7 @@
   user-select: none;
   /* Likely future */ }
 
-.font-cleanup, .catch-copy, h1, h2, h3, p, span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i, html, body, footer .article, nav.navbar.navbar-secondary, .btn, small, span {
+.font-cleanup, .catch-copy, h1, h2, h3, p, span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i, html, body, nav.navbar.navbar-secondary, .btn, small, span {
   margin: 0px;
   margin-bottom: 16px;
   padding: 0px;
@@ -89,7 +93,7 @@ h3 {
     h3 {
       font-size: 20px; } }
 
-p, span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i, html, body, footer .article, nav.navbar.navbar-secondary, .btn {
+p, span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i, html, body, nav.navbar.navbar-secondary, .btn {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
@@ -132,7 +136,7 @@ span {
   line-height: 1;
   vertical-align: middle;
   padding: 0px; }
-  .table-borderless thead tr th p, .table-borderless thead tr th span.misnav, .table-borderless thead tr th nav.navbar.navbar-primary, .table-borderless thead tr th nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless thead tr th span, .table-borderless thead tr th nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless thead tr th i, .table-borderless thead tr th html, .table-borderless thead tr th body, .table-borderless thead tr th footer .article, footer .table-borderless thead tr th .article, .table-borderless thead tr th nav.navbar.navbar-secondary, .table-borderless thead tr th .btn, .table-borderless thead tr td p, .table-borderless thead tr td span.misnav, .table-borderless thead tr td nav.navbar.navbar-primary, .table-borderless thead tr td nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless thead tr td span, .table-borderless thead tr td nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless thead tr td i, .table-borderless thead tr td html, .table-borderless thead tr td body, .table-borderless thead tr td footer .article, footer .table-borderless thead tr td .article, .table-borderless thead tr td nav.navbar.navbar-secondary, .table-borderless thead tr td .btn, .table-borderless tbody tr th p, .table-borderless tbody tr th span.misnav, .table-borderless tbody tr th nav.navbar.navbar-primary, .table-borderless tbody tr th nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless tbody tr th span, .table-borderless tbody tr th nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless tbody tr th i, .table-borderless tbody tr th html, .table-borderless tbody tr th body, .table-borderless tbody tr th footer .article, footer .table-borderless tbody tr th .article, .table-borderless tbody tr th nav.navbar.navbar-secondary, .table-borderless tbody tr th .btn, .table-borderless tbody tr td p, .table-borderless tbody tr td span.misnav, .table-borderless tbody tr td nav.navbar.navbar-primary, .table-borderless tbody tr td nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless tbody tr td span, .table-borderless tbody tr td nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless tbody tr td i, .table-borderless tbody tr td html, .table-borderless tbody tr td body, .table-borderless tbody tr td footer .article, footer .table-borderless tbody tr td .article, .table-borderless tbody tr td nav.navbar.navbar-secondary, .table-borderless tbody tr td .btn, .table-borderless tfoot tr th p, .table-borderless tfoot tr th span.misnav, .table-borderless tfoot tr th nav.navbar.navbar-primary, .table-borderless tfoot tr th nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless tfoot tr th span, .table-borderless tfoot tr th nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless tfoot tr th i, .table-borderless tfoot tr th html, .table-borderless tfoot tr th body, .table-borderless tfoot tr th footer .article, footer .table-borderless tfoot tr th .article, .table-borderless tfoot tr th nav.navbar.navbar-secondary, .table-borderless tfoot tr th .btn, .table-borderless tfoot tr td p, .table-borderless tfoot tr td span.misnav, .table-borderless tfoot tr td nav.navbar.navbar-primary, .table-borderless tfoot tr td nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless tfoot tr td span, .table-borderless tfoot tr td nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless tfoot tr td i, .table-borderless tfoot tr td html, .table-borderless tfoot tr td body, .table-borderless tfoot tr td footer .article, footer .table-borderless tfoot tr td .article, .table-borderless tfoot tr td nav.navbar.navbar-secondary, .table-borderless tfoot tr td .btn {
+  .table-borderless thead tr th p, .table-borderless thead tr th span.misnav, .table-borderless thead tr th nav.navbar.navbar-primary, .table-borderless thead tr th nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless thead tr th span, .table-borderless thead tr th nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless thead tr th i, .table-borderless thead tr th html, .table-borderless thead tr th body, .table-borderless thead tr th nav.navbar.navbar-secondary, .table-borderless thead tr th .btn, .table-borderless thead tr td p, .table-borderless thead tr td span.misnav, .table-borderless thead tr td nav.navbar.navbar-primary, .table-borderless thead tr td nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless thead tr td span, .table-borderless thead tr td nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless thead tr td i, .table-borderless thead tr td html, .table-borderless thead tr td body, .table-borderless thead tr td nav.navbar.navbar-secondary, .table-borderless thead tr td .btn, .table-borderless tbody tr th p, .table-borderless tbody tr th span.misnav, .table-borderless tbody tr th nav.navbar.navbar-primary, .table-borderless tbody tr th nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless tbody tr th span, .table-borderless tbody tr th nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless tbody tr th i, .table-borderless tbody tr th html, .table-borderless tbody tr th body, .table-borderless tbody tr th nav.navbar.navbar-secondary, .table-borderless tbody tr th .btn, .table-borderless tbody tr td p, .table-borderless tbody tr td span.misnav, .table-borderless tbody tr td nav.navbar.navbar-primary, .table-borderless tbody tr td nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless tbody tr td span, .table-borderless tbody tr td nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless tbody tr td i, .table-borderless tbody tr td html, .table-borderless tbody tr td body, .table-borderless tbody tr td nav.navbar.navbar-secondary, .table-borderless tbody tr td .btn, .table-borderless tfoot tr th p, .table-borderless tfoot tr th span.misnav, .table-borderless tfoot tr th nav.navbar.navbar-primary, .table-borderless tfoot tr th nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless tfoot tr th span, .table-borderless tfoot tr th nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless tfoot tr th i, .table-borderless tfoot tr th html, .table-borderless tfoot tr th body, .table-borderless tfoot tr th nav.navbar.navbar-secondary, .table-borderless tfoot tr th .btn, .table-borderless tfoot tr td p, .table-borderless tfoot tr td span.misnav, .table-borderless tfoot tr td nav.navbar.navbar-primary, .table-borderless tfoot tr td nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless tfoot tr td span, .table-borderless tfoot tr td nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless tfoot tr td i, .table-borderless tfoot tr td html, .table-borderless tfoot tr td body, .table-borderless tfoot tr td nav.navbar.navbar-secondary, .table-borderless tfoot tr td .btn {
     line-height: 26px; }
 
 .block-display {
@@ -247,20 +251,40 @@ footer {
   position: relative;
   line-height: 50px;
   z-index: 9999;
-  background-color: #f8f8f8; }
+  background-color: #f8f8f8;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
   footer .container {
     border-top: 1px solid #e6e6e6; }
-  footer.footer-fixed {
-    position: fixed;
-    left: 0px;
-    right: 0px;
-    bottom: 0px; }
-  footer .article {
-    position: relative;
-    height: 50px;
-    background-color: #f8f8f8; }
-    footer .article p, footer .article span.misnav, footer .article nav.navbar.navbar-primary, footer .article nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand footer .article span, footer .article nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button footer .article i, footer .article html, footer .article body, footer .article .article, footer .article nav.navbar.navbar-secondary, footer .article .btn {
-      color: #888; }
+    footer .container a.btn {
+      color: #6e6e6e;
+      padding: 3px 5px; }
+      footer .container a.btn:last-child {
+        padding: 3px 0px 3px 25px; }
+      footer .container a.btn:hover {
+        opacity: 0.75; }
+      footer .container a.btn:focus {
+        border: none;
+        outline: none; }
+      footer .container a.btn > img {
+        width: 16px; }
+    footer .container .popover {
+      width: 450px;
+      max-width: 450px; }
+      footer .container .popover .popover-title {
+        background: transparent;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center; }
+      footer .container .popover .popover-content {
+        position: relative;
+        padding-bottom: 178px; }
+        footer .container .popover .popover-content img.qrcode {
+          position: absolute;
+          bottom: 28px;
+          width: 150px; }
 
 footer, .page-wrap:after {
   display: block;
@@ -435,7 +459,8 @@ nav.navbar {
   position: relative;
   margin-top: 50px; }
   .main .main-intro {
-    position: relative; }
+    position: relative;
+    padding-top: 98px; }
   .main .content {
     position: absolute;
     top: 0px;
@@ -448,7 +473,7 @@ nav.navbar {
 .article {
   position: relative;
   width: 100%; }
-  .article .container {
+  .article .container, .article .container-fluid {
     position: relative; }
   .article .bg {
     position: absolute;
@@ -470,21 +495,21 @@ nav.navbar {
         background-color: rgba(0, 0, 0, 0.1); }
     .article .bg .bg-items {
       position: relative; }
-  .article.article-center .container {
+  .article.article-center .container, .article.article-center .container-fluid {
     text-align: center; }
-    .article.article-center .container p, .article.article-center .container span.misnav, .article.article-center .container nav.navbar.navbar-primary, .article.article-center .container nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .article.article-center .container span, .article.article-center .container nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .article.article-center .container i, .article.article-center .container html, .article.article-center .container body, .article.article-center .container footer .article, footer .article.article-center .container .article, .article.article-center .container nav.navbar.navbar-secondary, .article.article-center .container .btn {
+    .article.article-center .container p, .article.article-center .container span.misnav, .article.article-center .container nav.navbar.navbar-primary, .article.article-center .container nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .article.article-center .container span, .article.article-center .container nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .article.article-center .container i, .article.article-center .container html, .article.article-center .container body, .article.article-center .container nav.navbar.navbar-secondary, .article.article-center .container .btn, .article.article-center .container-fluid p, .article.article-center .container-fluid span.misnav, .article.article-center .container-fluid nav.navbar.navbar-primary, .article.article-center .container-fluid nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .article.article-center .container-fluid span, .article.article-center .container-fluid nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .article.article-center .container-fluid i, .article.article-center .container-fluid html, .article.article-center .container-fluid body, .article.article-center .container-fluid nav.navbar.navbar-secondary, .article.article-center .container-fluid .btn {
       text-align: left; }
-  .article.article-v-bottom .container {
+  .article.article-v-bottom .container, .article.article-v-bottom .container-fluid {
     position: absolute;
     left: 50%;
     bottom: 0px; }
-    .article.article-v-bottom .container .row {
+    .article.article-v-bottom .container .row, .article.article-v-bottom .container-fluid .row {
       position: relative;
       left: -50%; }
-  .article.article-v-center .container {
+  .article.article-v-center .container, .article.article-v-center .container-fluid {
     display: table;
     height: 100%; }
-    .article.article-v-center .container .row {
+    .article.article-v-center .container .row, .article.article-v-center .container-fluid .row {
       display: table-row;
       height: 0px;
       vertical-align: middle; }
@@ -536,7 +561,7 @@ nav.navbar {
 .btn-danger {
   background-color: #f04e41; }
   .btn-danger:hover, .btn-danger:active, .btn-danger:focus, .btn-danger:visited {
-    background-color: #f15a4e; }
+    background-color: #ee4f47; }
 
 .btn-default {
   color: #f04e41; }

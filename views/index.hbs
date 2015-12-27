@@ -1,106 +1,105 @@
 {{> header }}
-<style type="text/css">
-nav.navbar.navbar-default li > a[href~="/"], nav.navbar.navbar-default li > a[href~="/"]:hover{
-	color:#999;
-}
-.page-wrap{
-	margin-bottom: 0px;
-}
-.page-wrap:after{
-	height: 0px;
-}
-.article {
-	position: relative;
-}
-video.background {
-  object-fit: cover;
-}
-.btn-ghost{
-	background: transparent;
-}
-.play, .detail{
-	position: absolute;
-}
-.play.btn-ghost{
-	color: #333;
-	border: 1px solid #333;
-}
-.play.btn-ghost:hover{
-	color: #fff;
-	background-color: #333;
-}
-.detail.btn-ghost{
-	color: #ef483b;
-	border: 1px solid #ef483b;
-}
-.detail.btn-ghost:hover{
-	color: #fff;
-	background-color: #ef483b;
-}
-.detail .arrow{
-	padding: 7px;
-	background: url("/images/arrow-red.png") 8px 12px no-repeat;
-}
+<style>
+	nav.navbar.navbar-default li > a[href~="/"], nav.navbar.navbar-default li > a[href~="/about"]:hover{
+		color:#999;
+	}
+	.article#jumbotron .container-fluid, .article#jumbotron .col-sm-6{
+		padding: 0px;
+	}
+	.article#jumbotron>.container-fluid{
+		width: 100%;
+	}
+	.main-intro {
+		padding-bottom: 48px;
+	}
+	.main-intro .article .text-right p:first-child{
+		margin-right: 50px;
+	}
 </style>
-<div class="main">
-	<div class="article article-full article-center hidden-xs">
-		<div class="bg">
-			<video class="background hidden-xs" autoplay style="visibility: visible;" width="2314px" height="1080px">
-				<source src="index.mp4" type="video/mp4">
-				<img src="/images/index-jumbo.png">
-			</video>
-			<div class="foreground"></div>
-			<div class="bg-items">
-			</div>
-		</div>
-		<a class="play btn btn-ghost" style="display: none">回 放</a>
-		<a class="detail btn btn-ghost" style="display: none" href="/scooter">查 看<span class="arrow"></span></a>
-	</div>
-	<div class="article article-full article-center visible-xs-block">
-		<div class="bg">
-			<img class="background visible-xs-block" src="/images/index-jumbo-mobi.png">
-			<div class="foreground"></div>
-			<div class="bg-items">
-			</div>
-		</div>
-		<a class="play" style="display: none">回 放</a>
-		<a class="detail btn btn-default" style="display: none" href="/scooter">查 看<span class="arrow"></span></a>
-	</div>
-</div>
-</div>
-<script type="text/javascript">
-$('.article').first().on('resized', function(){
-	var origin = {
-			height: 1194,
-			width: 2560,
-			play: {
-				top: 560,
-				left: 1055
-			},
-			detail: {
-				top: 560,
-				right: 1061
+<script>
+	$(document).ready(function(){
+		var article = $('#jumbotron');
+		var containerWidth = article.width();
+		var defer = $.Deferred();
+		var bgImg = $($(".bg-items img")[0]);
+		defer.promise(bgImg);
+		(function resolveWhenImageHeaderLoaded() {
+			if(bgImg.width() && bgImg.height) {
+				defer.resolve();
 			}
-		},
-		containerHeight = $('video').height(),
-		containerWidth = $('video').width();
-
-	$('.play').css({
-		"top": containerHeight / origin.height * origin.detail.top,
-		"left": containerWidth / origin.width * origin.play.left + parseFloat($('video').css("left"))
+			else{
+				setTimeout(resolveWhenImageHeaderLoaded, 100)
+			}
+		})();
+		bgImg.done(function(){
+			var bgWidthHeightRatio = bgImg.width() / bgImg.height();
+			var containerHeight = containerWidth / 2 / bgWidthHeightRatio;
+			article.css('height', containerHeight);
+		});
 	});
-	$('.detail').css({
-		"top": containerHeight / origin.height * origin.detail.top,
-		"right": containerWidth / origin.width * origin.detail.right + parseFloat($('video').css("left"))
-	});
-});
-$('video').on('ended', function(){
-	$('.article a').show();
-});
-$('.play').click(function(){
-	$('.article a').hide();
-	$('video')[0].play();
-})
 </script>
-</body>
-</html>
+<div class="main">
+	<div class="article article-750 article-center article-v-center" id="jumbotron">
+		<div class="bg">
+			<div class="foreground"></div>
+			<div class="bg-items">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-6">
+							<img class="img-responsive" src="images/index-k1.jpg"/>
+						</div>
+						<div class="col-sm-6">
+							<img class="img-responsive" src="images/index-l1.jpg"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-6">
+					<h1 class="text-red">质胜每一步</h1>
+					<span class="mis1 text-red"><a class="hyperlink" href="/scooter">一号滑板车 ></a></span>
+				</div>
+				<div class="col-sm-6">
+					<h1 class="text-reverse">轻生活，骑出彩</h1>
+					<span class="mis1 text-reverse">/ 规划中的智慧出行蓝图，敬请期待</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main-intro">
+		<nav class="navbar navbar-lite navbar-secondary">
+			<div class="outer-container">
+			  <div class="container">
+			    <div class="collapse navbar-collapse">
+			      <ul class="nav text-center">
+			      	<li><a>关于美步科技 /</a></li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div>
+			</div><!-- /.outer-container -->
+		</nav>
+		<div class="article">
+			<div class="bg">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<h3>不止步于滑板车</h3>
+					</div>
+					<div class="col-sm-6">
+						<p class="block-display">美步公司专注于个人电动载具。随着个性化的生活和出行方式越来越普及，一人单独出行占据日常交通的大部分；电动化交通工具的技术发展，为轻量化、个性化、智能化的，更加符合个人出行需求的新型绿色交通工具的出现做好了技术储备。<br>
+						我们定义 P.E.T 为 90% 以上的时间为个人使用，偶尔两人使用的电动交通工具。创始人俞浩 5 年前在清华大学成立专门团队从事该领域的研究。公司现有来自清华大学、同济大学汽车学院的博士、硕士等组成的核心团队 12 人。公司计划从短途代步工具领域切入，逐渐发展到城市中等距离行驶的交通工具。产品形态从电动滑板车，发展到 smart 式的两门两座中程代步工具，再到未来的无人驾驶个人交通工具。P.E.T 的最终形态是一种交通机器人。<br>
+						截至 2015 年 12 月，公司一号产品（K1 系列）已经研发完成并投入生产。 <br></p>
+						<div class="text-right">
+							<p class="text-red"><a class="hyperlink" href="/scooter">一号产品 ></a></p>
+							<p class="text-red"><a class="hyperlink" href="/future">更多 P.E.T 概念 ></a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{> footer }}
