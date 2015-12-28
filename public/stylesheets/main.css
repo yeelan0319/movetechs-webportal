@@ -1,23 +1,23 @@
 /*media query*/
 /*color-palette*/
 /*This is default font color, darkest, should be used on lite background*/
-.text-default, .font-cleanup, .catch-copy, h1, h2, h3, p, span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i, html, body, nav.navbar.navbar-secondary, .btn, small, span, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a {
+.text-default, .font-cleanup, .catch-copy, h1, h2, h3, p, span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i, html, body, nav.navbar.navbar-secondary, .btn, small, span, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a, nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav li > a, nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav li > a:hover {
   color: #333; }
 
 /*This is brightest font color, should be used on dark background*/
 .text-reverse, nav.navbar.navbar-default .navbar-brand, nav.navbar.navbar-default li > a, nav.navbar.navbar-dark .navbar-brand, nav.navbar.navbar-dark li > a {
-  color: white; }
+  color: white !important; }
 
 /*This is a lighter version for default font color, should be used when hover on default*/
 .text-blackout, nav.navbar.navbar-lite .outer-container .navbar-brand:hover, nav.navbar.navbar-lite .outer-container li > a:hover {
-  color: #7e7e7e; }
+  color: #7e7e7e !important; }
 
 /*This is a darker version for reverse font color, should be used when hover on reverse*/
 .text-whiteout, nav.navbar.navbar-default .navbar-brand:hover, nav.navbar.navbar-default li > a:hover, nav.navbar.navbar-dark .navbar-brand:hover, nav.navbar.navbar-dark li > a:hover {
-  color: #dcdcdc; }
+  color: #dcdcdc !important; }
 
 .text-red {
-  color: #f04e41; }
+  color: #f04e41 !important; }
   .text-red a {
     color: #f04e41; }
     .text-red a:hover {
@@ -418,6 +418,8 @@ nav.navbar {
       box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1); }
       nav.navbar.navbar-secondary.navbar-fixed .navbar-collapse {
         border-bottom: none; }
+  nav.navbar.navbar-third {
+    position: relative; }
   nav.navbar.navbar-default {
     background-color: #23252b;
     background-color: rgba(35, 37, 43, 0.96);
@@ -453,6 +455,25 @@ nav.navbar {
       border-bottom-color: black; }
       nav.navbar.navbar-dark .navbar-collapse li {
         border-bottom-color: white; }
+  nav.navbar.navbar-grey {
+    background-color: #f8f8f8;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+    nav.navbar.navbar-grey .container {
+      padding: 0px; }
+      nav.navbar.navbar-grey .container .navbar-collapse {
+        margin: 0px;
+        padding: 0px;
+        border-bottom-color: #e6e6e6; }
+        nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav {
+          margin: 0px; }
+          nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav li {
+            margin: 0px;
+            padding: 0px;
+            border-top: 1px solid #e6e6e6; }
+            nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav li > a {
+              font-size: 16px; }
 
 /*main style*/
 .main {
@@ -569,3 +590,33 @@ nav.navbar {
     color: #f04e41;
     border-color: #fafafa;
     background-color: #fafafa; }
+
+.collapse-paragraph {
+  position: relative;
+  max-height: 1000px;
+  overflow: hidden;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; }
+  .collapse-paragraph .collapse-control {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    padding-top: 50px;
+    text-align: right;
+    background: transparent; }
+    .collapse-paragraph .collapse-control > a {
+      cursor: pointer; }
+      .collapse-paragraph .collapse-control > a[data-control="collapse"] {
+        display: block; }
+      .collapse-paragraph .collapse-control > a[data-control="expand"] {
+        display: none; }
+  .collapse-paragraph.collapsed {
+    max-height: 130px; }
+    .collapse-paragraph.collapsed .collapse-control {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), white 70%); }
+      .collapse-paragraph.collapsed .collapse-control > a[data-control="collapse"] {
+        display: none; }
+      .collapse-paragraph.collapsed .collapse-control > a[data-control="expand"] {
+        display: block; }

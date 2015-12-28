@@ -86,5 +86,14 @@ $(document).ready(function(){
 	});
 	$(function () {
 	  $('[data-toggle="popover"]').popover();
+	  $('.collapse-paragraph .collapse-control a').click(function(){
+	  	var paragraph = $('.collapse-paragraph');
+	  	if($(this).data('control') === 'collapse') {
+	  		paragraph.addClass('collapsed');
+	  	}
+	  	else if($(this).data('control') === 'expand'){
+	  		paragraph.removeClass('collapsed');
+	  	}
+	  })
 	});
 });

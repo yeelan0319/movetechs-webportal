@@ -14,18 +14,18 @@ $grey-opaque: rgb(35,37,43);
 }
 /*This is brightest font color, should be used on dark background*/
 .text-reverse{
-	color: white;
+	color: white !important;
 }
 /*This is a lighter version for default font color, should be used when hover on default*/
 .text-blackout{
-	color: #7e7e7e;
+	color: #7e7e7e !important;
 }
 /*This is a darker version for reverse font color, should be used when hover on reverse*/
 .text-whiteout{
-	color: #dcdcdc;
+	color: #dcdcdc !important;
 }
 .text-red {
-	color: $red;
+	color: $red !important;
 	a {
 		color: $red;
 		&:hover {
@@ -558,7 +558,9 @@ nav.navbar{
 			}
 		}
 	}
-
+	&.navbar-third {
+		position: relative;
+	}
 	/*default, lite, etc.. are only adjust styles*/
 	&.navbar-default{
 		background-color: $grey-opaque;  //use this as fallback
@@ -626,6 +628,33 @@ nav.navbar{
 
 			&:hover{
 				@extend .text-whiteout;
+			}
+		}
+	}
+	&.navbar-grey{
+		background-color: #f8f8f8;
+		@include box-shadow(none);
+		.container {
+			padding: 0px;
+			.navbar-collapse{
+				margin: 0px;
+				padding: 0px;
+				border-bottom-color: #e6e6e6;
+				.navbar-nav {
+					margin: 0px;
+					li{
+						margin: 0px;
+						padding: 0px;
+						border-top: 1px solid #e6e6e6;
+						&>a{
+							@extend .text-default;
+							font-size: 16px;
+							&:hover{
+								@extend .text-default;
+							}
+						}
+					}
+				}	
 			}
 		}
 	}
@@ -706,7 +735,7 @@ nav.navbar{
 		}
 	}
 	&.article-v-center {
-		.container, .container-fluid {
+		.container, .container-fluid{
 			display: table;
 			height: 100%;
 			.row {
@@ -790,5 +819,42 @@ nav.navbar{
 		color: $red;
 		border-color: #fafafa;
 		background-color: #fafafa;
+	}
+}
+.collapse-paragraph{
+	position: relative;
+	max-height: 1000px;
+	overflow: hidden;
+	@include transition(all 1s ease);
+
+	.collapse-control {
+		position: absolute;
+		width: 100%;
+		bottom: 0px;
+		padding-top: 50px;
+		text-align: right;
+		background: transparent;
+		&>a {
+			cursor: pointer;
+			&[data-control="collapse"] {
+				display: block;
+			}
+			&[data-control="expand"] {
+				display: none;
+			}
+		}
+	}
+
+	&.collapsed {
+		max-height: 130px;
+		.collapse-control {
+			background: linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,255,255,1) 70%);
+			&>a[data-control="collapse"] {
+				display: none;
+			}
+			&>a[data-control="expand"] {
+				display: block;
+			}
+		}
 	}
 }

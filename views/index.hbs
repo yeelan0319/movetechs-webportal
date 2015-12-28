@@ -28,15 +28,44 @@
 		background-color:#fff;
 		border-color: #888;
 	}
+	.article#jumbotron-mobile .carousel-inner .item .carousel-caption {
+		top: 30%;
+		text-shadow: none;
+	}
 	.main-intro {
 		padding-bottom: 48px;
 	}
 	.main-intro .article .text-right p:first-child{
 		margin-right: 50px;
 	}
+	@media only screen and (max-width: 1068px) and (min-width: 768px) { 
+		.article#jumbotron-mobile .carousel-inner .item .carousel-caption h1{
+			font-size: 62px;
+			line-height: 1em;
+			font-weight: 800;
+		}
+	}
+	@media only screen and (max-width: 767px) { 
+		.article#jumbotron-mobile .carousel-inner .item .carousel-caption h1{
+			font-size: 52px;
+			line-height: 1em;
+			font-weight: 800;
+		}
+		.main .main-intro {
+			padding-top: 78px;
+			padding-bottom: 28px;
+		}
+		footer {
+			background: rgb(35,37,43);
+		}
+	}
 </style>
 <script>
 	$(document).ready(function(){
+		resizeJumbo();
+		$(window).resize(resizeJumbo);
+	});
+	function resizeJumbo() {
 		var article = $('#jumbotron');
 		var containerWidth = article.width();
 		var defer = $.Deferred();
@@ -55,7 +84,7 @@
 			var containerHeight = containerWidth / 2 / bgWidthHeightRatio;
 			article.css('height', containerHeight);
 		});
-	});
+	}
 </script>
 <div class="main">
 	<div class="article article-750 article-center article-v-center hidden-sm hidden-xs" id="jumbotron">
@@ -126,7 +155,7 @@
 			  </div>
 			</div><!-- /.outer-container -->
 		</nav>
-		<div class="article">
+		<div class="article hidden-xs">
 			<div class="bg">
 			</div>
 			<div class="container">
@@ -146,6 +175,41 @@
 				</div>
 			</div>
 		</div>
+		<div class="article visible-xs-block">
+			<div class="bg">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3>不止步于滑板车</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="collapse-paragraph collapsed">
+							<p class="block-display">美步公司专注于个人电动载具。随着个性化的生活和出行方式越来越普及，一人单独出行占据日常交通的大部分；电动化交通工具的技术发展，为轻量化、个性化、智能化的，更加符合个人出行需求的新型绿色交通工具的出现做好了技术储备。<br>
+							我们定义 P.E.T 为 90% 以上的时间为个人使用，偶尔两人使用的电动交通工具。创始人俞浩 5 年前在清华大学成立专门团队从事该领域的研究。公司现有来自清华大学、同济大学汽车学院的博士、硕士等组成的核心团队 12 人。公司计划从短途代步工具领域切入，逐渐发展到城市中等距离行驶的交通工具。产品形态从电动滑板车，发展到 smart 式的两门两座中程代步工具，再到未来的无人驾驶个人交通工具。P.E.T 的最终形态是一种交通机器人。<br>
+							截至 2015 年 12 月，公司一号产品（K1 系列）已经研发完成并投入生产。 <br></p>
+							<div class="collapse-control text-red">
+								<a data-control="collapse">收起</a>
+								<a data-control="expand">展开</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
 	</div>
+	<nav class="navbar navbar-grey navbar-third visible-xs-block">
+	  <div class="container">
+	    <div class="navbar-collapse" id="third-nav">
+	      <ul class="nav navbar-nav">
+	        <li><a href="/scooter">滑板车K1</a></li>
+	        <li><a href="/about">团队介绍</a></li>
+	        <li><a href="/future">想象未来</a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
 </div>
 {{> footer }}
