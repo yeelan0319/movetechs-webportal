@@ -51,6 +51,32 @@
 		background: #f8f8f8;
 	}
 </style>
+<script>
+	$(document).ready(function(){
+		resizeJumbo();
+		$(window).resize(resizeJumbo);
+	});
+	function resizeJumbo() {
+		var article = $('#jumbotron');
+		var containerWidth = article.width();
+		var defer = $.Deferred();
+		var bgImg = $($(".bg-items img")[0]);
+		defer.promise(bgImg);
+		(function resolveWhenImageHeaderLoaded() {
+			if(bgImg.width() && bgImg.height) {
+				defer.resolve();
+			}
+			else{
+				setTimeout(resolveWhenImageHeaderLoaded, 100)
+			}
+		})();
+		bgImg.done(function(){
+			var bgWidthHeightRatio = bgImg.width() / bgImg.height();
+			var containerHeight = containerWidth / bgWidthHeightRatio + 122;
+			article.css('height', containerHeight);
+		});
+	}
+</script>
 <div class="main">
 	<div class="article" id="jumbotron">
 		<div class="bg">
