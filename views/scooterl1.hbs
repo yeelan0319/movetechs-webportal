@@ -1,0 +1,58 @@
+{{> header }}
+<style>
+	nav.navbar.navbar-default li > a[href~="/scooter-l1"], nav.navbar.navbar-default li > a[href~="/scooter-l1"]:hover{
+		color:#999;
+	}
+	.article .background {
+		right: 0px !important;
+		bottom: 0px !important;
+	}
+	.article .container {
+		padding-top: 20%;
+	}
+	.article h3{
+		vertical-align: middle;
+	}
+	.article h3 span {
+		font-size: 62px;
+		line-height: 1em;
+		font-weight: 100;
+		margin-right: 36px;
+		vertical-align: middle;
+	}
+	
+	@media only screen and (max-width: 767px) { 
+		.article h3 span {
+			font-size: 42px;
+			line-height: 1em;
+			font-weight: 100;
+			margin-right: 36px;
+		}
+	}
+	@media only screen and (max-width: 1067px) { 
+		.article h3 span {
+			display: block;
+		}
+	}
+	@media only screen and (min-width: 1067px) { 
+		.article h3{
+			margin-left: -5%;
+		}
+	}
+</style>
+<div class="main">
+	<div class="article article-full">
+		<div class="bg">
+			<img class="background" src="images/l1-1.jpg"/>
+			<div class="foreground"></div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h3><span>轻生活，骑出彩</span> /规划中的智慧出行蓝图，敬请期待</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{> footer }}

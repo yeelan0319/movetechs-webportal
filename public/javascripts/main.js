@@ -11,7 +11,7 @@ function redoLayoutArticle(article){
 
 	if(article.hasClass('article-full')) {
 		article.css({
-			height: $("html").height()
+			height: $("html").height() - $("footer").height() //- $("nav").height() 
 		});
 		// content.css({
 		// 	paddingTop: (article.innerHeight() - content.innerHeight())/2
@@ -56,8 +56,8 @@ function redoLayoutArticle(article){
 			bgImg.css({
 				height: bgRealHeight,
 				width: bgRealWidth,
-				left: (containerWidth - bgRealWidth) / 2,
-				top: (containerHeight - bgRealHeight) / 2 
+				right: (containerWidth - bgRealWidth) / 2,
+				bottom: (containerHeight - bgRealHeight) / 2 
 			}).show();
 		});
 		article.trigger("resized");

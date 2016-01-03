@@ -5,17 +5,28 @@ var router = express.Router();
 router.get('/', function(req, res) {
   res.render('index', {});
 });
-router.get('/scooter', function(req, res){
-	res.render('huabanche', {});
+router.get('/scooter-k1', function(req, res){
+	res.render('scooterk1', {});
 });
-router.get('/contact', function(req, res){
-	res.render('contact', {});
+router.get('/scooter-l1', function(req, res){
+	res.render('scooterl1', {});
 });
 router.get('/about', function(req, res){
 	res.render('about', {});
 });
+router.get('/future', function(req, res) {
+	res.render('future', {});
+});
+router.get('/contact', function(req, res){
+	res.render('contact', {});
+});
 router.get('/wechat', function(req, res){
 	res.render('wechat', {});
+});
+
+/*redirect*/
+router.get('/scooter', function(req, res){
+	res.redirect('/scooter-k1');
 });
 
 module.exports = router;

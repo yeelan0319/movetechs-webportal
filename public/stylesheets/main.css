@@ -6,15 +6,15 @@
 
 /*This is brightest font color, should be used on dark background*/
 .text-reverse, nav.navbar.navbar-default .navbar-brand, nav.navbar.navbar-default li > a, nav.navbar.navbar-dark .navbar-brand, nav.navbar.navbar-dark li > a {
-  color: white !important; }
+  color: white; }
 
 /*This is a lighter version for default font color, should be used when hover on default*/
 .text-blackout, nav.navbar.navbar-lite .outer-container .navbar-brand:hover, nav.navbar.navbar-lite .outer-container li > a:hover {
-  color: #7e7e7e !important; }
+  color: #7e7e7e; }
 
 /*This is a darker version for reverse font color, should be used when hover on reverse*/
 .text-whiteout, nav.navbar.navbar-default .navbar-brand:hover, nav.navbar.navbar-default li > a:hover, nav.navbar.navbar-dark .navbar-brand:hover, nav.navbar.navbar-dark li > a:hover {
-  color: #dcdcdc !important; }
+  color: #dcdcdc; }
 
 .text-red {
   color: #f04e41 !important; }
@@ -37,7 +37,7 @@
   margin: 0px;
   margin-bottom: 16px;
   padding: 0px;
-  line-height: auto;
+  line-height: 1em;
   display: inline; }
 
 .catch-copy {
@@ -58,21 +58,17 @@
 h1 {
   font-size: 36px;
   font-weight: 100;
-  line-height: 48px;
   display: block; }
   @media only screen and (max-width: 1068px) {
     h1 {
-      font-size: 32px;
-      line-height: 42px; } }
+      font-size: 32px; } }
   @media only screen and (max-width: 767px) {
     h1 {
-      font-size: 24px;
-      line-height: 36px; } }
+      font-size: 24px; } }
 
 h2 {
   font-size: 24px;
   font-weight: 600;
-  line-height: 36px;
   display: block; }
   @media only screen and (max-width: 1068px) {
     h2 {
@@ -84,7 +80,6 @@ h2 {
 h3 {
   font-size: 24px;
   font-weight: 100;
-  line-height: 36px;
   display: block; }
   @media only screen and (max-width: 1068px) {
     h3 {

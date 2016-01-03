@@ -14,15 +14,15 @@ $grey-opaque: rgb(35,37,43);
 }
 /*This is brightest font color, should be used on dark background*/
 .text-reverse{
-	color: white !important;
+	color: white;
 }
 /*This is a lighter version for default font color, should be used when hover on default*/
 .text-blackout{
-	color: #7e7e7e !important;
+	color: #7e7e7e;
 }
 /*This is a darker version for reverse font color, should be used when hover on reverse*/
 .text-whiteout{
-	color: #dcdcdc !important;
+	color: #dcdcdc;
 }
 .text-red {
 	color: $red !important;
@@ -43,7 +43,7 @@ $grey-opaque: rgb(35,37,43);
 	margin: 0px;
 	margin-bottom: 16px;
 	padding: 0px;
-	line-height: auto;
+	line-height: 1em;
 	display: inline;
 	@extend .text-default;
 }
@@ -70,22 +70,22 @@ h1 {  //标题1
 	@extend .font-cleanup;
 	font-size: 36px;
 	font-weight: 100;
-	line-height: 48px;
+	//line-height: 48px;
 	display: block;
 	@media only screen and (max-width: $tablet-max) {  //Tablet
 		font-size: 32px;
-		line-height: 42px;
+		//line-height: 42px;
 	}
 	@media only screen and (max-width: $phone-max) {  //Phone
 		font-size: 24px;
-		line-height: 36px;
+		//line-height: 36px;
 	}
 }
 h2 {  //副标题
 	@extend .font-cleanup;
 	font-size: 24px;
 	font-weight: 600;
-	line-height: 36px;
+	//line-height: 36px;
 	display: block;
 	@media only screen and (max-width: $tablet-max) {  //Tablet
 		font-size: 22px;
@@ -98,7 +98,7 @@ h3 {   //标题2
 	@extend .font-cleanup;
 	font-size: 24px;
 	font-weight: 100;
-	line-height: 36px;
+	//line-height: 36px;
 	display: block;
 	@media only screen and (max-width: $tablet-max) {  //Tablet
 		font-size: 22px;
