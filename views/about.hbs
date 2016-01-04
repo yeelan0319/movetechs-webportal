@@ -69,7 +69,7 @@
 		})();
 		bgImg.done(function(){
 			var bgWidthHeightRatio = bgImg.width() / bgImg.height();
-			var containerHeight = containerWidth / bgWidthHeightRatio + 122;
+			var containerHeight = containerWidth / bgWidthHeightRatio + 48 / (containerWidth / 1004); //与屏幕大小成反比
 			article.css('height', containerHeight);
 		});
 	}

@@ -64,6 +64,13 @@ nav.navbar.navbar-default li > a[href~="/scooter-k1"], nav.navbar.navbar-default
 	#improvements .article .row .col-sm-6:last-child{
 	 	padding-left: 15px;
 	}
+	#overview-6.article div.h1wrapper img {
+		position: relative;
+		top: 0px;
+		left: 0px;
+		display: block;
+    margin: 0 auto;
+	}     
 }
 </style>
 <div class="main">
@@ -71,7 +78,7 @@ nav.navbar.navbar-default li > a[href~="/scooter-k1"], nav.navbar.navbar-default
 		<div class="outer-container">
 		  <div class="container">
 			  <div class="navbar-header">
-			  	<a class="navbar-brand"><span>K1</span></a>
+			  	<a class="navbar-brand hyperlink" data-hyperlink="overview"><span>美步K1</span></a>
 		      <button type="button" class="navbar-toggle collapsed btn-arrow" data-toggle="collapse" data-target="#secondary-nav">
 		        <span class="sr-only">Toggle navigation</span>
 		        <i class="material-icons">&#xE313;</i>
@@ -270,7 +277,7 @@ nav.navbar.navbar-default li > a[href~="/scooter-k1"], nav.navbar.navbar-default
 								世界上性能最强的电动滑板车！
 							</h1>
 						</div>
-						<span class="mis2 text-reverse hyperlink" data-hyperlink="breakthroughs">了解更多 ></span>
+						<span class="mis2 hyperlink-reverse hyperlink" data-hyperlink="breakthroughs">了解更多 ></span>
 					</div>
 				</div>
 			</div>
@@ -525,7 +532,7 @@ nav.navbar.navbar-default li > a[href~="/scooter-k1"], nav.navbar.navbar-default
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<span class="mis2 text-reverse hyperlink" data-hyperlink="improvements">其他数十项改进 ></span>
+						<span class="mis2 hyperlink-reverse hyperlink" data-hyperlink="improvements">其他数十项改进 ></span>
 					</div>
 				</div>
 			</div>
@@ -705,7 +712,7 @@ nav.navbar.navbar-default li > a[href~="/scooter-k1"], nav.navbar.navbar-default
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<span class="mis2 text-reverse hyperlink" data-hyperlink="metrics">更多技术细节 ></span>
+						<span class="mis2 hyperlink-reverse hyperlink" data-hyperlink="metrics">更多技术细节 ></span>
 					</div>
 				</div>
 			</div>
@@ -828,7 +835,7 @@ nav.navbar.navbar-default li > a[href~="/scooter-k1"], nav.navbar.navbar-default
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<span class="mis2 text-reverse hyperlink" data-hyperlink="breakthroughs">了解核心突破 ></span>
+						<span class="mis2 hyperlink-reverse hyperlink" data-hyperlink="breakthroughs">了解核心突破 ></span>
 					</div>
 				</div>
 			</div>
@@ -854,6 +861,7 @@ nav.navbar.navbar-default li > a[href~="/scooter-k1"], nav.navbar.navbar-default
 			var current = $('.content-active');
 			var target = $(this).data('hyperlink');
 			if(current.attr('id') == target) {
+				$(document).scrollTop(51);
 				return;
 			}
 			$('#secondary-nav').collapse('hide');
@@ -877,8 +885,8 @@ nav.navbar.navbar-default li > a[href~="/scooter-k1"], nav.navbar.navbar-default
 				.data('scroll', $(document).scrollTop());
 			next.addClass('content-active');
 			$('.main').css('height', next.height());
-			if($(document).scrollTop() > 50){
-				$(document).scrollTop(50);
+			if($(document).scrollTop() > 51){
+				$(document).scrollTop(51);
 			}
 		}	
 </script>

@@ -21,7 +21,7 @@ $dark-bg: #2b2d33;        // k1-metrics
 $darker-bg: #222429;      // footer-dark
 
 $red: #f04e41;
-$red-hover: #EE4F47;
+$red-hover: rgba($red, 0.75);
 
 .block-display {
 	display: block;
@@ -100,12 +100,18 @@ $red-hover: #EE4F47;
 	cursor: pointer;
 	@extend .text-not-selectable;
 	&:hover {
-		text-decoration: underline;
+		text-decoration: none;
 	}
 	&.hyperlink-red {
 		@extend .text-red;
 		&:hover {
 			@extend .text-red-hover;
+		}
+	}
+	&.hyperlink-reverse {
+		@extend .text-reverse;
+		&:hover {
+			@extend .text-reverse-hover;
 		}
 	}
 }
@@ -214,9 +220,6 @@ span {
 	}
 	&.misnav {  //不需要margin-bottom
 		font-size: 14px;
-		@media only screen and (max-width: $phone-max) {  //Phone
-			font-size: 18px;
-		}
 	}
 }
 
@@ -382,7 +385,7 @@ footer{
 	z-index: 9999;
 	background-color: $grey-lighter;
 	@include transition(all 0.5s ease);
-	.container {
+	>.container {
 		border-top: 1px solid $grey-light;
 		a.btn{
 			@extend .text-grey;
@@ -405,6 +408,7 @@ footer{
 		.popover {
 			width: 450px;
 			max-width: 450px;
+			background: rgba($white, 0.96);
 			.popover-title {
 				background: transparent;
 				font-size: 14px;
@@ -421,6 +425,12 @@ footer{
 				}
 			}
 		}	
+	}
+	@media only screen and (max-width: $phone-max) {
+		background-color: $darker-bg;
+		>.container {
+			border-top: none;
+		}
 	}
 }
 
@@ -453,9 +463,10 @@ nav.navbar{
 		height: auto;
 		line-height: auto;
 		opacity: 1;
-		/*&:hover{
-			opacity: 0.8;
-		}*/
+		text-decoration: none;
+		&:hover{
+			opacity: 0.75;
+		}
 		img {
 			width: 88px;
 			padding: 0px;
@@ -540,7 +551,7 @@ nav.navbar{
 			.navbar-brand {
 				padding: 14px 10px 13px 0px;
 				margin-right: 10px;
-				cursor: default;
+				cursor: pointer;
 				@media only screen and (max-width: $phone-max){  // Phone
 					padding-left: 15px;
 				}
@@ -628,13 +639,23 @@ nav.navbar{
 			}
 		}
 		&.navbar-secondary {
-			.outer-container .navbar-collapse {
+			@media only screen and (min-width: $tablet-min) {
+				.outer-container .navbar-collapse {
+					@include box-shadow(inset 0px -1px 0px rgba($black, 0.1));
+				}
+			}
+			@media only screen and (max-width: $phone-max) {
 				@include box-shadow(inset 0px -1px 0px rgba($black, 0.1));
 			}
-		}
-		&.navbar-secondary.navbar-fixed {
-			.outer-container .navbar-collapse {
-				@include box-shadow(none);
+			&.navbar-fixed {
+				@media only screen and (min-width: $tablet-min) {
+					.outer-container .navbar-collapse {
+						@include box-shadow(none);
+					}
+				}
+				@media only screen and (max-width: $phone-max) {
+					@include box-shadow(none);
+				}
 			}
 		}
 	}
