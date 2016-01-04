@@ -3,35 +3,56 @@ $desktop-min: 1069px;
 $tablet-max: 1068px;
 $tablet-min: 768px;
 $phone-max: 767px;
+
+/*variables*/
+$navbar-height: 50px;
+$footer-height: 50px;
+
 /*color-palette*/
+$white: #ffffff;          // reverse | carousel-indicator active | navbar-lite | navbar-default collapse-icon-bar
+$grey-lighter: #f8f8f8;   // lighter-bg: about-joinus, footer | navbar-grey 
+$grey-light: #ececec;     // reverse-hover | light-bg: about-jumbo | navbar-grey border | footer border
+$grey: #888888;           // reverse-selected | carousel-indicator | carousel-indicator border
+$grey-dark: #6e6e6e;      // default-hover | border on dark-bg
+$grey-darker: #333333;    // default
+$black: #000;             
+
+$dark-bg: #2b2d33;        // k1-metrics
+$darker-bg: #222429;      // footer-dark
+
 $red: #f04e41;
 $red-hover: #EE4F47;
-$grey-opacity96: rgba(35,37,43,0.96);
-$grey-opaque: rgb(35,37,43);
+
+.block-display {
+	display: block;
+}
+.inline-display {
+	display: inline;
+}
 /*This is default font color, darkest, should be used on lite background*/
 .text-default{
-	color: #333;
+	color: $grey-darker;
+}
+/*This is a lighter version for default font color, should be used when hover on default*/
+.text-default-hover{
+	color: $grey-dark;
 }
 /*This is brightest font color, should be used on dark background*/
 .text-reverse{
-	color: white;
-}
-/*This is a lighter version for default font color, should be used when hover on default*/
-.text-blackout{
-	color: #7e7e7e;
+	color: $white;
 }
 /*This is a darker version for reverse font color, should be used when hover on reverse*/
-.text-whiteout{
-	color: #dcdcdc;
+.text-reverse-hover{
+	color: $grey-light;
+}
+.text-grey {
+	color: $grey-dark;
 }
 .text-red {
 	color: $red !important;
-	a {
-		color: $red;
-		&:hover {
-			color: $red-hover;
-		}	
-	}
+}
+.text-red-hover {
+	color: $red-hover !important;
 }
 .text-not-selectable{
 	-webkit-user-select: none;  /* Chrome all / Safari all */
@@ -39,20 +60,36 @@ $grey-opaque: rgb(35,37,43);
   -ms-user-select: none;      /* IE 10+ */
   user-select: none;          /* Likely future */   
 }
+.text-justify {
+  text-align:justify;
+  text-justify:distribute-all-lines;/*ie6-8*/
+  text-align-last:justify;/* ie9*/
+  -moz-text-align-last:justify;/*ff*/
+  -webkit-text-align-last:justify;/*chrome 20+*/
+
+  @media only screen and (-webkit-min-device-pixel-ratio:0){/* chrome*/
+  	&:after{
+  		content:".";
+      display: inline-block;
+      width:100%;
+      overflow:hidden;
+      height:0;
+  	}
+  }
+}
 .font-cleanup {
 	margin: 0px;
-	margin-bottom: 16px;
 	padding: 0px;
 	line-height: 1em;
-	display: inline;
 	@extend .text-default;
 }
 .catch-copy {  //强调
 	@extend .font-cleanup;
-	font-size: 32px;
-	font-weight: 800;
-	line-height: 42px;
 	display:block;
+	font-size: 32px;
+	line-height: 42px;
+	margin-bottom: 23px;	
+	font-weight: 800;
 	em {
 		font-family: Gotham;
     font-size: 65px;
@@ -65,97 +102,123 @@ $grey-opaque: rgb(35,37,43);
 	&:hover {
 		text-decoration: underline;
 	}
+	&.hyperlink-red {
+		@extend .text-red;
+		&:hover {
+			@extend .text-red-hover;
+		}
+	}
 }
 h1 {  //标题1
 	@extend .font-cleanup;
-	font-size: 36px;
-	font-weight: 100;
-	//line-height: 48px;
 	display: block;
+	font-size: 36px;
+	line-height: 48px;
+	margin-bottom: 22px;
+	font-weight: 100;
 	@media only screen and (max-width: $tablet-max) {  //Tablet
 		font-size: 32px;
-		//line-height: 42px;
+		line-height: 42px;
+		margin-bottom: 23px;
 	}
 	@media only screen and (max-width: $phone-max) {  //Phone
 		font-size: 24px;
-		//line-height: 36px;
+		line-height: 36px;
+		margin-bottom: 22px;
 	}
 }
 h2 {  //副标题
 	@extend .font-cleanup;
-	font-size: 24px;
-	font-weight: 600;
-	//line-height: 36px;
 	display: block;
+	font-size: 24px;
+	line-height: 36px;
+	margin-bottom: 22px;
+	font-weight: 600;
 	@media only screen and (max-width: $tablet-max) {  //Tablet
 		font-size: 22px;
+		line-height: 36px;
+		margin-bottom: 21px;
 	}
 	@media only screen and (max-width: $phone-max) {  //Phone
 		font-size: 20px;
+		line-height: 36px;
+		margin-bottom: 20px;
 	}
 }
 h3 {   //标题2
 	@extend .font-cleanup;
-	font-size: 24px;
-	font-weight: 100;
-	//line-height: 36px;
 	display: block;
+	font-size: 24px;
+	line-height: 36px;
+	margin-bottom: 22px;
+	font-weight: 100;
 	@media only screen and (max-width: $tablet-max) {  //Tablet
 		font-size: 22px;
+		line-height: 36px;
+		margin-bottom: 21px;
 	}
 	@media only screen and (max-width: $phone-max) {  //Phone
 		font-size: 20px;
+		line-height: 36px;
+		margin-bottom: 20px;
 	}
 }
 p {   //正文
 	@extend .font-cleanup;
+	display: inline;
 	font-size: 14px;
-	font-weight: 400;
 	line-height: 24px;
+	margin-bottom: 23px;
+	font-weight: 400;
 	text-align: justify; 
   text-justify: ideographic;
 }
 small {  //补充说明
 	@extend .font-cleanup;
-	font-size: 12px;
-	font-weight: 400;
-	line-height: 18px;
 	display: block;
+	font-size: 12px;
+	line-height: 18px;
 	margin-bottom: 5px;
+	font-weight: 400;
 	@media only screen and (max-width: $phone-max) {  //Phone
 		font-size: 14px;
+		line-height: 18px;
+		margin-bottom: 4px;
 	}
 }
 span {
 	@extend .font-cleanup;
+	display: inline;
+	font-weight: 400;
 	text-align: justify; 
   text-justify: ideographic;
-	font-weight: 400;
 	&.mis1 {  //其他文字1
 		font-size: 20px;
 		line-height: 36px;
+		margin-bottom: 20px;
 		@media only screen and (max-width: $phone-max) {  //Phone
 			font-size: 18px;
+			line-height: 36px;
+			margin-bottom: 19px;
 		}
 	}
 	&.mis2 {   //其他文字2
 		font-size: 16px;
-		line-height:16px;
+		line-height: 24px;
+		margin-bottom: 24px;
 		@media only screen and (max-width: $phone-max) {  //Phone
 			font-size: 14px;
 			line-height: 24px;
+			margin-bottom: 23px;
 		}
 	}
-	&.misnav {
-		@extend p;
+	&.misnav {  //不需要margin-bottom
+		font-size: 14px;
 		@media only screen and (max-width: $phone-max) {  //Phone
 			font-size: 18px;
 		}
 	}
 }
-
-$navbar-height: 50px;
-$footer-height: 50px;
 
 @mixin box-shadow($shadows) {
   -moz-box-shadow: $shadows;
@@ -191,45 +254,11 @@ $footer-height: 50px;
 				line-height: 1;
     		vertical-align: middle;
     		padding: 0px;
-
-    		p{
-    			line-height: 26px;
-    		}
 			}
 		}
 	}
 }
 
-.block-display {
-	display: block;
-}
-.inline-display {
-	display: inline;
-}
-.divider{
-	width: 42px;
-	height: 1px;
-	display: block;
-	background: #000;
-}
-
-.text-justify {
-  text-align:justify;
-  text-justify:distribute-all-lines;/*ie6-8*/
-  text-align-last:justify;/* ie9*/
-  -moz-text-align-last:justify;/*ff*/
-  -webkit-text-align-last:justify;/*chrome 20+*/
-
-  @media only screen and (-webkit-min-device-pixel-ratio:0){/* chrome*/
-  	&:after{
-  		content:".";
-      display: inline-block;
-      width:100%;
-      overflow:hidden;
-      height:0;
-  	}
-  }
-}
 @font-face {
   font-family: 'Han Sans';
   font-style: normal;
@@ -303,7 +332,6 @@ $footer-height: 50px;
   font-style: normal;
   font-size: 14px; /* Preferred icon size */
   display: inline-block;
-  width: 1rem;
   line-height: inherit;
   text-transform: none;
   letter-spacing: normal;
@@ -352,12 +380,13 @@ footer{
 	position: relative;
 	line-height: $footer-height;	
 	z-index: 9999;
-	background-color: #f8f8f8;
+	background-color: $grey-lighter;
 	@include transition(all 0.5s ease);
 	.container {
-		border-top: 1px solid #e6e6e6;
+		border-top: 1px solid $grey-light;
 		a.btn{
-			color: #6e6e6e;
+			@extend .text-grey;
+			@include box-shadow(none);
 			padding: 3px 5px;
 			&:last-child {
 				padding: 3px 0px 3px 25px; 
@@ -435,6 +464,22 @@ nav.navbar{
 			}
 		}
 	}
+	.navbar-toggle{
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			&.btn-hanburger {
+				margin-top: 8px;
+				margin-bottom: 8px;
+				.icon-bar{
+					margin-bottom: 0px;
+				}
+			}
+			&.btn-arrow {
+				margin-top: 5px;
+				margin-bottom: 2px;
+			}
+		}
 	.nav {
 		&.navbar-right{
 			margin-right: 0px;
@@ -466,18 +511,6 @@ nav.navbar{
 			padding: 0px;
 		}
 	}
-	@media only screen and (max-width: $phone-max){  // Phone
-		.navbar-toggle{
-			position: absolute;
-			top: 0px;
-			right: 0px;
-			margin-top: 8px;
-			margin-bottom: 8px;
-			.icon-bar{
-				margin-bottom: 0px;
-			}
-		}
-	}
 	&.navbar-primary {
 		@extend span.misnav;
 		z-index:10000;
@@ -505,7 +538,7 @@ nav.navbar{
 		@include transition(none);
 		.navbar-header {
 			.navbar-brand {
-				padding: 11px 10px 11px 0px;
+				padding: 14px 10px 13px 0px;
 				margin-right: 10px;
 				cursor: default;
 				@media only screen and (max-width: $phone-max){  // Phone
@@ -518,14 +551,11 @@ nav.navbar{
 					@include transform(rotate(180deg));
 				}
 			}
-			.navbar-brand span, button i{
+			.navbar-brand, .navbar-brand span, button i{
 				@extend span.misnav;
 			}	
 		}
 		.navbar-collapse{
-			// height: $navbar-height !important;
-			// overflow: hidden !important;
-
 			li{
 				@include transition(all 0.2s ease);
 
@@ -549,24 +579,16 @@ nav.navbar{
 				}
 			}
 		}
-
-		&.navbar-fixed{
-			border-bottom: 1px solid #e5e5e5\9; /* IE8 and below */
-			@include box-shadow(inset 0px -1px 0px rgba(0, 0, 0, 0.1));
-			.navbar-collapse{
-				border-bottom: none;
-			}
-		}
 	}
 	&.navbar-third {
 		position: relative;
 	}
 	/*default, lite, etc.. are only adjust styles*/
 	&.navbar-default{
-		background-color: $grey-opaque;  //use this as fallback
-		background-color: $grey-opacity96;
+		background-color: $darker-bg;  //use this as fallback
+		background-color: rgba($darker-bg, 0.96);
 		&.bg-opaque {
-			background-color: $grey-opaque;
+			background-color: $darker-bg;
 		}
 		@include box-shadow(none);
 
@@ -574,20 +596,22 @@ nav.navbar{
 			@extend .text-reverse;
 
 			&:hover{
-				@extend .text-whiteout;
+				@extend .text-reverse-hover;
+			}
+			&.static:hover {
+				@extend .text-reverse;
 			}
 		}
 		.navbar-toggle .icon-bar{
-			background-color: #fff;
+			background-color: $white;
 		}
 
 	}
-
 	&.navbar-lite{
-		background-color: #fff;
-		background: rgba(255,255,255,0.96);
+		background-color: $white;
+		background: rgba($white, 0.96);
 		&.bg-opaque{
-			background-color: #fff;
+			background-color: $white;
 		}
 		@include box-shadow(none);
 
@@ -596,13 +620,16 @@ nav.navbar{
 				@extend .text-default;
 
 				&:hover{
-					@extend .text-blackout;
+					@extend .text-default-hover;
+				}
+				&.static:hover {
+					@extend .text-default;
 				}
 			}
 		}
 		&.navbar-secondary {
 			.outer-container .navbar-collapse {
-				@include box-shadow(inset 0px -1px 0px rgba(0, 0, 0, 0.1));
+				@include box-shadow(inset 0px -1px 0px rgba($black, 0.1));
 			}
 		}
 		&.navbar-secondary.navbar-fixed {
@@ -611,41 +638,21 @@ nav.navbar{
 			}
 		}
 	}
-	&.navbar-dark{
-		background-color: black;
-		@include box-shadow(none);
-		
-		.navbar-collapse{
-			border-bottom-color: black;
-
-			li{
-				border-bottom-color: white;
-			}
-		}
-
-		.navbar-brand, li>a{
-			@extend .text-reverse;
-
-			&:hover{
-				@extend .text-whiteout;
-			}
-		}
-	}
 	&.navbar-grey{
-		background-color: #f8f8f8;
+		background-color: $grey-lighter;
 		@include box-shadow(none);
 		.container {
 			padding: 0px;
 			.navbar-collapse{
 				margin: 0px;
 				padding: 0px;
-				border-bottom-color: #e6e6e6;
+				border-bottom-color: $grey-light;
 				.navbar-nav {
 					margin: 0px;
 					li{
 						margin: 0px;
 						padding: 0px;
-						border-top: 1px solid #e6e6e6;
+						border-top: 1px solid $grey-light;
 						&>a{
 							@extend .text-default;
 							font-size: 16px;
@@ -704,11 +711,6 @@ nav.navbar{
 			left:0px;
 			width: 100%;
 			height: 100%;
-
-			&.shadow{
-				background-color: rgba(0,0,0,0.1);
-			}
-			
 		}
 		.bg-items{
 			position: relative;
@@ -762,65 +764,6 @@ nav.navbar{
 	}
 }
 
-/*override jquery-ui slider*/
-.container{
-	&.is-dragging{
-  	cursor: move;
-  	cursor: -webkit-grabbing;
-  	cursor: grabbing
-  }
-  .ui-widget-content{
-		border: none;
-		background: #e2e2e2;
-	}
-	.ui-slider-horizontal{
-		height: 2px;
-	}
-
-	.ui-slider-handle{
-		height: 16px;
-		width: 16px;
-		top: -8px;
-		border: 1px solid #bbb;
-		border-radius: 14px;
-		background: #fafafa;
-	  outline: none;
-
-	  &:hover{
-	  	cursor: move;
-	  	cursor: -webkit-grab;
-	  	cursor: grab;
-	  }
-	}
-}
-
-/*override paper material design*/
-.btn{
-	margin: 8px 0px;
-	padding: 3px 20px;
-	@extend p;
-	@include box-shadow(none);
-
-	&:focus, &:active{
-		@include box-shadow(none);
-	}
-}
-.btn-danger{
-	background-color: $red;
-
-	&:hover, &:active, &:focus, &:visited{
-		background-color: $red-hover;
-	}
-}
-.btn-default{
-	color: $red;
-
-	&:hover, &:active, &:focus, &:visited{
-		color: $red;
-		border-color: #fafafa;
-		background-color: #fafafa;
-	}
-}
 .collapse-paragraph{
 	position: relative;
 	max-height: 1000px;
@@ -848,7 +791,7 @@ nav.navbar{
 	&.collapsed {
 		max-height: 130px;
 		.collapse-control {
-			background: linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,255,255,1) 70%);
+			background: linear-gradient(180deg, rgba($white, 0.3), rgba($white, 1) 70%);
 			&>a[data-control="collapse"] {
 				display: none;
 			}

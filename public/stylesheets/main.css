@@ -1,27 +1,36 @@
 /*media query*/
+/*variables*/
 /*color-palette*/
-/*This is default font color, darkest, should be used on lite background*/
-.text-default, .font-cleanup, .catch-copy, h1, h2, h3, p, span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i, html, body, nav.navbar.navbar-secondary, .btn, small, span, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a, nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav li > a, nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav li > a:hover {
-  color: #333; }
+.block-display {
+  display: block; }
 
-/*This is brightest font color, should be used on dark background*/
-.text-reverse, nav.navbar.navbar-default .navbar-brand, nav.navbar.navbar-default li > a, nav.navbar.navbar-dark .navbar-brand, nav.navbar.navbar-dark li > a {
-  color: white; }
+.inline-display {
+  display: inline; }
+
+/*This is default font color, darkest, should be used on lite background*/
+.text-default, .font-cleanup, .catch-copy, h1, h2, h3, p, html, body, nav.navbar.navbar-secondary, small, span, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a, nav.navbar.navbar-lite .outer-container .navbar-brand.static:hover, nav.navbar.navbar-lite .outer-container li > a.static:hover, nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav li > a, nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav li > a:hover {
+  color: #333333; }
 
 /*This is a lighter version for default font color, should be used when hover on default*/
-.text-blackout, nav.navbar.navbar-lite .outer-container .navbar-brand:hover, nav.navbar.navbar-lite .outer-container li > a:hover {
-  color: #7e7e7e; }
+.text-default-hover, nav.navbar.navbar-lite .outer-container .navbar-brand:hover, nav.navbar.navbar-lite .outer-container li > a:hover {
+  color: #6e6e6e; }
+
+/*This is brightest font color, should be used on dark background*/
+.text-reverse, nav.navbar.navbar-default .navbar-brand, nav.navbar.navbar-default li > a, nav.navbar.navbar-default .navbar-brand.static:hover, nav.navbar.navbar-default li > a.static:hover {
+  color: white; }
 
 /*This is a darker version for reverse font color, should be used when hover on reverse*/
-.text-whiteout, nav.navbar.navbar-default .navbar-brand:hover, nav.navbar.navbar-default li > a:hover, nav.navbar.navbar-dark .navbar-brand:hover, nav.navbar.navbar-dark li > a:hover {
-  color: #dcdcdc; }
+.text-reverse-hover, nav.navbar.navbar-default .navbar-brand:hover, nav.navbar.navbar-default li > a:hover {
+  color: #ececec; }
 
-.text-red {
+.text-grey, footer .container a.btn {
+  color: #6e6e6e; }
+
+.text-red, .hyperlink.hyperlink-red {
   color: #f04e41 !important; }
-  .text-red a {
-    color: #f04e41; }
-    .text-red a:hover {
-      color: #ee4f47; }
+
+.text-red-hover, .hyperlink.hyperlink-red:hover {
+  color: #ee4f47 !important; }
 
 .text-not-selectable, .hyperlink, nav.navbar {
   -webkit-user-select: none;
@@ -32,119 +41,6 @@
   /* IE 10+ */
   user-select: none;
   /* Likely future */ }
-
-.font-cleanup, .catch-copy, h1, h2, h3, p, span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i, html, body, nav.navbar.navbar-secondary, .btn, small, span {
-  margin: 0px;
-  margin-bottom: 16px;
-  padding: 0px;
-  line-height: 1em;
-  display: inline; }
-
-.catch-copy {
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 42px;
-  display: block; }
-  .catch-copy em {
-    font-family: Gotham;
-    font-size: 65px;
-    font-style: normal; }
-
-.hyperlink {
-  cursor: pointer; }
-  .hyperlink:hover {
-    text-decoration: underline; }
-
-h1 {
-  font-size: 36px;
-  font-weight: 100;
-  display: block; }
-  @media only screen and (max-width: 1068px) {
-    h1 {
-      font-size: 32px; } }
-  @media only screen and (max-width: 767px) {
-    h1 {
-      font-size: 24px; } }
-
-h2 {
-  font-size: 24px;
-  font-weight: 600;
-  display: block; }
-  @media only screen and (max-width: 1068px) {
-    h2 {
-      font-size: 22px; } }
-  @media only screen and (max-width: 767px) {
-    h2 {
-      font-size: 20px; } }
-
-h3 {
-  font-size: 24px;
-  font-weight: 100;
-  display: block; }
-  @media only screen and (max-width: 1068px) {
-    h3 {
-      font-size: 22px; } }
-  @media only screen and (max-width: 767px) {
-    h3 {
-      font-size: 20px; } }
-
-p, span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i, html, body, nav.navbar.navbar-secondary, .btn {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 24px;
-  text-align: justify;
-  text-justify: ideographic; }
-
-small {
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 18px;
-  display: block;
-  margin-bottom: 5px; }
-  @media only screen and (max-width: 767px) {
-    small {
-      font-size: 14px; } }
-
-span {
-  text-align: justify;
-  text-justify: ideographic;
-  font-weight: 400; }
-  span.mis1 {
-    font-size: 20px;
-    line-height: 36px; }
-    @media only screen and (max-width: 767px) {
-      span.mis1 {
-        font-size: 18px; } }
-  span.mis2 {
-    font-size: 16px;
-    line-height: 16px; }
-    @media only screen and (max-width: 767px) {
-      span.mis2 {
-        font-size: 14px;
-        line-height: 24px; } }
-  @media only screen and (max-width: 767px) {
-    span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i {
-      font-size: 18px; } }
-
-.table-borderless thead tr th, .table-borderless thead tr td, .table-borderless tbody tr th, .table-borderless tbody tr td, .table-borderless tfoot tr th, .table-borderless tfoot tr td {
-  border: none;
-  line-height: 1;
-  vertical-align: middle;
-  padding: 0px; }
-  .table-borderless thead tr th p, .table-borderless thead tr th span.misnav, .table-borderless thead tr th nav.navbar.navbar-primary, .table-borderless thead tr th nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless thead tr th span, .table-borderless thead tr th nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless thead tr th i, .table-borderless thead tr th html, .table-borderless thead tr th body, .table-borderless thead tr th nav.navbar.navbar-secondary, .table-borderless thead tr th .btn, .table-borderless thead tr td p, .table-borderless thead tr td span.misnav, .table-borderless thead tr td nav.navbar.navbar-primary, .table-borderless thead tr td nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless thead tr td span, .table-borderless thead tr td nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless thead tr td i, .table-borderless thead tr td html, .table-borderless thead tr td body, .table-borderless thead tr td nav.navbar.navbar-secondary, .table-borderless thead tr td .btn, .table-borderless tbody tr th p, .table-borderless tbody tr th span.misnav, .table-borderless tbody tr th nav.navbar.navbar-primary, .table-borderless tbody tr th nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless tbody tr th span, .table-borderless tbody tr th nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless tbody tr th i, .table-borderless tbody tr th html, .table-borderless tbody tr th body, .table-borderless tbody tr th nav.navbar.navbar-secondary, .table-borderless tbody tr th .btn, .table-borderless tbody tr td p, .table-borderless tbody tr td span.misnav, .table-borderless tbody tr td nav.navbar.navbar-primary, .table-borderless tbody tr td nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless tbody tr td span, .table-borderless tbody tr td nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless tbody tr td i, .table-borderless tbody tr td html, .table-borderless tbody tr td body, .table-borderless tbody tr td nav.navbar.navbar-secondary, .table-borderless tbody tr td .btn, .table-borderless tfoot tr th p, .table-borderless tfoot tr th span.misnav, .table-borderless tfoot tr th nav.navbar.navbar-primary, .table-borderless tfoot tr th nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless tfoot tr th span, .table-borderless tfoot tr th nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless tfoot tr th i, .table-borderless tfoot tr th html, .table-borderless tfoot tr th body, .table-borderless tfoot tr th nav.navbar.navbar-secondary, .table-borderless tfoot tr th .btn, .table-borderless tfoot tr td p, .table-borderless tfoot tr td span.misnav, .table-borderless tfoot tr td nav.navbar.navbar-primary, .table-borderless tfoot tr td nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .table-borderless tfoot tr td span, .table-borderless tfoot tr td nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .table-borderless tfoot tr td i, .table-borderless tfoot tr td html, .table-borderless tfoot tr td body, .table-borderless tfoot tr td nav.navbar.navbar-secondary, .table-borderless tfoot tr td .btn {
-    line-height: 26px; }
-
-.block-display {
-  display: block; }
-
-.inline-display {
-  display: inline; }
-
-.divider {
-  width: 42px;
-  height: 1px;
-  display: block;
-  background: #000; }
 
 .text-justify {
   text-align: justify;
@@ -165,6 +61,134 @@ span {
         width: 100%;
         overflow: hidden;
         height: 0; } }
+
+.font-cleanup, .catch-copy, h1, h2, h3, p, html, body, nav.navbar.navbar-secondary, small, span {
+  margin: 0px;
+  padding: 0px;
+  line-height: 1em; }
+
+.catch-copy {
+  display: block;
+  font-size: 32px;
+  line-height: 42px;
+  margin-bottom: 23px;
+  font-weight: 800; }
+  .catch-copy em {
+    font-family: Gotham;
+    font-size: 65px;
+    font-style: normal; }
+
+.hyperlink {
+  cursor: pointer; }
+  .hyperlink:hover {
+    text-decoration: underline; }
+
+h1 {
+  display: block;
+  font-size: 36px;
+  line-height: 48px;
+  margin-bottom: 22px;
+  font-weight: 100; }
+  @media only screen and (max-width: 1068px) {
+    h1 {
+      font-size: 32px;
+      line-height: 42px;
+      margin-bottom: 23px; } }
+  @media only screen and (max-width: 767px) {
+    h1 {
+      font-size: 24px;
+      line-height: 36px;
+      margin-bottom: 22px; } }
+
+h2 {
+  display: block;
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 22px;
+  font-weight: 600; }
+  @media only screen and (max-width: 1068px) {
+    h2 {
+      font-size: 22px;
+      line-height: 36px;
+      margin-bottom: 21px; } }
+  @media only screen and (max-width: 767px) {
+    h2 {
+      font-size: 20px;
+      line-height: 36px;
+      margin-bottom: 20px; } }
+
+h3 {
+  display: block;
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 22px;
+  font-weight: 100; }
+  @media only screen and (max-width: 1068px) {
+    h3 {
+      font-size: 22px;
+      line-height: 36px;
+      margin-bottom: 21px; } }
+  @media only screen and (max-width: 767px) {
+    h3 {
+      font-size: 20px;
+      line-height: 36px;
+      margin-bottom: 20px; } }
+
+p, html, body, nav.navbar.navbar-secondary {
+  display: inline;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 23px;
+  font-weight: 400;
+  text-align: justify;
+  text-justify: ideographic; }
+
+small {
+  display: block;
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 5px;
+  font-weight: 400; }
+  @media only screen and (max-width: 767px) {
+    small {
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 4px; } }
+
+span {
+  display: inline;
+  font-weight: 400;
+  text-align: justify;
+  text-justify: ideographic; }
+  span.mis1 {
+    font-size: 20px;
+    line-height: 36px;
+    margin-bottom: 20px; }
+    @media only screen and (max-width: 767px) {
+      span.mis1 {
+        font-size: 18px;
+        line-height: 36px;
+        margin-bottom: 19px; } }
+  span.mis2 {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px; }
+    @media only screen and (max-width: 767px) {
+      span.mis2 {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 23px; } }
+  span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i {
+    font-size: 14px; }
+    @media only screen and (max-width: 767px) {
+      span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i {
+        font-size: 18px; } }
+
+.table-borderless thead tr th, .table-borderless thead tr td, .table-borderless tbody tr th, .table-borderless tbody tr td, .table-borderless tfoot tr th, .table-borderless tfoot tr td {
+  border: none;
+  line-height: 1;
+  vertical-align: middle;
+  padding: 0px; }
 
 @font-face {
   font-family: 'Han Sans';
@@ -210,7 +234,6 @@ span {
   font-size: 14px;
   /* Preferred icon size */
   display: inline-block;
-  width: 1rem;
   line-height: inherit;
   text-transform: none;
   letter-spacing: normal;
@@ -252,9 +275,11 @@ footer {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
   footer .container {
-    border-top: 1px solid #e6e6e6; }
+    border-top: 1px solid #ececec; }
     footer .container a.btn {
-      color: #6e6e6e;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
       padding: 3px 5px; }
       footer .container a.btn:last-child {
         padding: 3px 0px 3px 25px; }
@@ -320,6 +345,18 @@ nav.navbar {
       @media only screen and (max-width: 767px) {
         nav.navbar .navbar-brand img {
           margin: 0 auto; } }
+  nav.navbar .navbar-toggle {
+    position: absolute;
+    top: 0px;
+    right: 0px; }
+    nav.navbar .navbar-toggle.btn-hanburger {
+      margin-top: 8px;
+      margin-bottom: 8px; }
+      nav.navbar .navbar-toggle.btn-hanburger .icon-bar {
+        margin-bottom: 0px; }
+    nav.navbar .navbar-toggle.btn-arrow {
+      margin-top: 5px;
+      margin-bottom: 2px; }
   nav.navbar .nav.navbar-right {
     margin-right: 0px; }
     @media only screen and (min-width: 1069px) {
@@ -340,15 +377,6 @@ nav.navbar {
   @media only screen and (min-width: 1069px) {
     nav.navbar .navbar-collapse {
       padding: 0px; } }
-  @media only screen and (max-width: 767px) {
-    nav.navbar .navbar-toggle {
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      margin-top: 8px;
-      margin-bottom: 8px; }
-      nav.navbar .navbar-toggle .icon-bar {
-        margin-bottom: 0px; } }
   nav.navbar.navbar-primary {
     z-index: 10000; }
     nav.navbar.navbar-primary .navbar-brand {
@@ -370,7 +398,7 @@ nav.navbar {
     -o-transition: none;
     transition: none; }
     nav.navbar.navbar-secondary .navbar-header .navbar-brand {
-      padding: 11px 10px 11px 0px;
+      padding: 14px 10px 13px 0px;
       margin-right: 10px;
       cursor: default; }
       @media only screen and (max-width: 767px) {
@@ -405,34 +433,26 @@ nav.navbar {
         line-height: 50px;
         cursor: pointer;
         margin-bottom: -2px; }
-    nav.navbar.navbar-secondary.navbar-fixed {
-      border-bottom: 1px solid #e5e5e5 \9;
-      /* IE8 and below */
-      -moz-box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
-      -webkit-box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
-      box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1); }
-      nav.navbar.navbar-secondary.navbar-fixed .navbar-collapse {
-        border-bottom: none; }
   nav.navbar.navbar-third {
     position: relative; }
   nav.navbar.navbar-default {
-    background-color: #23252b;
-    background-color: rgba(35, 37, 43, 0.96);
+    background-color: #222429;
+    background-color: rgba(34, 36, 41, 0.96);
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none; }
     nav.navbar.navbar-default.bg-opaque {
-      background-color: #23252b; }
+      background-color: #222429; }
     nav.navbar.navbar-default .navbar-toggle .icon-bar {
-      background-color: #fff; }
+      background-color: white; }
   nav.navbar.navbar-lite {
-    background-color: #fff;
+    background-color: white;
     background: rgba(255, 255, 255, 0.96);
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none; }
     nav.navbar.navbar-lite.bg-opaque {
-      background-color: #fff; }
+      background-color: white; }
     nav.navbar.navbar-lite.navbar-secondary .outer-container .navbar-collapse {
       -moz-box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
       -webkit-box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
@@ -441,15 +461,6 @@ nav.navbar {
       -moz-box-shadow: none;
       -webkit-box-shadow: none;
       box-shadow: none; }
-  nav.navbar.navbar-dark {
-    background-color: black;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none; }
-    nav.navbar.navbar-dark .navbar-collapse {
-      border-bottom-color: black; }
-      nav.navbar.navbar-dark .navbar-collapse li {
-        border-bottom-color: white; }
   nav.navbar.navbar-grey {
     background-color: #f8f8f8;
     -moz-box-shadow: none;
@@ -460,13 +471,13 @@ nav.navbar {
       nav.navbar.navbar-grey .container .navbar-collapse {
         margin: 0px;
         padding: 0px;
-        border-bottom-color: #e6e6e6; }
+        border-bottom-color: #ececec; }
         nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav {
           margin: 0px; }
           nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav li {
             margin: 0px;
             padding: 0px;
-            border-top: 1px solid #e6e6e6; }
+            border-top: 1px solid #ececec; }
             nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav li > a {
               font-size: 16px; }
 
@@ -507,13 +518,11 @@ nav.navbar {
       left: 0px;
       width: 100%;
       height: 100%; }
-      .article .bg .foreground.shadow {
-        background-color: rgba(0, 0, 0, 0.1); }
     .article .bg .bg-items {
       position: relative; }
   .article.article-center .container, .article.article-center .container-fluid {
     text-align: center; }
-    .article.article-center .container p, .article.article-center .container span.misnav, .article.article-center .container nav.navbar.navbar-primary, .article.article-center .container nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .article.article-center .container span, .article.article-center .container nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .article.article-center .container i, .article.article-center .container html, .article.article-center .container body, .article.article-center .container nav.navbar.navbar-secondary, .article.article-center .container .btn, .article.article-center .container-fluid p, .article.article-center .container-fluid span.misnav, .article.article-center .container-fluid nav.navbar.navbar-primary, .article.article-center .container-fluid nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header .navbar-brand .article.article-center .container-fluid span, .article.article-center .container-fluid nav.navbar.navbar-secondary .navbar-header button i, nav.navbar.navbar-secondary .navbar-header button .article.article-center .container-fluid i, .article.article-center .container-fluid html, .article.article-center .container-fluid body, .article.article-center .container-fluid nav.navbar.navbar-secondary, .article.article-center .container-fluid .btn {
+    .article.article-center .container p, .article.article-center .container html, .article.article-center .container body, .article.article-center .container nav.navbar.navbar-secondary, .article.article-center .container-fluid p, .article.article-center .container-fluid html, .article.article-center .container-fluid body, .article.article-center .container-fluid nav.navbar.navbar-secondary {
       text-align: left; }
   .article.article-v-bottom .container, .article.article-v-bottom .container-fluid {
     position: absolute;
@@ -538,53 +547,6 @@ nav.navbar {
     height: 300px; }
   .article.article-wrapcontent h2 {
     margin-bottom: 0px; }
-
-/*override jquery-ui slider*/
-.container.is-dragging {
-  cursor: move;
-  cursor: -webkit-grabbing;
-  cursor: grabbing; }
-.container .ui-widget-content {
-  border: none;
-  background: #e2e2e2; }
-.container .ui-slider-horizontal {
-  height: 2px; }
-.container .ui-slider-handle {
-  height: 16px;
-  width: 16px;
-  top: -8px;
-  border: 1px solid #bbb;
-  border-radius: 14px;
-  background: #fafafa;
-  outline: none; }
-  .container .ui-slider-handle:hover {
-    cursor: move;
-    cursor: -webkit-grab;
-    cursor: grab; }
-
-/*override paper material design*/
-.btn {
-  margin: 8px 0px;
-  padding: 3px 20px;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  box-shadow: none; }
-  .btn:focus, .btn:active {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none; }
-
-.btn-danger {
-  background-color: #f04e41; }
-  .btn-danger:hover, .btn-danger:active, .btn-danger:focus, .btn-danger:visited {
-    background-color: #ee4f47; }
-
-.btn-default {
-  color: #f04e41; }
-  .btn-default:hover, .btn-default:active, .btn-default:focus, .btn-default:visited {
-    color: #f04e41;
-    border-color: #fafafa;
-    background-color: #fafafa; }
 
 .collapse-paragraph {
   position: relative;

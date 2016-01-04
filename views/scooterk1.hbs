@@ -1,7 +1,7 @@
 {{> header }}
 <style type="text/css">
 nav.navbar.navbar-default li > a[href~="/scooter-k1"], nav.navbar.navbar-default li > a[href~="/scooter-k1"]:hover{
-	color:#999;
+	color:#888;  /*$grey, reverse-selected*/
 }
 .navbar-secondary .btn .plus{
 	padding: 8px;
@@ -40,12 +40,12 @@ nav.navbar.navbar-default li > a[href~="/scooter-k1"], nav.navbar.navbar-default
 	 padding-left: 57px;
 }
 #metrics #metrics-1 .foreground {
-	background-color: #2b2d33;
+	background-color: #2b2d33;   /*dark-bg*/
 }
 #metrics .table-container {
 	padding-top: 18px;
 	padding-bottom: 18px;
-	border-bottom: 1px solid #6e6e6e;
+	border-bottom: 1px solid #6e6e6e;  /*$grey-darker, border on dark-bg*/
 }
 #metrics .container>.row:first-child .table-container {
 	padding-top: 0px;
@@ -60,8 +60,10 @@ nav.navbar.navbar-default li > a[href~="/scooter-k1"], nav.navbar.navbar-default
 #metrics table tr{
 	height: 32px;
 }
-@media only screen and (max-width: $phone-max) {
-
+@media only screen and (max-width: 767px) {
+	#improvements .article .row .col-sm-6:last-child{
+	 	padding-left: 15px;
+	}
 }
 </style>
 <div class="main">
@@ -70,7 +72,7 @@ nav.navbar.navbar-default li > a[href~="/scooter-k1"], nav.navbar.navbar-default
 		  <div class="container">
 			  <div class="navbar-header">
 			  	<a class="navbar-brand"><span>K1</span></a>
-		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#secondary-nav">
+		      <button type="button" class="navbar-toggle collapsed btn-arrow" data-toggle="collapse" data-target="#secondary-nav">
 		        <span class="sr-only">Toggle navigation</span>
 		        <i class="material-icons">&#xE313;</i>
 		      </button>
@@ -204,7 +206,7 @@ nav.navbar.navbar-default li > a[href~="/scooter-k1"], nav.navbar.navbar-default
 						<span class="mis1 block-display">/ 百公里续航 <br>/ IP65级防水 <br>/ 360°照明 <br>/ 结构创新</span>
 						<p class="block-display">采用三星原装电池，主打性能与车身强度，是首款达到IP65级防水级别的电动滑板车。<br>
 						配选27AH电池，续航可达100KM。车身采用多角度的灯光防护设计，可反射汽车灯光源，同样适用于夜间骑行。</p>
-						<span class="mis2 block-display text-red hyperlink" data-hyperlink="breakthroughs">了解核心突破 ></span>
+						<span class="mis2 block-display hyperlink hyperlink-red" data-hyperlink="breakthroughs">了解核心突破 ></span>
 					</div>
 				</div>
 			</div>
@@ -234,7 +236,7 @@ nav.navbar.navbar-default li > a[href~="/scooter-k1"], nav.navbar.navbar-default
 					<div class="col-sm-6 col-sm-offset-6">
 						<h1>数十项改进，<br>只为骑行更安全舒适</h1>
 						<p class="block-display">设计团队针对现有滑板车存在的不足，对数十个细节进行优化，提升了骑行体验。自带USB充电口，免充气的实心防爆胎，优秀的折叠装置设计等。可选配原厂座椅。</p>
-						<span class="mis2 block-display text-red hyperlink" data-hyperlink="improvements">了解改进 ></span>
+						<span class="mis2 block-display hyperlink-red hyperlink" data-hyperlink="improvements">了解改进 ></span>
 					</div>
 				</div>
 			</div>

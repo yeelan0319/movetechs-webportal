@@ -1,13 +1,10 @@
 {{> header }}
 <style>
 	nav.navbar.navbar-default li > a[href~="/about"], nav.navbar.navbar-default li > a[href~="/about"]:hover{
-		color:#999;
-	}
-	nav.navbar.navbar-secondary .navbar-collapse li a:hover{
-		color:#333;
+		color:#888;   /*$grey, reverse-selected*/
 	}
 	.article#jumbotron .foreground{
-		background: #ECECEC;
+		background: #ececec;   /*$grey-light, light-bg*/
 	}
 	.article#jumbotron .bg-items{
 		position: absolute;
@@ -29,7 +26,6 @@
 	.article#profile .profile-name p{
 		position: absolute; 
 		top: 0px; 
-		line-height: 1em;
 		padding-left: 10px; 
 		white-space: nowrap;
 	}
@@ -49,7 +45,7 @@
 		margin-top: -10px;
 	}
 	.article#joinus .foreground{
-		background: #f8f8f8;
+		background: #f8f8f8;    /*$grey-lighter, lighter-bg*/
 	}
 </style>
 <script>
@@ -107,7 +103,7 @@
 			  <div class="container">
 			    <div class="navbar-collapse">
 			      <ul class="nav text-center">
-			      	<li><a>美步（move）团队 /</a></li>
+			      	<li><a class="static">美步团队 /</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div>

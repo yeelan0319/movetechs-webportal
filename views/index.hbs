@@ -1,10 +1,7 @@
 {{> header }}
 <style>
-	nav.navbar.navbar-default li > a[href~="/"], nav.navbar.navbar-default li > a[href~="/about"]:hover{
-		color:#999;
-	}
-	nav.navbar.navbar-secondary .navbar-collapse li a:hover{
-		color:#333;
+	nav.navbar.navbar-default li > a[href~="/"], nav.navbar.navbar-default li > a[href~="/"]:hover{
+		color:#888;   /*$grey, reverse-selected*/
 	}
 	.article#jumbotron .container-fluid, .article#jumbotron .col-sm-6{
 		padding: 0px;
@@ -18,15 +15,15 @@
 	.article#jumbotron-mobile .carousel-indicators li{
 		width:8px;
 		height:8px;
-		background-color:#888;
+		background-color:#888;     /*$grey, carousel-indicator*/
 		margin: 0px 6px;
-		border: 1px solid #888;
+		border: 1px solid #888;    /*$grey, carousel-indicator border*/
 	}
 	.article#jumbotron-mobile .carousel-indicators li.active {
 		width: 8px;
 		height: 8px;
-		background-color:#fff;
-		border-color: #888;
+		background-color:#fff;     /*$white, carousel-indicator active*/
+		border-color: #888;				 /*$grey, carousel-indicator border*/
 	}
 	.article#jumbotron-mobile .carousel-inner .item .carousel-caption {
 		top: 30%;
@@ -42,13 +39,15 @@
 		.article#jumbotron-mobile .carousel-inner .item .carousel-caption h1{
 			font-size: 62px;
 			line-height: 1em;
+			margin-bottom: 28px;
 			font-weight: 800;
 		}
 	}
 	@media only screen and (max-width: 767px) { 
 		.article#jumbotron-mobile .carousel-inner .item .carousel-caption h1{
-			font-size: 52px;
+			font-size: 37px;
 			line-height: 1em;
+			margin-bottom: 28px;
 			font-weight: 800;
 		}
 		.main .main-intro {
@@ -107,7 +106,7 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<h1 class="text-red">质胜每一步</h1>
-					<span class="mis1 text-red"><a class="hyperlink" href="/scooter-k1">一号滑板车 ></a></span>
+					<span class="mis1 text-red"><a class="hyperlink hyperlink-red" href="/scooter-k1">一号滑板车 ></a></span>
 				</div>
 				<div class="col-sm-6">
 					<h1 class="text-reverse">轻生活，骑出彩</h1>
@@ -130,7 +129,7 @@
 		      <img src="images/index-k1.jpg" alt="..."/>
 		      <div class="carousel-caption">
 		        <h1 class="text-red">质胜每一步</h1>
-						<span class="mis1 text-red"><a class="hyperlink" href="/scooter-k1">一号滑板车 ></a></span>
+						<span class="mis1 text-red"><a class="hyperlink hyperlink-red" href="/scooter-k1">一号滑板车 ></a></span>
 		      </div>
 		    </div>
 		    <div class="item">
@@ -149,7 +148,7 @@
 			  <div class="container">
 			    <div class="navbar-collapse">
 			      <ul class="nav text-center">
-			      	<li><a>关于美步科技 /</a></li>
+			      	<li><a class="static">关于美步科技 /</a></li>
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div>
@@ -168,8 +167,8 @@
 						六年前创始团队在清华大学成立专门的团队探索、研究智能出行，成立公司后，我们迅速组建了智能车技术背景的20人核心研发团队，成员全部来自清华大学、同济汽车学院等相关院系毕业生，公司有极强的正向研发能力和完整且业界领先的供应链与生产管理。<br>
 						截至 2015 年 12 月，公司一号产品（K1 系列）已经研发完成并投入生产。 <br></p>
 						<div class="text-right">
-							<p class="text-red"><a class="hyperlink" href="/scooter-k1">一号产品 ></a></p>
-							<p class="text-red"><a class="hyperlink" href="/future">更多 P.E.T 概念 ></a></p>
+							<p class="text-red"><a class="hyperlink hyperlink-red" href="/scooter-k1">一号产品 ></a></p>
+							<p class="text-red"><a class="hyperlink hyperlink-red" href="/future">更多 P.E.T 概念 ></a></p>
 						</div>
 					</div>
 				</div>
@@ -190,9 +189,9 @@
 							<p class="block-display">美步科技旨在为人们定制出行方式。我们提出P.E.T的概念，认为人们出行所需的交通工具将越来越轻量化、智能化——90%以上的情况将是个人使用，也因此能更好的地满足用户个性化、关怀等需求。<br>
 							六年前创始团队在清华大学成立专门的团队探索、研究智能出行，成立公司后，我们迅速组建了智能车技术背景的20人核心研发团队，成员全部来自清华大学、同济汽车学院等相关院系毕业生，公司有极强的正向研发能力和完整且业界领先的供应链与生产管理。<br>
 							截至 2015 年 12 月，公司一号产品（K1 系列）已经研发完成并投入生产。 <br></p>
-							<div class="collapse-control text-red">
-								<a data-control="collapse">收起</a>
-								<a data-control="expand">展开</a>
+							<div class="collapse-control">
+								<a class="hyperlink hyperlink-red" data-control="collapse">收起</a>
+								<a class="hyperlink hyperlink-red" data-control="expand">展开</a>
 							</div>
 						</div>
 					</div>
