@@ -407,16 +407,20 @@ nav.navbar {
       @media only screen and (max-width: 767px) {
         nav.navbar.navbar-secondary .navbar-header .navbar-brand {
           padding-left: 15px; } }
-    nav.navbar.navbar-secondary .navbar-header button {
-      -webkit-transition: all 0.2s ease;
-      -moz-transition: all 0.2s ease;
-      -o-transition: all 0.2s ease;
-      transition: all 0.2s ease; }
-      nav.navbar.navbar-secondary .navbar-header button.in {
-        -ms-transform: rotate(180deg);
-        -moz-transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
-        transform: rotate(180deg); }
+    nav.navbar.navbar-secondary .navbar-header div[type~="button"] {
+      position: absolute;
+      height: 100%;
+      width: 100%; }
+      nav.navbar.navbar-secondary .navbar-header div[type~="button"] button {
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease; }
+        nav.navbar.navbar-secondary .navbar-header div[type~="button"] button.in {
+          -ms-transform: rotate(180deg);
+          -moz-transform: rotate(180deg);
+          -webkit-transform: rotate(180deg);
+          transform: rotate(180deg); }
     nav.navbar.navbar-secondary .navbar-collapse li {
       -webkit-transition: all 0.2s ease;
       -moz-transition: all 0.2s ease;
@@ -541,11 +545,11 @@ nav.navbar {
       text-align: left; }
   .article.article-v-bottom .container, .article.article-v-bottom .container-fluid {
     position: absolute;
-    left: 50%;
-    bottom: 0px; }
-    .article.article-v-bottom .container .row, .article.article-v-bottom .container-fluid .row {
-      position: relative;
-      left: -50%; }
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin-left: auto;
+    margin-right: auto; }
   .article.article-v-center .container, .article.article-v-center .container-fluid {
     display: table;
     height: 100%; }
@@ -562,6 +566,14 @@ nav.navbar {
     height: 300px; }
   .article.article-wrapcontent h2 {
     margin-bottom: 0px; }
+  @media only screen and (max-width: 767px) {
+    .article.article-xs-v-bottom .container, .article.article-xs-v-bottom .container-fluid {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      margin-left: auto;
+      margin-right: auto; } }
 
 .collapse-paragraph {
   position: relative;

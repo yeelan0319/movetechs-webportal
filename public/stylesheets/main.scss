@@ -556,10 +556,15 @@ nav.navbar{
 					padding-left: 15px;
 				}
 			}
-			button{
-				@include transition(all 0.2s ease);
-				&.in{
-					@include transform(rotate(180deg));
+			div[type~="button"]{
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				button{
+					@include transition(all 0.2s ease);
+					&.in{
+					  @include transform(rotate(180deg));
+					}
 				}
 			}
 			.navbar-brand, .navbar-brand span, button i{
@@ -749,12 +754,11 @@ nav.navbar{
 	&.article-v-bottom {
 		.container, .container-fluid {
 			position: absolute;
-			left: 50%;
+			left: 0px;
+			right: 0px;
 			bottom: 0px;
-			.row {
-				position: relative;
-				left: -50%;
-			}
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 	&.article-v-center {
@@ -781,6 +785,18 @@ nav.navbar{
 	&.article-wrapcontent {
 		h2{
 			margin-bottom: 0px;
+		}
+	}
+	@media only screen and (max-width: $phone-max) {
+		&.article-xs-v-bottom {
+			.container, .container-fluid {
+				position: absolute;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 	}
 }
