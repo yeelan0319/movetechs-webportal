@@ -4,11 +4,8 @@
 .block-display {
   display: block; }
 
-.inline-display {
-  display: inline; }
-
 /*This is default font color, darkest, should be used on lite background*/
-.text-default, .font-cleanup, .catch-copy, h1, h2, h3, p, html, body, nav.navbar.navbar-secondary, small, span, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a, nav.navbar.navbar-lite .outer-container .navbar-brand.static:hover, nav.navbar.navbar-lite .outer-container li > a.static:hover, nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav li > a, nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav li > a:hover {
+.text-default, .font-cleanup, .catch-copy, h1, h2, h3, p, nav.navbar.navbar-secondary, small, span, html, body, nav.navbar.navbar-lite .outer-container .navbar-brand, nav.navbar.navbar-lite .outer-container li > a, nav.navbar.navbar-lite .outer-container .navbar-brand.static:hover, nav.navbar.navbar-lite .outer-container li > a.static:hover, nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav li > a, nav.navbar.navbar-grey .container .navbar-collapse .navbar-nav li > a:hover {
   color: #333333; }
 
 /*This is a lighter version for default font color, should be used when hover on default*/
@@ -62,10 +59,12 @@
         overflow: hidden;
         height: 0; } }
 
-.font-cleanup, .catch-copy, h1, h2, h3, p, html, body, nav.navbar.navbar-secondary, small, span {
+.font-cleanup, .catch-copy, h1, h2, h3, p, nav.navbar.navbar-secondary, small, span, html, body {
   margin: 0px;
   padding: 0px;
-  line-height: 1em; }
+  line-height: 1em;
+  font-size: 14px;
+  line-height: 24px; }
 
 .catch-copy {
   display: block;
@@ -134,8 +133,8 @@ h3 {
       line-height: 36px;
       margin-bottom: 20px; } }
 
-p, html, body, nav.navbar.navbar-secondary {
-  display: inline;
+p, nav.navbar.navbar-secondary {
+  display: inline-block;
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 23px;
@@ -156,7 +155,7 @@ small {
       margin-bottom: 4px; } }
 
 span {
-  display: inline;
+  display: inline-block;
   font-weight: 400;
   text-align: justify;
   text-justify: ideographic; }
@@ -401,7 +400,7 @@ nav.navbar {
     -o-transition: none;
     transition: none; }
     nav.navbar.navbar-secondary .navbar-header .navbar-brand {
-      padding: 14px 10px 13px 0px;
+      padding: 13px 10px;
       margin-right: 10px;
       cursor: pointer; }
       @media only screen and (max-width: 767px) {
@@ -409,8 +408,9 @@ nav.navbar {
           padding-left: 15px; } }
     nav.navbar.navbar-secondary .navbar-header div[type~="button"] {
       position: absolute;
-      height: 100%;
-      width: 100%; }
+      left: 0px;
+      right: 0px;
+      height: 100%; }
       nav.navbar.navbar-secondary .navbar-header div[type~="button"] button {
         -webkit-transition: all 0.2s ease;
         -moz-transition: all 0.2s ease;
@@ -421,6 +421,9 @@ nav.navbar {
           -moz-transform: rotate(180deg);
           -webkit-transform: rotate(180deg);
           transform: rotate(180deg); }
+      @media (min-width: 768px) {
+        nav.navbar.navbar-secondary .navbar-header div[type~="button"] {
+          display: none; } }
     nav.navbar.navbar-secondary .navbar-collapse li {
       -webkit-transition: all 0.2s ease;
       -moz-transition: all 0.2s ease;
@@ -504,16 +507,16 @@ nav.navbar {
 .main {
   position: relative;
   margin-top: 50px; }
-  .main .main-intro {
+  .main > .main-intro {
     position: relative;
     padding-top: 98px; }
-  .main .content {
+  .main > .content {
     position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
     display: none; }
-    .main .content.content-active {
+    .main > .content.content-active {
       display: block; }
 
 .article {
@@ -521,39 +524,39 @@ nav.navbar {
   width: 100%; }
   .article .container, .article .container-fluid {
     position: relative; }
-  .article .bg {
+  .article > .bg {
     position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
     height: 100%;
     overflow: hidden; }
-    .article .bg .background {
+    .article > .bg .background {
       position: absolute;
       display: none; }
-    .article .bg .foreground {
+    .article > .bg .foreground {
       position: absolute;
       top: 0px;
       left: 0px;
       width: 100%;
       height: 100%; }
-    .article .bg .bg-items {
+    .article > .bg .bg-items {
       position: relative; }
-  .article.article-center .container, .article.article-center .container-fluid {
+  .article.article-center > .content.container, .article.article-center > .content.container-fluid {
     text-align: center; }
-    .article.article-center .container p, .article.article-center .container html, .article.article-center .container body, .article.article-center .container nav.navbar.navbar-secondary, .article.article-center .container-fluid p, .article.article-center .container-fluid html, .article.article-center .container-fluid body, .article.article-center .container-fluid nav.navbar.navbar-secondary {
+    .article.article-center > .content.container p, .article.article-center > .content.container nav.navbar.navbar-secondary, .article.article-center > .content.container-fluid p, .article.article-center > .content.container-fluid nav.navbar.navbar-secondary {
       text-align: left; }
-  .article.article-v-bottom .container, .article.article-v-bottom .container-fluid {
+  .article.article-v-bottom > .content.container, .article.article-v-bottom > .content.container-fluid {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: 0px;
     margin-left: auto;
     margin-right: auto; }
-  .article.article-v-center .container, .article.article-v-center .container-fluid {
+  .article.article-v-center > .content.container, .article.article-v-center > .content.container-fluid {
     display: table;
     height: 100%; }
-    .article.article-v-center .container .row, .article.article-v-center .container-fluid .row {
+    .article.article-v-center > .content.container .row, .article.article-v-center > .content.container-fluid .row {
       display: table-row;
       height: 0px;
       vertical-align: middle; }

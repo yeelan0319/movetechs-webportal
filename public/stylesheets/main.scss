@@ -26,9 +26,6 @@ $red-hover: rgba($red, 0.75);
 .block-display {
 	display: block;
 }
-.inline-display {
-	display: inline;
-}
 /*This is default font color, darkest, should be used on lite background*/
 .text-default{
 	color: $grey-darker;
@@ -81,6 +78,8 @@ $red-hover: rgba($red, 0.75);
 	margin: 0px;
 	padding: 0px;
 	line-height: 1em;
+	font-size: 14px;
+	line-height: 24px;
 	@extend .text-default;
 }
 .catch-copy {  //强调
@@ -171,7 +170,7 @@ h3 {   //标题2
 }
 p {   //正文
 	@extend .font-cleanup;
-	display: inline;
+	display: inline-block;
 	font-size: 14px;
 	line-height: 24px;
 	margin-bottom: 23px;
@@ -194,7 +193,7 @@ small {  //补充说明
 }
 span {
 	@extend .font-cleanup;
-	display: inline;
+	display: inline-block;
 	font-weight: 400;
 	text-align: justify; 
   text-justify: ideographic;
@@ -357,7 +356,7 @@ span {
 }
 
 html, body {
-	@extend p;
+	@extend .font-cleanup;
 	height: 100%;
 	background: white;
 	font-family: "Gotham light","Helvetica Neue", Helvetica, Arial, "Han Sans", sans-serif;
@@ -549,7 +548,7 @@ nav.navbar{
 		@include transition(none);
 		.navbar-header {
 			.navbar-brand {
-				padding: 14px 10px 13px 0px;
+				padding: 13px 10px;
 				margin-right: 10px;
 				cursor: pointer;
 				@media only screen and (max-width: $phone-max){  // Phone
@@ -558,13 +557,17 @@ nav.navbar{
 			}
 			div[type~="button"]{
 				position: absolute;
+				left: 0px;
+				right: 0px;
 				height: 100%;
-				width: 100%;
 				button{
 					@include transition(all 0.2s ease);
 					&.in{
 					  @include transform(rotate(180deg));
 					}
+				}
+				@media (min-width: $tablet-min){
+					display: none;
 				}
 			}
 			.navbar-brand, .navbar-brand span, button i{
@@ -697,11 +700,11 @@ nav.navbar{
 .main{
 	position: relative;
 	margin-top: $navbar-height;
-	.main-intro {
+	>.main-intro {
 		position: relative;
 		padding-top: 98px;
 	}
-	.content {
+	>.content {
 		position:absolute;
 		top: 0px;
 		left:0px;
@@ -719,7 +722,7 @@ nav.navbar{
 	.container, .container-fluid{
 		position: relative;
 	}
-	.bg{
+	>.bg{
 		position: absolute;
 		top:0px;
 		left:0px;
@@ -743,32 +746,38 @@ nav.navbar{
 		}
 	}
 	&.article-center{
-		.container, .container-fluid {
-			text-align: center;
+		>.content {
+			&.container, &.container-fluid {
+				text-align: center;
 
-			p{
-				text-align: left;
+				p{
+					text-align: left;
+				}
 			}
 		}
 	}
 	&.article-v-bottom {
-		.container, .container-fluid {
-			position: absolute;
-			left: 0px;
-			right: 0px;
-			bottom: 0px;
-			margin-left: auto;
-			margin-right: auto;
+		>.content {
+			&.container, &.container-fluid {
+				position: absolute;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 	}
 	&.article-v-center {
-		.container, .container-fluid{
-			display: table;
-			height: 100%;
-			.row {
-				display: table-row;
-				height: 0px;
-				vertical-align: middle;
+		>.content {
+			&.container, &.container-fluid{
+				display: table;
+				height: 100%;
+				.row {
+					display: table-row;
+					height: 0px;
+					vertical-align: middle;
+				}
 			}
 		}
 	}
