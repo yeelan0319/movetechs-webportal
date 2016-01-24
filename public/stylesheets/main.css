@@ -20,7 +20,7 @@
 .text-reverse-hover, .hyperlink.hyperlink-reverse:hover, nav.navbar.navbar-default .navbar-brand:hover, nav.navbar.navbar-default li > a:hover {
   color: #ececec; }
 
-.text-grey, footer > .container a.btn {
+.text-grey, footer > .container .footer-left small, footer > .container .footer-right a.btn {
   color: #6e6e6e; }
 
 .text-red, .hyperlink.hyperlink-red {
@@ -272,36 +272,43 @@ footer {
   transition: all 0.5s ease; }
   footer > .container {
     border-top: 1px solid #ececec; }
-    footer > .container a.btn {
-      -moz-box-shadow: none;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      padding: 3px 5px; }
-      footer > .container a.btn:last-child {
-        padding: 3px 0px 3px 25px; }
-      footer > .container a.btn:hover {
-        opacity: 0.75; }
-      footer > .container a.btn:focus {
-        border: none;
-        outline: none; }
-      footer > .container a.btn > img {
-        width: 16px; }
-    footer > .container .popover {
-      width: 450px;
-      max-width: 450px;
-      background: rgba(255, 255, 255, 0.96); }
-      footer > .container .popover .popover-title {
-        background: transparent;
-        font-size: 14px;
-        font-weight: 400;
-        text-align: center; }
-      footer > .container .popover .popover-content {
-        position: relative;
-        padding-bottom: 178px; }
-        footer > .container .popover .popover-content img.qrcode {
-          position: absolute;
-          bottom: 28px;
-          width: 150px; }
+    footer > .container .footer-left {
+      float: left; }
+      footer > .container .footer-left small {
+        line-height: 50px;
+        margin-bottom: 0px; }
+    footer > .container .footer-right {
+      float: right; }
+      footer > .container .footer-right a.btn {
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        padding: 3px 5px; }
+        footer > .container .footer-right a.btn:last-child {
+          padding: 3px 0px 3px 25px; }
+        footer > .container .footer-right a.btn:hover {
+          opacity: 0.75; }
+        footer > .container .footer-right a.btn:focus {
+          border: none;
+          outline: none; }
+        footer > .container .footer-right a.btn > img {
+          width: 16px; }
+      footer > .container .footer-right .popover {
+        width: 450px;
+        max-width: 450px;
+        background: white; }
+        footer > .container .footer-right .popover .popover-title {
+          background: transparent;
+          font-size: 14px;
+          font-weight: 400;
+          text-align: center; }
+        footer > .container .footer-right .popover .popover-content {
+          position: relative;
+          padding-bottom: 178px; }
+          footer > .container .footer-right .popover .popover-content img.qrcode {
+            position: absolute;
+            bottom: 28px;
+            width: 150px; }
   @media only screen and (max-width: 767px) {
     footer {
       background-color: #222429; }
@@ -384,15 +391,17 @@ nav.navbar {
     nav.navbar.navbar-primary .navbar-brand {
       padding: 16px 15px; }
     @media only screen and (max-width: 767px) {
-      nav.navbar.navbar-primary .navbar-collapse {
-        -moz-box-shadow: none;
-        -webkit-box-shadow: none;
-        box-shadow: none; }
-        nav.navbar.navbar-primary .navbar-collapse .nav li:last-child {
-          margin-bottom: 12px; }
-        nav.navbar.navbar-primary .navbar-collapse .nav li a {
-          line-height: 60px;
-          height: 60px; } }
+      nav.navbar.navbar-primary {
+        font-size: 18px; }
+        nav.navbar.navbar-primary .navbar-collapse {
+          -moz-box-shadow: none;
+          -webkit-box-shadow: none;
+          box-shadow: none; }
+          nav.navbar.navbar-primary .navbar-collapse .nav li:last-child {
+            margin-bottom: 12px; }
+          nav.navbar.navbar-primary .navbar-collapse .nav li a {
+            line-height: 60px;
+            height: 60px; } }
   nav.navbar.navbar-secondary {
     z-index: 9999;
     -webkit-transition: none;

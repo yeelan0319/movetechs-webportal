@@ -386,44 +386,55 @@ footer{
 	@include transition(all 0.5s ease);
 	>.container {
 		border-top: 1px solid $grey-light;
-		a.btn{
-			@extend .text-grey;
-			@include box-shadow(none);
-			padding: 3px 5px;
-			&:last-child {
-				padding: 3px 0px 3px 25px; 
-			}
-			&:hover{
-				opacity: 0.75;
-			}
-			&:focus{
-				border: none;
-    		outline:none;
-			}
-			&>img{
-				width: 16px;
+		.footer-left{
+			float:left;
+			small{
+				@extend .text-grey;
+				line-height: $footer-height;
+				margin-bottom: 0px;
 			}
 		}
-		.popover {
-			width: 450px;
-			max-width: 450px;
-			background: rgba($white, 0.96);
-			.popover-title {
-				background: transparent;
-				font-size: 14px;
-				font-weight: 400;
-				text-align: center;
-			}
-			.popover-content {
-				position: relative;
-				padding-bottom: 178px;
-				img.qrcode{
-					position: absolute;
-					bottom: 28px;
-					width: 150px;
+		.footer-right {
+			float: right;
+			a.btn{
+				@extend .text-grey;
+				@include box-shadow(none);
+				padding: 3px 5px;
+				&:last-child {
+					padding: 3px 0px 3px 25px; 
+				}
+				&:hover{
+					opacity: 0.75;
+				}
+				&:focus{
+					border: none;
+	    		outline:none;
+				}
+				&>img{
+					width: 16px;
 				}
 			}
-		}	
+			.popover {
+				width: 450px;
+				max-width: 450px;
+				background: $white;
+				.popover-title {
+					background: transparent;
+					font-size: 14px;
+					font-weight: 400;
+					text-align: center;
+				}
+				.popover-content {
+					position: relative;
+					padding-bottom: 178px;
+					img.qrcode{
+						position: absolute;
+						bottom: 28px;
+						width: 150px;
+					}
+				}
+			}	
+		}
 	}
 	@media only screen and (max-width: $phone-max) {
 		background-color: $darker-bg;
@@ -528,6 +539,7 @@ nav.navbar{
 			padding: 16px 15px;
 		}
 		@media only screen and (max-width: $phone-max){  // Phone
+			font-size: 18px;
 			.navbar-collapse {
 				@include box-shadow(none);
 				.nav li {			
