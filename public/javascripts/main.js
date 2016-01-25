@@ -32,9 +32,10 @@ function redoLayoutArticle(article){
 		})();
 
 		bgImg.done(function(){
+			var bgImg = article.find('.background');  //此处重新取bgImg是为了保证当资源替换的时候，取到的图像的长宽比是正确的
 			var containerHeight = article.innerHeight(),
 				containerWidth = article.width(),
-				bgWidthHeightRatio = bgImg.width() / bgImg.height(),
+				bgWidthHeightRatio = bgImg[0].naturalWidth / bgImg[0].naturalHeight,
 				bgTheoryHeight, 
 				bgTheoryWidth, 
 				bgRealWidth, 
