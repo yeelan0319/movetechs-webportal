@@ -7,6 +7,7 @@ $phone-max: 767px;
 /*variables*/
 $navbar-height: 50px;
 $footer-height: 50px;
+$footer-height-mobile: 124px;
 
 /*color-palette*/
 $white: #ffffff;          // reverse | carousel-indicator active | navbar-lite | navbar-default collapse-icon-bar
@@ -123,8 +124,8 @@ h1 {  //标题1
 	font-weight: 100;
 	@media only screen and (max-width: $tablet-max) {  //Tablet
 		font-size: 32px;
-		line-height: 42px;
-		margin-bottom: 23px;
+		line-height: 44px;
+		margin-bottom: 22px;
 	}
 	@media only screen and (max-width: $phone-max) {  //Phone
 		font-size: 24px;
@@ -141,13 +142,13 @@ h2 {  //副标题
 	font-weight: 600;
 	@media only screen and (max-width: $tablet-max) {  //Tablet
 		font-size: 22px;
-		line-height: 36px;
-		margin-bottom: 21px;
+		line-height: 28px;
+		margin-bottom: 26px;
 	}
 	@media only screen and (max-width: $phone-max) {  //Phone
 		font-size: 20px;
-		line-height: 36px;
-		margin-bottom: 20px;
+		line-height: 28px;
+		margin-bottom: 24px;
 	}
 }
 h3 {   //标题2
@@ -159,13 +160,13 @@ h3 {   //标题2
 	font-weight: 100;
 	@media only screen and (max-width: $tablet-max) {  //Tablet
 		font-size: 22px;
-		line-height: 36px;
-		margin-bottom: 21px;
+		line-height: 28px;
+		margin-bottom: 26px;
 	}
 	@media only screen and (max-width: $phone-max) {  //Phone
 		font-size: 20px;
-		line-height: 36px;
-		margin-bottom: 20px;
+		line-height: 28px;
+		margin-bottom: 24px;
 	}
 }
 p {   //正文
@@ -187,8 +188,8 @@ small {  //补充说明
 	font-weight: 400;
 	@media only screen and (max-width: $phone-max) {  //Phone
 		font-size: 14px;
-		line-height: 18px;
-		margin-bottom: 4px;
+		line-height: 24px;
+		margin-bottom: 3px;
 	}
 }
 span {
@@ -199,12 +200,12 @@ span {
   text-justify: ideographic;
 	&.mis1 {  //其他文字1
 		font-size: 20px;
-		line-height: 36px;
-		margin-bottom: 20px;
+		line-height: 28px;
+		margin-bottom: 24px;
 		@media only screen and (max-width: $phone-max) {  //Phone
 			font-size: 18px;
-			line-height: 36px;
-			margin-bottom: 19px;
+			line-height: 26px;
+			margin-bottom: 24px;
 		}
 	}
 	&.mis2 {   //其他文字2
@@ -219,6 +220,9 @@ span {
 	}
 	&.misnav {  //不需要margin-bottom
 		font-size: 14px;
+	}
+	&.misfooter {
+		font-size: 12px;
 	}
 }
 
@@ -376,8 +380,18 @@ html, body {
 		content: '';
 		display: block;
 	}
+	@media only screen and (max-width: $phone-max) {
+		margin-bottom: -$footer-height-mobile;
+	}
 }
 
+footer, .page-wrap:after {
+	display:block;
+	height: $footer-height;
+	@media only screen and (max-width: $phone-max) {
+		height: $footer-height-mobile;
+	}
+}
 footer{
 	position: relative;
 	line-height: $footer-height;	
@@ -386,33 +400,32 @@ footer{
 	@include transition(all 0.5s ease);
 	>.container {
 		border-top: 1px solid $grey-light;
-		.footer-left{
-			float:left;
-			small{
-				@extend .text-grey;
-				line-height: $footer-height;
-				margin-bottom: 0px;
-			}
+		.misfooter{
+			@extend .text-grey;
 		}
-		.footer-right {
-			float: right;
-			a.btn{
-				@extend .text-grey;
-				@include box-shadow(none);
-				padding: 3px 5px;
-				&:last-child {
-					padding: 3px 0px 3px 25px; 
-				}
-				&:hover{
-					opacity: 0.75;
-				}
-				&:focus{
-					border: none;
-	    		outline:none;
-				}
-				&>img{
-					width: 16px;
-				}
+		a.btn{
+			@extend .text-grey;
+			@include box-shadow(none);
+			padding: 3px 5px;
+			&:last-child {
+				padding: 3px 0px 3px 25px; 
+			}
+			&:hover{
+				opacity: 0.75;
+			}
+			&:focus{
+				border: none;
+    		outline:none;
+			}
+			&>img{
+				width: 16px;
+			}
+		}	
+	}
+	@media only screen and (min-width: $tablet-min) {
+		>.container {
+			.misfooter{
+				line-height: $footer-height;
 			}
 			.popover {
 				width: 450px;
@@ -432,21 +445,24 @@ footer{
 						bottom: 28px;
 						width: 150px;
 					}
-				}
-			}	
+			}
+		}
 		}
 	}
 	@media only screen and (max-width: $phone-max) {
 		background-color: $darker-bg;
 		>.container {
 			border-top: none;
+			&.visible-xs-block{
+				background-color: $dark-bg;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				.misfooter{
+					line-height: 18px;
+				}
+			}	
 		}
 	}
-}
-
-footer, .page-wrap:after {
-	display:block;
-	height: $footer-height;
 }
 nav.navbar{
 	position: absolute;
@@ -659,6 +675,9 @@ nav.navbar{
 			}
 		}
 		&.navbar-secondary {
+			&.navbar-fixed .outer-container {
+				@include box-shadow(inset 0px -1px 0px rgba($black, 0.1));
+			}
 			@media only screen and (min-width: $tablet-min) {
 				.outer-container .navbar-collapse {
 					@include box-shadow(inset 0px -1px 0px rgba($black, 0.1));
@@ -831,7 +850,7 @@ nav.navbar{
 	.collapse-control {
 		position: absolute;
 		width: 100%;
-		bottom: 0px;
+		bottom: -1px;
 		padding-top: 50px;
 		text-align: right;
 		background: transparent;

@@ -20,7 +20,7 @@
 .text-reverse-hover, .hyperlink.hyperlink-reverse:hover, nav.navbar.navbar-default .navbar-brand:hover, nav.navbar.navbar-default li > a:hover {
   color: #ececec; }
 
-.text-grey, footer > .container .footer-left small, footer > .container .footer-right a.btn {
+.text-grey, footer > .container .misfooter, footer > .container a.btn {
   color: #6e6e6e; }
 
 .text-red, .hyperlink.hyperlink-red {
@@ -91,8 +91,8 @@ h1 {
   @media only screen and (max-width: 1068px) {
     h1 {
       font-size: 32px;
-      line-height: 42px;
-      margin-bottom: 23px; } }
+      line-height: 44px;
+      margin-bottom: 22px; } }
   @media only screen and (max-width: 767px) {
     h1 {
       font-size: 24px;
@@ -108,13 +108,13 @@ h2 {
   @media only screen and (max-width: 1068px) {
     h2 {
       font-size: 22px;
-      line-height: 36px;
-      margin-bottom: 21px; } }
+      line-height: 28px;
+      margin-bottom: 26px; } }
   @media only screen and (max-width: 767px) {
     h2 {
       font-size: 20px;
-      line-height: 36px;
-      margin-bottom: 20px; } }
+      line-height: 28px;
+      margin-bottom: 24px; } }
 
 h3 {
   display: block;
@@ -125,13 +125,13 @@ h3 {
   @media only screen and (max-width: 1068px) {
     h3 {
       font-size: 22px;
-      line-height: 36px;
-      margin-bottom: 21px; } }
+      line-height: 28px;
+      margin-bottom: 26px; } }
   @media only screen and (max-width: 767px) {
     h3 {
       font-size: 20px;
-      line-height: 36px;
-      margin-bottom: 20px; } }
+      line-height: 28px;
+      margin-bottom: 24px; } }
 
 p, nav.navbar.navbar-secondary {
   display: inline-block;
@@ -151,8 +151,8 @@ small {
   @media only screen and (max-width: 767px) {
     small {
       font-size: 14px;
-      line-height: 18px;
-      margin-bottom: 4px; } }
+      line-height: 24px;
+      margin-bottom: 3px; } }
 
 span {
   display: inline-block;
@@ -161,13 +161,13 @@ span {
   text-justify: ideographic; }
   span.mis1 {
     font-size: 20px;
-    line-height: 36px;
-    margin-bottom: 20px; }
+    line-height: 28px;
+    margin-bottom: 24px; }
     @media only screen and (max-width: 767px) {
       span.mis1 {
         font-size: 18px;
-        line-height: 36px;
-        margin-bottom: 19px; } }
+        line-height: 26px;
+        margin-bottom: 24px; } }
   span.mis2 {
     font-size: 16px;
     line-height: 24px;
@@ -179,6 +179,8 @@ span {
         margin-bottom: 23px; } }
   span.misnav, nav.navbar.navbar-primary, nav.navbar.navbar-secondary .navbar-header .navbar-brand, nav.navbar.navbar-secondary .navbar-header .navbar-brand span, nav.navbar.navbar-secondary .navbar-header button i {
     font-size: 14px; }
+  span.misfooter {
+    font-size: 12px; }
 
 .table-borderless thead tr th, .table-borderless thead tr td, .table-borderless tbody tr th, .table-borderless tbody tr td, .table-borderless tfoot tr th, .table-borderless tfoot tr td {
   border: none;
@@ -260,6 +262,16 @@ html, body {
   .page-wrap:after {
     content: '';
     display: block; }
+  @media only screen and (max-width: 767px) {
+    .page-wrap {
+      margin-bottom: -124px; } }
+
+footer, .page-wrap:after {
+  display: block;
+  height: 50px; }
+  @media only screen and (max-width: 767px) {
+    footer, .page-wrap:after {
+      height: 124px; } }
 
 footer {
   position: relative;
@@ -272,52 +284,50 @@ footer {
   transition: all 0.5s ease; }
   footer > .container {
     border-top: 1px solid #ececec; }
-    footer > .container .footer-left {
-      float: left; }
-      footer > .container .footer-left small {
-        line-height: 50px;
-        margin-bottom: 0px; }
-    footer > .container .footer-right {
-      float: right; }
-      footer > .container .footer-right a.btn {
-        -moz-box-shadow: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        padding: 3px 5px; }
-        footer > .container .footer-right a.btn:last-child {
-          padding: 3px 0px 3px 25px; }
-        footer > .container .footer-right a.btn:hover {
-          opacity: 0.75; }
-        footer > .container .footer-right a.btn:focus {
-          border: none;
-          outline: none; }
-        footer > .container .footer-right a.btn > img {
-          width: 16px; }
-      footer > .container .footer-right .popover {
-        width: 450px;
-        max-width: 450px;
-        background: white; }
-        footer > .container .footer-right .popover .popover-title {
-          background: transparent;
-          font-size: 14px;
-          font-weight: 400;
-          text-align: center; }
-        footer > .container .footer-right .popover .popover-content {
-          position: relative;
-          padding-bottom: 178px; }
-          footer > .container .footer-right .popover .popover-content img.qrcode {
-            position: absolute;
-            bottom: 28px;
-            width: 150px; }
+    footer > .container a.btn {
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      padding: 3px 5px; }
+      footer > .container a.btn:last-child {
+        padding: 3px 0px 3px 25px; }
+      footer > .container a.btn:hover {
+        opacity: 0.75; }
+      footer > .container a.btn:focus {
+        border: none;
+        outline: none; }
+      footer > .container a.btn > img {
+        width: 16px; }
+  @media only screen and (min-width: 768px) {
+    footer > .container .misfooter {
+      line-height: 50px; }
+    footer > .container .popover {
+      width: 450px;
+      max-width: 450px;
+      background: white; }
+      footer > .container .popover .popover-title {
+        background: transparent;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center; }
+      footer > .container .popover .popover-content {
+        position: relative;
+        padding-bottom: 178px; }
+        footer > .container .popover .popover-content img.qrcode {
+          position: absolute;
+          bottom: 28px;
+          width: 150px; } }
   @media only screen and (max-width: 767px) {
     footer {
       background-color: #222429; }
       footer > .container {
-        border-top: none; } }
-
-footer, .page-wrap:after {
-  display: block;
-  height: 50px; }
+        border-top: none; }
+        footer > .container.visible-xs-block {
+          background-color: #2b2d33;
+          padding-top: 10px;
+          padding-bottom: 10px; }
+          footer > .container.visible-xs-block .misfooter {
+            line-height: 18px; } }
 
 nav.navbar {
   position: absolute;
@@ -472,6 +482,10 @@ nav.navbar {
     box-shadow: none; }
     nav.navbar.navbar-lite.bg-opaque {
       background-color: white; }
+    nav.navbar.navbar-lite.navbar-secondary.navbar-fixed .outer-container {
+      -moz-box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
+      -webkit-box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1); }
     @media only screen and (min-width: 768px) {
       nav.navbar.navbar-lite.navbar-secondary .outer-container .navbar-collapse {
         -moz-box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.1);
@@ -598,7 +612,7 @@ nav.navbar {
   .collapse-paragraph .collapse-control {
     position: absolute;
     width: 100%;
-    bottom: 0px;
+    bottom: -1px;
     padding-top: 50px;
     text-align: right;
     background: transparent; }

@@ -15,28 +15,32 @@
 	}
 	.article h3 span {
 		font-size: 62px;
-		line-height: 1em;
+		line-height: 72px;
 		font-weight: 100;
 		margin-right: 36px;
 		vertical-align: middle;
 	}
-	
+	@media only screen and (max-width: 1067px) { 
+		.article h3 span {
+			font-size: 48px;
+			line-height: 58px;
+			display: block;
+		}
+	}
 	@media only screen and (max-width: 767px) { 
 		.article h3 span {
 			font-size: 42px;
-			line-height: 1em;
-			font-weight: 100;
-			margin-right: 36px;
-		}
-	}
-	@media only screen and (max-width: 1067px) { 
-		.article h3 span {
-			display: block;
+			line-height: 52px;
 		}
 	}
 	@media only screen and (min-width: 1067px) { 
 		.article h3{
 			margin-left: -5%;
+		}
+	}
+	@media only screen and (min-width: 1601px) { 
+		.article h3{
+			margin-left: -10%;
 		}
 	}
 </style>

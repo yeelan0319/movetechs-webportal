@@ -1,36 +1,45 @@
 	</div>
 	<footer>
 		<div class="container">
-			<div class="footer-left">
-				<small>© 2016 movetechs.com 版权所有 上海美步科技有限公司 沪ICP备15057873号-1</small>
+			<div class="row">
+				<!-- 在非手机上显示的时候，备案信息与连接放在同一行上 -->
+				<div class="hidden-xs col-sm-8">
+					<span class="misfooter">© 2016 movetechs.com 版权所有 上海美步科技有限公司 沪ICP备15057873号-1</span>
+				</div>
+				<div class="col-xs-12 col-sm-4 text-right">
+					<a target="_blank" href="http://weibo.com/movetechs?is_all=1" class="btn"><img src="images/share/weiboicon2x.png"/></a>
+					<!-- 当在手机上显示的时候会跳转到单独的微信页面 -->
+					<a href="/wechat" class="btn visible-xs-inline"><img src="images/share/wechaticon2x.png"/></a>
+					<!-- 当在非手机上显示的时候会弹出微信页面 -->
+					<a tabindex="0" class="btn hidden-xs" 
+						role="button" 
+						data-toggle="popover" 
+						data-placement="top"  
+						title="关注我们的官方微信"
+						data-html="true"
+						data-trigger="focus" 
+						data-content="
+							<div>
+								<p class='block-display'>美步科技官方微信服务号已开通！<br>
+									在这里，我们将与您分享个人出行方式的趣闻。</p>
+								<span class='block-display mis1'>搜索添加 / </span>
+								<p class='block-display'>微信界面右上方按钮[+] > 选择[添加朋友] > 在搜索框中输入'movetechs美步科技'添加。</p>
+								<span class='block-display mis1'>扫码添加 / </span>
+								<p class='block-display'>微信界面右上方按钮[+] > 选择[扫一扫] > 读取下方二维码添加：</p>
+								<img width='150px' class='qrcode' src='images/share/movetechs-qrcode.jpg'/>
+							</div>
+						">
+						<img class='qrcode' src="images/share/wechaticon2x.png"/>
+					</a>
+					<a href="/contact" class="btn">联系我们</a>
+				</div>
 			</div>
-			<div class="footer-right">
-				<a target="_blank" href="http://weibo.com/movetechs?is_all=1" class="btn"><img src="images/share/weiboicon2x.png"/></a>
-				<a href="/wechat" class="btn visible-xs-inline"><img src="images/share/wechaticon2x.png"/></a>
-				<a tabindex="0" class="btn hidden-xs" 
-					role="button" 
-					data-toggle="popover" 
-					data-placement="top"  
-					title="关注我们的官方微信"
-					data-html="true"
-					data-trigger="focus" 
-					data-content="
-						<div>
-							<p class='block-display'>美步科技官方微信服务号已开通！<br>
-								在这里，我们将与您分享个人出行方式的趣闻。</p>
-							<span class='block-display mis1'>搜索添加 / </span>
-							<p class='block-display'>微信界面右上方按钮[+] > 选择[添加朋友] > 在搜索框中输入'movetechs美步科技'添加。</p>
-							<span class='block-display mis1'>扫码添加 / </span>
-							<p class='block-display'>微信界面右上方按钮[+] > 选择[扫一扫] > 读取下方二维码添加：</p>
-							<img width='150px' class='qrcode' src='images/share/movetechs-qrcode.jpg'/>
-						</div>
-					">
-					<img class='qrcode' src="images/share/wechaticon2x.png"/>
-				</a>
-				
-				<a href="/contact" class="btn">联系我们</a>
-			</div>
-			<div class="clearfix"></div>
+		</div>
+		<!-- 当在手机上显示的时候，备案信息放在连接的下方，并且有单独的区块颜色 -->
+		<div class="container visible-xs-block">
+			<span class="block-display misfooter">© 2016 movetechs.com 版权所有</span>
+			<span class="block-display misfooter">上海美步科技有限公司</span>
+			<span class="block-display misfooter">沪ICP备15057873号-1</span>
 		</div>
 	</footer>
 </body>
